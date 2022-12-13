@@ -32,9 +32,9 @@ public class UserServiceImpl implements UserService {
 
 //To Validate While User is Login
 	@Override
-	public Boolean loginValidator(long mobNumber,String pass) {
-		User user=userRepo.findBymobNumber(mobNumber);
-		 if(user.getMobNumber()==mobNumber && user.getPass()==pass)
+	public Boolean loginValidator(String dlno,String pass) {
+		User user=userRepo.findByDlno(dlno);
+		 if(user.getDlno()==dlno && user.getPass()==pass)
 			 return true;
 		 else 
 			 return false;
@@ -44,8 +44,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	public String createUser(@ModelAttribute User user) throws Exception {
-		
-		if(Long.valueOf(user.getMobNumber())==null){
+//		User u = userRepo.findByDlno(user.getDlno());
+		if(user.getDlno()==""){
 			if(user.getPass()==""){
 			try {
 				throw new Exception("please enter dlno and password");
@@ -87,17 +87,17 @@ public class UserServiceImpl implements UserService {
 
 	//Getting User by providing Dlno 
 	@Override
-	public int getIdByMobileNumber(long mobNo) {
-		User u=userRepo.findBymobNumber(mobNo);
+	public int getIdByDlno(String dlno) {
+		User u=userRepo.findByDlno(dlno);
 		int id=u.getId();
 		return id;
 	}
 	
 	@Override
-	public long getPhoneNumber(long mobNumber) {
-		User u=userRepo.findBymobNumber(mobNumber);
+	public String getDlno(String dlno) {
+		User u=userRepo.findByDlno(dlno);
 		u.getId();
-		return u.getMobNumber();
+		return u.getDlno();
 	}
 	//Getting User by providing id 
 	@Override
@@ -107,9 +107,9 @@ public class UserServiceImpl implements UserService {
 
 
 	@Override
-	public boolean checkIfDlExist(long mobNumber) {
-	User u = userRepo.findBymobNumber(mobNumber);
-	if(u.getMobNumber()==mobNumber)
+	public boolean checkIfDlExist(String dlno) {
+	User u = userRepo.findByDlno(dlno);
+	if(u.getDlno().equals(dlno))
 		return true;
 	else {
 		return false;
@@ -120,12 +120,12 @@ public class UserServiceImpl implements UserService {
 
 
 	@Override
-	public long finduser(long mobNumber) {
+	public String finduser(String dlno) {
 
-		 if(userRepo.findBymobNumber(mobNumber)!=null){
-			 return userRepo.findBymobNumber(mobNumber).getMobNumber();
+		 if(userRepo.findByDlno(dlno)!=null){
+			 return userRepo.findByDlno(dlno).getDlno();
 		 }
-			 return 0;
+			 return null;
 	}
 
 

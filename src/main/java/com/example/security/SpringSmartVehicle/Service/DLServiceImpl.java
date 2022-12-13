@@ -21,17 +21,30 @@ public class DLServiceImpl implements DLService {
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	public String createDL(DrivingLicense dl)  {
-		if(checkIfDLExist(dl.getDlno())!=null){
+		if(checkIfDLExist(dl.getDlno())!=null ) {
 			return "DL already Exists";
+		}
+		else if(checkIfPhoneNumberExist(dl.getMobNo())!=null){
+			return "Phone Number already Exists";
 		}
 		dlRepo.save(dl);
 		return "Sucessfully Added DL Information";
 	}
 	
+	private DrivingLicense checkIfPhoneNumberExist(long mobNo) {
+		// TODO Auto-generated method stub
+
+		return dlRepo.findBymobNo(mobNo);
+	}
+	
+
 	//check if the dl exist or not
 	private DrivingLicense checkIfDLExist(String dlno) {
 		return dlRepo.findByDlno(dlno);
 	}
+	
+	
+	
 	//list the dl
 	@Override
 	public List<DrivingLicense> getAll() {

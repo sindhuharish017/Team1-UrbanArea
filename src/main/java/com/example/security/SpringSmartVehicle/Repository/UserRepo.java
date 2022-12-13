@@ -8,7 +8,7 @@ import com.example.security.SpringSmartVehicle.entity.User;
 @Repository
 public interface UserRepo extends JpaRepository<User, Integer> {
 
-	User findBymobNumber(long mobNumber);
+	User findByDlno(String dlno);
 //	boolean findByDlnoAndPass(String dlno,String pass);
 
 	User findByPass(String pass);

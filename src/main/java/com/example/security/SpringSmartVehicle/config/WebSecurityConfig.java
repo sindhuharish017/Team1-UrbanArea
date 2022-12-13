@@ -24,26 +24,35 @@ public class WebSecurityConfig {
 			http.authorizeRequests()
 //			.antMatchers("/hello").anonymous()
 //			.antMatchers("/user").hasAnyRole("USER")
-			.antMatchers("/login").hasAnyRole("ADMIN")	
-//			.antMatchers("/user").authenticated()
+			//.antMatchers("/admin").hasAnyRole("ADMIN")	
+			.antMatchers("/user").authenticated()
 			.anyRequest().permitAll()
 			.and()
 			.formLogin()
-//			.usernameParameter("dlno")
-//			.usernameParameter("pass")
-			.defaultSuccessUrl("/createdl")
+			.usernameParameter("dlno")
+			.usernameParameter("pass")
+			.defaultSuccessUrl("/vehicle")
 			.permitAll()
 			.and()
 			.logout().logoutSuccessUrl("/home").permitAll();
-//			.and()
-//			
 //			.anyRequest().authenticated();
 			
-			http.httpBasic();
+//			http.httpBasic();
 //			http.formLogin().loginPage("/user").defaultSuccessUrl("/vehicle.jsp").failureUrl("/user");
 		
 			return http.build();
 		}
+//		http.authorizeRequests()
+//		.antMatchers("/users").authenticated()
+//		.anyRequest().permitAll()
+//		.and()
+//		.formLogin()
+//		.usernameParameter("email")
+//		.defaultSuccessUrl("/users")
+//		.permitAll()
+//		.and()
+//		.logout().logoutSuccessUrl("/").permitAll();
+//		}
 
 		
 
@@ -59,7 +68,7 @@ public class WebSecurityConfig {
 		
 			
 //			udm.createUser(User.withUsername("scott").password(passwordEncoder.encode("tiger")).roles("USER").build());
-			udm.createUser(User.withUsername("admin").password(passwordEncoder.encode("admin")).roles("ADMIN").build());
+			udm.createUser(User.withUsername("admin").password(passwordEncoder.encode("admin")).roles("ADMIN","USER").build());
 			return udm;
 			
 		}

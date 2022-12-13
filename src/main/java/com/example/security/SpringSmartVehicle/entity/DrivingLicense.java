@@ -1,13 +1,13 @@
 package com.example.security.SpringSmartVehicle.entity;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Past;
 
 
 
@@ -24,7 +24,8 @@ public class DrivingLicense {
 	private String address;
 	private LocalDate fromDate;
 	private LocalDate toDate;
-	private int age;
+	
+	@Column(unique=true)
 	private long mobNo;
 
 	private String[] vehicle;
@@ -39,14 +40,14 @@ public class DrivingLicense {
 	
 	//parametered constructor
 	public DrivingLicense(String name, LocalDate dateofBirth, String address, LocalDate fromDate, LocalDate toDate,
-			int age, long mobNo, String[] vehicle) {
+			 long mobNo, String[] vehicle) {
 		super();
 		this.name = name;
 		this.dateofBirth = dateofBirth;
 		this.address = address;
 		this.fromDate = fromDate;
 		this.toDate = toDate;
-		this.age = age;
+	
 		this.mobNo = mobNo;
 		this.vehicle = vehicle;
 	}
@@ -54,7 +55,7 @@ public class DrivingLicense {
 
 
 	public DrivingLicense(String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,
-			LocalDate toDate, int age, long mobNo, String[] vehicle) {
+			LocalDate toDate, long mobNo, String[] vehicle) {
 		super();
 		this.dlno = dlno;
 		this.name = name;
@@ -62,7 +63,7 @@ public class DrivingLicense {
 		this.address = address;
 		this.fromDate = fromDate;
 		this.toDate = toDate;
-		this.age = age;
+		
 		this.mobNo = mobNo;
 		this.vehicle = vehicle;
 	}
@@ -73,7 +74,7 @@ public class DrivingLicense {
 
 
 	public DrivingLicense(String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,
-			LocalDate toDate, int age, long mobNo, String[] vehicle, User user) {
+			LocalDate toDate,  long mobNo, String[] vehicle, User user) {
 		super();
 		this.dlno = dlno;
 		this.name = name;
@@ -81,7 +82,7 @@ public class DrivingLicense {
 		this.address = address;
 		this.fromDate = fromDate;
 		this.toDate = toDate;
-		this.age = age;
+		
 		this.mobNo = mobNo;
 		this.vehicle = vehicle;
 //		this.user = user;
@@ -93,7 +94,7 @@ public class DrivingLicense {
 
 
 	public DrivingLicense(int id, String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,
-			LocalDate toDate, int age, long mobNo, String[] vehicle, User user) {
+			LocalDate toDate, long mobNo, String[] vehicle, User user) {
 		super();
 		this.id = id;
 		this.dlno = dlno;
@@ -102,7 +103,7 @@ public class DrivingLicense {
 		this.address = address;
 		this.fromDate = fromDate;
 		this.toDate = toDate;
-		this.age = age;
+	
 		this.mobNo = mobNo;
 		this.vehicle = vehicle;
 //		this.user = user;
@@ -111,7 +112,7 @@ public class DrivingLicense {
 
 
 	public DrivingLicense(int id, String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,
-			LocalDate toDate, int age, long mobNo, String[] vehicle) {
+			LocalDate toDate,  long mobNo, String[] vehicle) {
 		super();
 		this.id = id;
 		this.dlno = dlno;
@@ -120,7 +121,7 @@ public class DrivingLicense {
 		this.address = address;
 		this.fromDate = fromDate;
 		this.toDate = toDate;
-		this.age = age;
+		
 		this.mobNo = mobNo;
 		this.vehicle = vehicle;
 	}
@@ -212,16 +213,7 @@ public class DrivingLicense {
 
 
 
-	public int getAge() {
-		return age;
-	}
-
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
+	
 
 
 	public long getMobNo() {
@@ -248,15 +240,27 @@ public class DrivingLicense {
 	}
 
 
-	@Override
-	public String toString() {
-		return "DrivingLicense [id=" + id + ", dlno=" + dlno + ", name=" + name + ", dateofBirth=" + dateofBirth
-				+ ", address=" + address + ", fromDate=" + fromDate + ", toDate=" + toDate + ", age=" + age + ", mobNo="
-				+ mobNo + ", vehicle=" + Arrays.toString(vehicle) + "]";
-	}
 
+//	public User getUser() {
+//		return user;
+//	}
+//
+//
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//		user.setId(getId());
+//	}
 
-
-
+//
+//
+//	@Override
+//	public String toString() {
+//		return "DrivingLicense [id=" + id + ", dlno=" + dlno + ", name=" + name + ", dateofBirth=" + dateofBirth
+//				+ ", address=" + address + ", fromDate=" + fromDate + ", toDate=" + toDate + ", age=" + age + ", mobNo="
+////				+ mobNo + ", vehicle=" + Arrays.toString(vehicle) + ", user=" + user + "]";
+//	}
+//
+//	
 
 }

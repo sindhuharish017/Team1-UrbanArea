@@ -1,3 +1,27 @@
+//package com.example.security.SpringSmartVehicle.controller;
+//
+//import java.util.ArrayList;
+//import java.util.HashMap;
+//import java.util.List;
+//import java.util.Map;
+//
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+////import org.springframework.boot.context.properties.bind.BindException;
+//import org.springframework.stereotype.Controller;
+//import org.springframework.ui.Model;
+//import org.springframework.ui.ModelMap;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.ModelAttribute;
+//import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.PutMapping;
+//import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.ResponseBody;
+//import org.springframework.web.servlet.ModelAndView;
+//
+//import com.example.security.SpringSmartVehicle.Service.AdminService;
 
 package com.example.security.SpringSmartVehicle.controller;
 
@@ -41,7 +65,6 @@ public class SpringVehicleController {
 
 	@Autowired
 	private UserRepo repo;
-	
 	@Autowired
 	private PoliceService policeService;
 
@@ -50,20 +73,20 @@ public class SpringVehicleController {
 		return "home";
 	}
 
-	@GetMapping("/login")
+	@GetMapping("/admin")
 	public String admin() {
 		return "admin";
 	}
 
-	@PostMapping("/login")
+	@PostMapping("/admin")
 	public ModelAndView admin(@ModelAttribute Admin admin ,Model model) throws Exception {
 
-		if (adminService.loginValidator(admin.getUsername()) == 1)  {
+		if (adminService.loginValidator(admin.getUsername()) == 1) {
 			ModelAndView mv = new ModelAndView("redirect:/createdl");
 			return mv;
 		}
 		ModelAndView mv = new ModelAndView();
-     	model.addAttribute("fail", "invalid Username or Password");
+     	model.addAttribute("fail", "login failed");
 		return mv;
 		
 	}
@@ -88,12 +111,12 @@ public class SpringVehicleController {
 	
 	//To Create DL
 	@PostMapping("/createdl")
-	public ModelAndView newDLRegister(@ModelAttribute DrivingLicense dl, User user) throws NullPointerException {
-
-		ModelAndView mv = new ModelAndView("redirect:/dllist");
+	public ModelAndView newDLRegister(@ModelAttribute DrivingLicense dl, User user,Model model) throws Exception {
 		
+		ModelAndView mv = new ModelAndView("redirect:/dllist");
+		dl.setToDate(dl.getFromDate().plusYears(20));
+		model.addAttribute("todate",dl.getToDate());
 		dlService.createDL(dl);
-
 		return mv;
 	}
 	
@@ -126,7 +149,7 @@ public class SpringVehicleController {
 	public String newUserRegister(@ModelAttribute User user) {
 		// DrivingLicense dl= new DrivingLicense();
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("mobno", user.getMobNumber());
+		mv.addObject("dlno", user.getDlno());
 		return "register";
 	}
 
@@ -138,8 +161,8 @@ public class SpringVehicleController {
 		try {
 			//The User is Allowed to register, if the user holding Driving License... 
 			//It is Checking Using checkIfDlnoExist method
-			DrivingLicense dl=dlRepo.findBymobNo(user.getMobNumber());
-			if(user.getMobNumber()==dl.getMobNo()){
+			if (checkIfDlnoExist(user.getDlno(),user.getFullname())) {
+
 				if (user.getPass().equals(user.getConfirmpassword())) {
 					
 					userservice.createUser(user);
@@ -149,13 +172,17 @@ public class SpringVehicleController {
 					model.addAttribute("valid", "Those Password didn't Match.Try Again ");
 					return mv1;
 				}
-			}
 
-			
+			}
+			else{
+				ModelAndView mv1 = new ModelAndView("/register");
+				model.addAttribute("valid", " The Username Should Match to Your DL name ");
+				return mv1;
+			}
 		}catch (Exception e) {
 
 			ModelAndView mv1 = new ModelAndView("/register");
-			model.addAttribute("valid", "This Phone Number is Incorrect. Try Again  ");
+			model.addAttribute("valid", "provide Valid DL_NO ");
 			return mv1;
 		}
 		model.addAttribute("valid","the User Registered Succeessfilly!!!");
@@ -172,20 +199,20 @@ public class SpringVehicleController {
 	@PostMapping("/userlogin")
 	public ModelAndView user(@ModelAttribute User user, ModelMap model) throws NullPointerException {
 		try {
-			if (Long.valueOf(user.getMobNumber()) == null && user.getPass() == "") {
+			if (user.getDlno() == "" && user.getPass() == "") {
 				model.addAttribute("enter", "enter username and password");
 				ModelAndView mv = new ModelAndView("/userlogin");
 				return mv;
 			}
 			//User can only login if the dlno and Password Matches.
-			else if ( user.getPass().equals(userservice.findpass(user.getPass()))){
+			else if (user.getDlno().equals(userservice.finduser(user.getDlno()))
+					&& user.getPass().equals(userservice.findpass(user.getPass()))) {
 				System.out.println("User Page Requested");
-				
-				int id = userservice.getIdByMobileNumber(user.getMobNumber());
+				int id = userservice.getIdByDlno(user.getDlno());
 				System.out.println(id);
-				
+
 				ModelAndView mv = new ModelAndView("redirect:/vehicleType/" + id);
-				mv.addObject("mobno", user.getMobNumber());
+				mv.addObject("dlno", user.getDlno());
 				mv.addObject("pass", user.getPass());
 				return mv;
 			}
@@ -204,9 +231,13 @@ public class SpringVehicleController {
 		ModelAndView mv = new ModelAndView();
 
 		User u = repo.findById(id).get();
+		mv.addObject("dlno", u.getDlno());
 		mv.addObject("pass", u.getPass());
 		mv.addObject("confirmpassword", u.getConfirmpassword());
-		mv.addObject("phonenumber", u.getMobNumber());
+		mv.addObject("fullname", u.getFullname());
+		mv.addObject("dateofbirth", u.getDateofbirth());
+		mv.addObject("email", u.getEmail());
+		mv.addObject("phonenumber", u.getPhonenumber());
 		mv.setViewName("vehicleType");
 		return "/vehicleType";
 	}
@@ -218,7 +249,7 @@ public class SpringVehicleController {
 		User u = repo.findById(id).get();
 		u.setVehicleType(user.getVehicleType());
 		userservice.updateUser(u);
-		DrivingLicense dl = dlRepo.findBymobNo(u.getMobNumber());
+		DrivingLicense dl = dlRepo.findByDlno(u.getDlno());
 		String[] veh = dl.getVehicle();
 		System.out.println(Arrays.toString(veh));
 		System.out.println(dl.getAddress());
@@ -250,9 +281,13 @@ public class SpringVehicleController {
 	public ModelAndView AllowAccess(@PathVariable("id") int id, Model model) throws Exception {
 		ModelAndView mv = new ModelAndView("redirect:/police/{id}");
 		User u = repo.findById(id).get();
-		DrivingLicense dl = dlRepo.findBymobNo(u.getMobNumber());
+		DrivingLicense dl = dlRepo.findByDlno(u.getDlno());
 		Police police = new Police();
 		police.setAddress(dl.getAddress());
+		police.setDateofBirth(u.getDateofbirth());
+		police.setDlno(u.getDlno());
+		police.setName(u.getFullname());
+		police.setPhonenumber(u.getPhonenumber());
 		policeService.ProvideUserIdentity(police);
 		System.out.println(police.getDlno());
 		model.addAttribute("police", police);
@@ -279,7 +314,6 @@ public class SpringVehicleController {
 	@GetMapping("/dllist")
 	public String list(Model model) {
 		System.out.println("List Of DL");
-		
 		model.addAttribute("dl", dlService.getAll());
 		return "dllist";
 	}
@@ -288,13 +322,13 @@ public class SpringVehicleController {
 	public String PoliceNotified(@PathVariable("id") int id, Model model) {
 		System.out.println("information of user");
 		User u = repo.findById(id).get();
-		DrivingLicense dl=dlRepo.findBymobNo(u.getMobNumber());
+		DrivingLicense dl=dlRepo.findByDlno(u.getDlno());
 		Police p = new Police();
-		p.setDlno(dl.getDlno());
+		p.setDlno(u.getDlno());
 		p.setAddress(dl.getAddress());
-		p.setDateofBirth(dl.getDateofBirth());
-		p.setName(dl.getName());
-		p.setPhonenumber(u.getMobNumber());
+		p.setDateofBirth(u.getDateofbirth());
+		p.setName(u.getFullname());
+		p.setPhonenumber(u.getPhonenumber());
 		
 		model.addAttribute("phno", p.getPhonenumber());
 		model.addAttribute("name", p.getName());

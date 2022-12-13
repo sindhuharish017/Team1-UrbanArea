@@ -8,8 +8,9 @@ import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 @Repository
 public interface DLRepo extends JpaRepository<DrivingLicense, Integer> {
 
-	 DrivingLicense findBymobNo(long mobNo) ;
-	 DrivingLicense findByDlno(String dlno);
+	 DrivingLicense findByDlno(String dlno) ;
+
+	DrivingLicense findBymobNo(long mobNo);
 
 		
 }
