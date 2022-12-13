@@ -19,121 +19,74 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(unique = true, nullable = false)
-	private String dlno;
+	private long mobNumber;
 	@NotBlank
 	@Column(unique = true, nullable = false)
 	private String pass;
 	private String vehicleType;
-	@Column(name="name")
-	private String fullname;
-	private long phonenumber;
-	private String email;
-	private LocalDate dateofbirth;
 	private String confirmpassword;
 
 
 	public User() {
 	}
 
-	public User(int id, String dlno, @NotBlank String pass, String vehicleType, String fullname, long phonenumber,
-			String email, LocalDate dateofbirth, String confirmpassword) {
+
+	public User(long mobNumber, @NotBlank String pass, String vehicleType, String confirmpassword) {
 		super();
-		this.id = id;
-		this.dlno = dlno;
+		this.mobNumber = mobNumber;
 		this.pass = pass;
 		this.vehicleType = vehicleType;
-		this.fullname = fullname;
-		this.phonenumber = phonenumber;
-		this.email = email;
-		this.dateofbirth = dateofbirth;
 		this.confirmpassword = confirmpassword;
 	}
 
-	public User(String dlno, @NotBlank String pass, String vehicleType, String fullname, long phonenumber, String email,
-			LocalDate dateofbirth, String confirmpassword) {
-		super();
-		this.dlno = dlno;
-		this.pass = pass;
-		this.vehicleType = vehicleType;
-		this.fullname = fullname;
-		this.phonenumber = phonenumber;
-		this.email = email;
-		this.dateofbirth = dateofbirth;
-		this.confirmpassword = confirmpassword;
-	}
 
 	public int getId() {
 		return id;
 	}
 
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getDlno() {
-		return dlno;
+
+	public long getMobNumber() {
+		return mobNumber;
 	}
 
-	public void setDlno(String dlno) {
-		this.dlno = dlno;
+
+	public void setMobNumber(long mobNumber) {
+		this.mobNumber = mobNumber;
 	}
+
 
 	public String getPass() {
 		return pass;
 	}
 
+
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
+
 
 	public String getVehicleType() {
 		return vehicleType;
 	}
 
+
 	public void setVehicleType(String vehicleType) {
 		this.vehicleType = vehicleType;
 	}
 
-	public String getFullname() {
-		return fullname;
-	}
-
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
-	}
-
-	public long getPhonenumber() {
-		return phonenumber;
-	}
-
-	public void setPhonenumber(long phonenumber) {
-		this.phonenumber = phonenumber;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public LocalDate getDateofbirth() {
-		return dateofbirth;
-	}
-
-	public void setDateofbirth(LocalDate dateofbirth) {
-		this.dateofbirth = dateofbirth;
-	}
 
 	public String getConfirmpassword() {
 		return confirmpassword;
 	}
 
+
 	public void setConfirmpassword(String confirmpassword) {
 		this.confirmpassword = confirmpassword;
 	}
-
-	
 
 }

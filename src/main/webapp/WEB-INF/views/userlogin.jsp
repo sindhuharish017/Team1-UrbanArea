@@ -214,12 +214,13 @@ background-repeat: no-repeat;
                         <input type="Password" class="form-control form-control-lg" placeholder="Password" name="pass"  required="required" />
                         <label class="form-label" for="typepass"></label>
                       </div> 
-                          <div class="form-outline form-white mb-4">
-                          <label>Enter OTP</label>
-                        <input type="text" class="form-control form-control-lg"  name="otp" minlength="4" maxlength="4" required="required" />
-                       <!--  <input class="btn third"  type="submit" name="submit" value="Generate OTP"/> -->
+                           <div class="form-outline form-white mb-4">
+                        
+                        <input type="text" class="form-control form-control-lg"  placeholder="Enter OTP"name="otp" minlength="4" maxlength="4" required="required" />
+                 
+                 <input class="btn third"  type="submit" name="submit" value="Generate OTP"/>
                         <label class="form-label" for="typepass"></label>
-                      </div> 
+                      </div>  
                    <center style="color: white;"><b>${enter}</b></center> 
                    <center style="color: red;"><b>${fail}</b></center> 
 	   					
@@ -235,15 +236,6 @@ background-repeat: no-repeat;
                        </form></td> 
                         </tr>
                       </table>
-                   <script type="text/javascript">
-                   var digits='0123456789';;
-                   let OTP='';
-                   for(let i=0;i<4;i++){
-                	   OTP+=digits[Math.floor(Math.random *10)];
-                   }
-                   return OTP;
-                   }
-                   </script>
                     </div>
                   </div>
                 </div>
