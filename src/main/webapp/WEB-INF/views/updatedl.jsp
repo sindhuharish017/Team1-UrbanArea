@@ -216,7 +216,7 @@ label {
 		<a href="/home">Home</a>
 		 <a href="/createdl">Create</a> 
 		 <a href="/updateddllist">View</a>
-		<!--  <a href="/home">Logout</a> -->
+		 <a href="/home">Logout</a>
 	</div>
  <center>  
       
@@ -242,10 +242,7 @@ label {
     <i class = "fa fa-calendar" aria-hidden = "true"> </i>  
   </div>  
 
-  <div class = "inputWithIcon">  
-    <input type="text" class="form-control form-control-lg" value="${dl.age}" name="age" />  
-    <i class = "fa fa-calendar" aria-hidden = "true"> </i>                 
-    </div>  
+
     <div class = "inputWithIcon">  
         <input type="text" class="form-control form-control-lg" value="${dl.mobNo}"	 name="mobNo" /> 
             <i class = "fa fa-phone fa-lg fa-fw" aria-hidden = "true"> </i>                 
@@ -265,10 +262,14 @@ label {
     <i class ="fa fa-calendar"   aria-hidden = "true"> </i>  
   </div>   
             <div class="form-outline form-white mb-1">
-
-                <input type="checkbox" name="vehicle" value="2Wheeler">2 Wheeler
-                <input type="checkbox" name="vehicle" value="3Wheeler">3 Wheeler
-                 <input type="checkbox" name="vehicle" value="4Wheeler">4 Wheeler
+                 <input type="checkbox" name="vehicle" value="MC 50cc">&nbsp;MC 50cc &nbsp;&nbsp;&nbsp;  
+							<input type="checkbox" name="vehicle" value="LMV-NT">&nbsp;LMV-NT &nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="vehicle" value="FVG">&nbsp;FVG<br>
+							<input type="checkbox" name="vehicle" value="MC EX 50cc">&nbsp;MC EX 50cc &nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="vehicle" value="MCWG">&nbsp;MCWG &nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="vehicle" value="HGMV">&nbsp;HGMV &nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="vehicle" value="HPMY">&nbsp;HPMY
+							
                
             </div>
 
