@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.security.SpringSmartVehicle.Service.OtpService;
+import com.example.security.SpringSmartVehicle.Service.UserService;
 import com.example.security.SpringSmartVehicle.entity.User;
 
 	@RestController
