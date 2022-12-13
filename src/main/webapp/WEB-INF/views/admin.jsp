@@ -63,7 +63,7 @@
 </style>
 </head>
 <body>
-<form action="/login" method="post">
+<form action="/createdl" method="post">
   <nav class="navbar fixed-top navbar-dark bg-dark">
     <div class="topnav">
       <a href="/home">Home</a>

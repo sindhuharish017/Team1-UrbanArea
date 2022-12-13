@@ -133,7 +133,7 @@ background-repeat: no-repeat;
   
     <center><h2 class="head">Smart Vehicle</h2></center>
 
-    <center><form class="play" action="/login" method="get">
+    <center><form class="play" action="/admin" method="get">
       <table>
       <tr>
           <td><input class="btn third"  type="submit" name="submit" value="RTO OFFICER"/><br>
