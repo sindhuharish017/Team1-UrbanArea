@@ -2,6 +2,8 @@
 <! DOCTYPE html>  
 <html>  
 <head>  
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <meta charset = "utf-8">  
         <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">  
         <title>Vehicle Type </title>  
@@ -204,14 +206,26 @@ label {
            <br>
 
      <div class = "inputWithIcon">  
-            <select id = "vehicleList" name = "vehicleType" value="${vehicleType}" style="color: rgb(129, 8, 89) ; background-color: rgb(219, 233, 231); width: 105px; height: 30px; font-size: 20px;" >
+          <%--   <select id = "vehicleList" name = "vehicleType" value="${vehicleType}" style="color: rgb(129, 8, 89) ; background-color: rgb(219, 233, 231); width: 105px; height: 30px; font-size: 20px;" >
 					
                 <option value = "NONE">Select</option>
                 <option value = "2Wheeler">2Wheeler</option>
                 <option value = "3Wheeler">3Wheeler</option>
                 <option value = "4Wheeler">4Wheeler</option>
              
-           </select>
+           </select> --%>
+           
+           
+ <select id = "vehicleList" name = "vehicleType"  style="color: rgb(129, 8, 89) ; background-color: rgb(219, 233, 231); width: 105px; height: 30px; font-size: 20px;" >
+				<tr>
+					 <option  value = "none">SELECT</option>
+					 <td><c:forEach var="v" items="${dl}">  
+					  <option  value = "${v}">${v}</option>
+						</c:forEach></td> 
+				
+				</tr>
+				
+				  </select>
      </div>
             
 <br>

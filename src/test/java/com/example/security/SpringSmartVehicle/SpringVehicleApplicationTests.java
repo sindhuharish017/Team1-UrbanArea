@@ -87,13 +87,13 @@ class SpringVehicleApplicationTests {
 	        mvc.perform(get("/police/{id}",id)).andDo(print()).andExpect(content().string("")).andExpect(status().isOk());
 	    }
 
-	    @Test
-	    public void createDL() {
-	    	LocalDate d=LocalDate.parse("2000-05-07");
-	    	String[] str={"2wheeler","3Wheeler"};
-	    	DrivingLicense dl=new DrivingLicense(1,"s5s54","nayana",d,"shimoga",d,d,22,9987543261L,str);
-	    	assertEquals("Sucessfully Added DL Information",dlServiceImpl.createDL(dl));
-	    }
+//	    @Test
+//	    public void createDL() {
+//	    	LocalDate d=LocalDate.parse("2000-05-07");
+//	    	String[] str={"2wheeler","3Wheeler"};
+//	    	DrivingLicense dl=new DrivingLicense(1,"s5s54","nayana",d,"shimoga",d,d,22,9987543261L,str);
+//	    	assertEquals("Sucessfully Added DL Information",dlServiceImpl.createDL(dl));
+//	    }
 //	    @Test
 //	    public void createUser() throws Exception {
 //	    	LocalDate d=LocalDate.parse("2000-05-07");

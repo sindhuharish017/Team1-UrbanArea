@@ -221,16 +221,20 @@ public class SpringVehicleController {
 			return mv;
 		}
 	}
-@GetMapping("/vehicleType/{id}")
-	public String update(@PathVariable("id") int id, Model model, @ModelAttribute User user) {
+	@GetMapping("/vehicleType/{id}")
+	public String update(@PathVariable("id") int id, Model model, @ModelAttribute User user,@ModelAttribute DrivingLicense dl) {
 		ModelAndView mv = new ModelAndView();
 
 		User u = repo.findById(id).get();
+		DrivingLicense d= dlRepo.findBymobNo(u.getMobNumber());
 		mv.addObject("pass", u.getPass());
 		mv.addObject("confirmpassword", u.getConfirmpassword());
-		mv.addObject("phonenumber", u.getMobNumber());
-		
+		mv.addObject("mobNumber", u.getMobNumber());
 		mv.setViewName("vehicleType");
+		String[] veh = d.getVehicle();
+		model.addAttribute("dl",veh);
+//		model.addAttribute("dl",d.getVehicle());
+		
 		return "/vehicleType";
 	}
 //To select the Type of Vehicle The User wish to Drive.

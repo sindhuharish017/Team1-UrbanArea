@@ -1,19 +1,60 @@
 
 <! DOCTYPE html>  
 <html>  
-<head>  
+<head>
 <meta charset = "utf-8">  
         <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">  
         <title>Adding DL </title>  
         <link rel = "stylesheet" href = "https://codepen.io/gymratpacks/pen/VKzBEp#0">  
         <link href = 'https://fonts.googleapis.com/css?family=Nunito:400,300' rel = 'stylesheet' type = 'text/css'>  
-<link rel = "stylesheet"  
-        href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">  
+<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>   
+<script type="text/javascript">
+        function ValidateDOB() {
+        var Error = document.getElementById("Error");
+       
+        //Get the date from the TextBox.
+        var dateString = document.getElementById("txtDate").value;
+        var regex =   /^(\d{1,2})-(\d{1,2})-(\d{4})$/
+      
+        
+        //Check whether valid dd/MM/yyyy Date Format.
+        if (regex.test(dateString)) {
+        var parts = dateString.split("-");
+        var dtDOB = new Date(parts[1] + "-" + parts[0] + "-" + parts[2]);
+        var dtCurrent = new Date();
+       Error.innerHTML = "Age must be above 18 years"
+        if (dtCurrent.getFullYear() - dtDOB.getFullYear() < 18) {
+        return false;
+       }
+       
+        if (dtCurrent.getFullYear() - dtDOB.getFullYear() == 18) {
+       
+        //CD: 11/06/2018 and DB: 15/07/2000. Will turned 18 on 15/07/2018.
+        if (dtCurrent.getMonth() < dtDOB.getMonth()) {
+        return false;
+       }
+        if (dtCurrent.getMonth() == dtDOB.getMonth()) {
+        //CD: 11/06/2018 and DB: 15/06/2000. Will turned 18 on 15/06/2018.
+        if (dtCurrent.getDate() < dtDOB.getDate()) {
+        return false;
+       }
+       }
+       }
+       Error.innerHTML = "";
+        return true;
+       } else {
+       Error.innerHTML = "Date must be in dd-MM-yyyy format"
+        return false;
+       }
+       }
+      </script>  
+
+
 <style>  
-/* @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,300);  
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);  
-* { box-sizing: border-box; }   */
 
 .topnav {
   background-color: #333;
@@ -212,7 +253,7 @@ label {
       <a href="/home">Home</a>
       <a href="/createdl">Create</a>
       <a href="/dllist">View</a>
-     <!--  <a href="/home">Logout</a> -->
+      <a href="/home">Logout</a>
     </div>
   
     <center>  
@@ -221,58 +262,61 @@ label {
             <br>
             <div class="loginbox">
             <h3>Adding DL</h3>  
-           
-           
+      
+      
 <div class = "inputWithIcon">  
-  <input type = "text" placeholder = "Name" name="name" required="required">  
+  <input type = "text" placeholder = "NAME" name="name" required="required">  
   <i class = "fa fa-user fa-lg fa-fw" aria-hidden = "true"> </i>  
 </div> 
 <div class = "inputWithIcon">  
-    <input type = "text" placeholder = "DL_Number" name="dlno" required="required" minlength="16" maxlength="16">  
+    <input type = "text" placeholder = "DL_NUMBER" name="dlno" required="required" maxlength="16">  
     <i class = "fa fa-id-card-o" aria-hidden = "true"> </i>  
   </div>  
 
 <div class = "inputWithIcon">  
-    <input type = "text" placeholder = "Date of Birth" name="DateofBirth" required="required">  
+    <input type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd/mm/yyyy]" name="DateofBirth" maxlength="10"   required="required"><br>  
+    <span class="error" id="Error"></span>
     <i class = "fa fa-calendar" aria-hidden = "true"> </i>  
+    
   </div>  
 
+ 
   <div class = "inputWithIcon">  
-    <input type = "text" placeholder = "Age" name="age" required="required">  
-    <i class = "fa fa-calendar" aria-hidden = "true"> </i>  
-  </div>  
-
-  <div class = "inputWithIcon">  
-    <input type = "text" placeholder = "Mobile Number" name="mobNo" required="required" minlength="10" maxlength="10">  
+    <input type = "text" placeholder = "MOBILE NUMBER" name="mobNo" required="required" minlength="10" maxlength="10" pattern="(0/91)?[6-9][0-9]{9}">  
+   
     <i class = "fa fa-phone fa-lg fa-fw" aria-hidden = "true"> </i>  
   </div>  
   <div class = "inputWithIcon">  
-    <input type = "text" placeholder = "Address" name="Address" required="required">  
+    <input type = "text" placeholder = "ADDRESS" name="Address" required="required">  
     <i class = "fa fa-address-book" aria-hidden = "true"> </i>  
   </div>  
-
-<div class = "inputWithIcon">  
-<input type = "text" placeholder = "From Date" name="fromDate" required="required" >  
-    <i class = "fa fa-calendar" aria-hidden = "true"> </i>                 
-    </div>  
-    <div class = "inputWithIcon">  
-        <input type = "text" placeholder = "To Date" name="toDate" required="required">  
-            <i class = "fa fa-calendar" aria-hidden = "true"> </i>                 
-            </div>  
+        
+    <div class = "inputWithIcon" > 
+        <i  class = "fa fa-calendar"  aria-hidden = "true" style="top:2px;"></i>  
+        <input class="date form-control" type = "text"  placeholder="DOI"  name="fromDate" maxlength="10" required="required">  
+         <!-- <input type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd/mm/yyyy]" name="DateofBirth" maxlength="10"   required="required"><br>   --> 
+        <script type="text/javascript">  
+            $('.date').datepicker({  
+               format: 'dd-mm-yyyy'  
+             });  
+        </script>       
+       </div>
      
-            <div class="form-outline form-white mb-1">
-
-							<input type="checkbox" name="vehicle" value="2Wheeler">2Wheeler
-							<input type="checkbox" name="vehicle" value="3Wheeler">
-							3Wheeler <input type="checkbox" name="vehicle" value="4Wheeler">
-							4Wheeler
-						</div>
+      <div class="form-outline form-white mb-1">
+		  <input type="checkbox" name="vehicle" value="MC 50cc">&nbsp;MC 50cc &nbsp;&nbsp;&nbsp;  
+		  <input type="checkbox" name="vehicle" value="LMV-NT">&nbsp;LMV-NT &nbsp;&nbsp;&nbsp;
+		  <input type="checkbox" name="vehicle" value="FVG">&nbsp;FVG<br>
+		  <input type="checkbox" name="vehicle" value="MC EX 50cc">&nbsp;MC EX 50cc &nbsp;&nbsp;&nbsp;
+		  <input type="checkbox" name="vehicle" value="MCWG">&nbsp;MCWG &nbsp;&nbsp;&nbsp;
+		  <input type="checkbox" name="vehicle" value="HGMV">&nbsp;HGMV &nbsp;&nbsp;&nbsp;
+		  <input type="checkbox" name="vehicle" value="HPMY">&nbsp;HPMY
+	</div>
 
 
 <table>
     <tr>
-        <td><input class="btn third" type="submit" name="submit" value="Save"></td>
-
+      <td><input class="btn third" type="submit" name="submit" value="Save"  onclick="return ValidateDOB()"></td>
+      
 				<td><input class="btn third" type="submit" name="submit" value="Cancel"></td>
 			</tr>
 </table>
