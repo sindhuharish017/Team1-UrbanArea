@@ -227,8 +227,59 @@ label {
             <h2>Updating DL</h2>  
             <h3>${dl.dlno}</h3>
            
-           
-<div class = "inputWithIcon"> 
+ <div class = "inputWithIcon">  
+  <input type = "text" placeholder = "NAME" name="name" required="required">  
+  <i class = "fa fa-user fa-lg fa-fw" aria-hidden = "true"> </i>  
+</div> 
+
+<div class = "inputWithIcon">  
+    <input type = "text" placeholder = "DL_NUMBER" name="dlno" required="required" maxlength="16">  
+    <i class = "fa fa-id-card-o" aria-hidden = "true"> </i>  
+  </div>  
+
+<div class = "inputWithIcon">  
+    <input class="date form-control" type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd-mm-yyyy]" name="DateofBirth" maxlength="10"   required="required"> 
+    <span class="error" id="Error"></span>
+    <i class = "fa fa-calendar" aria-hidden = "true" style="top:2px;"> </i>  
+    
+  </div>  
+  
+
+ 
+  <div class = "inputWithIcon">  
+    <input type = "text" placeholder = "MOBILE NUMBER" name="mobNo" required="required" minlength="10" maxlength="10" pattern="(0/91)?[6-9][0-9]{9}">  
+   
+    <i class = "fa fa-phone fa-lg fa-fw" aria-hidden = "true"> </i>  
+  </div>  
+  <div class = "inputWithIcon">  
+    <input type = "text" placeholder = "ADDRESS" name="Address" required="required">  
+    <i class = "fa fa-address-book" aria-hidden = "true"> </i>  
+  </div>  
+        
+    <div class = "inputWithIcon" > 
+        <i  class = "fa fa-calendar"  aria-hidden = "true" style="top:2px;"></i>  
+        <!-- <input class="date form-control" type = "text"  placeholder="DOI"  name="fromDate" maxlength="10" required="required">  -->
+        <input class="date form-control" type = "text" id="txtDate" onblur = "ValidateDOI()" placeholder = "DOI" name="fromDate" maxlength="10"   required="required">  
+         <!-- <input type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd/mm/yyyy]" name="DateofBirth" maxlength="10"   required="required"><br>   --> 
+        <script type="text/javascript">  
+            $('.date').datepicker({  
+               format: 'dd-mm-yyyy'  
+             });  
+        </script>       
+       </div>
+     
+      <div class="form-outline form-white mb-1">
+		  <input type="checkbox" name="vehicle" value="MC 50cc">&nbsp;MC 50cc &nbsp;&nbsp;&nbsp;  
+		  <input type="checkbox" name="vehicle" value="LMV-NT">&nbsp;LMV-NT &nbsp;&nbsp;&nbsp;
+		  <input type="checkbox" name="vehicle" value="FVG">&nbsp;FVG<br>
+		  <input type="checkbox" name="vehicle" value="MC EX 50cc">&nbsp;MC EX 50cc &nbsp;&nbsp;&nbsp;
+		  <input type="checkbox" name="vehicle" value="MCWG">&nbsp;MCWG &nbsp;&nbsp;&nbsp;
+		  <input type="checkbox" name="vehicle" value="HGMV">&nbsp;HGMV &nbsp;&nbsp;&nbsp;
+		  <input type="checkbox" name="vehicle" value="HPMY">&nbsp;HPMY
+	</div>
+
+     
+<%-- <div class = "inputWithIcon"> 
     <input type="text" class="form-control form-control-lg" value="${dl.dlno }" name="dlno" readonly />  
   <i class = "fa fa-id-card-o" aria-hidden = "true"> </i>  
 </div> 
@@ -272,7 +323,7 @@ label {
 							
                
             </div>
-
+ --%>
 <table>
     <tr>
         <td><input class="btn third" type="submit" name="submit" value="Save"></td>

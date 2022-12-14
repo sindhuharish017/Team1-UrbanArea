@@ -63,14 +63,14 @@
 </style>
 </head>
 <body>
-<form action="/createdl" method="post">
+<form action="/admin" method="post">
   <nav class="navbar fixed-top navbar-dark bg-dark">
     <div class="topnav">
       <a href="/home">Home</a>
       <a href="/about">About</a>
       <a href="/faq">FAQ</a>
       <a href="/aboutus">About Us</a>
-      <!-- <a href="/home">Logout</a> -->
+      <a href="/home">Logout</a>
       
     </div>
   </nav>

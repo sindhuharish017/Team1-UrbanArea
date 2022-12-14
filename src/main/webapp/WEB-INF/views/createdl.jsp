@@ -51,6 +51,47 @@
         return false;
        }
        }
+      </script> 
+      
+      <script type="text/javascript">
+        function ValidateDOI() {
+        var Error = document.getElementById("Error");
+       
+        //Get the date from the TextBox.
+        var dateString = document.getElementById("txtDate").value;
+        var regex =   /^(\d{1,2})-(\d{1,2})-(\d{4})$/
+      
+        
+        //Check whether valid dd/MM/yyyy Date Format.
+        if (regex.test(dateString)) {
+        var parts = dateString.split("-");
+        var dtDOI = new DateofBirth(parts[1] + "-" + parts[0] + "-" + parts[2]);
+        var dtCurrent = new fromDate();
+       Error.innerHTML = "Age must be above 18 years"
+        if (dtCurrent.getFullYear() - dtDOI.getFullYear() < 18) {
+        return false;
+       }
+       
+        if (dtCurrent.getFullYear() - dtDOI.getFullYear() == 18) {
+       
+        //CD: 11/06/2018 and DB: 15/07/2000. Will turned 18 on 15/07/2018.
+        if (dtCurrent.getMonth() < dtDOI.getMonth()) {
+        return false;
+       }
+        if (dtCurrent.getMonth() == dtDOB.getMonth()) {
+        //CD: 11/06/2018 and DB: 15/06/2000. Will turned 18 on 15/06/2018.
+        if (dtCurrent.getDate() < dtDOI.getDate()) {
+        return false;
+       }
+       }
+       }
+       Error.innerHTML = "";
+        return true;
+       } else {
+       Error.innerHTML = "Date must be in dd-MM-yyyy format"
+        return false;
+       }
+       }
       </script>  
 
 
@@ -274,11 +315,12 @@ label {
   </div>  
 
 <div class = "inputWithIcon">  
-    <input type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd/mm/yyyy]" name="DateofBirth" maxlength="10"   required="required"><br>  
+    <input class="date form-control" type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd-mm-yyyy]" name="DateofBirth" maxlength="10"   required="required"> 
     <span class="error" id="Error"></span>
-    <i class = "fa fa-calendar" aria-hidden = "true"> </i>  
+    <i class = "fa fa-calendar" aria-hidden = "true" style="top:2px;"> </i>  
     
   </div>  
+  
 
  
   <div class = "inputWithIcon">  
@@ -293,7 +335,8 @@ label {
         
     <div class = "inputWithIcon" > 
         <i  class = "fa fa-calendar"  aria-hidden = "true" style="top:2px;"></i>  
-        <input class="date form-control" type = "text"  placeholder="DOI"  name="fromDate" maxlength="10" required="required">  
+        <!-- <input class="date form-control" type = "text"  placeholder="DOI"  name="fromDate" maxlength="10" required="required">  -->
+        <input class="date form-control" type = "text" id="txtDate" onblur = "ValidateDOI()" placeholder = "DOI" name="fromDate" maxlength="10"   required="required">  
          <!-- <input type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd/mm/yyyy]" name="DateofBirth" maxlength="10"   required="required"><br>   --> 
         <script type="text/javascript">  
             $('.date').datepicker({  
@@ -315,8 +358,8 @@ label {
 
 <table>
     <tr>
-      <td><input class="btn third" type="submit" name="submit" value="Save"  onclick="return ValidateDOB()"></td>
-      
+     <!--  <td><input class="btn third" type="submit" name="submit" value="Save"  onclick="return ValidateDOB()"></td> -->
+               <td><input class="btn third" type="submit" name="submit" value="Save"  onclick="var validate=ValidateDOB();ValidateDOI();return validate"></td>
 				<td><input class="btn third" type="submit" name="submit" value="Cancel"></td>
 			</tr>
 </table>

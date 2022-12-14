@@ -111,7 +111,7 @@
 		<div class="topnav">
       <a href="/home">Home</a>
       <a href="/createdl">Create</a>
-      <!-- <a href="/home">Logout</a> -->
+      <a href="/home">Logout</a>
     </div>
 	<center><h2 class="head">List Of DL </h2></center><br>
 	<table class="table table-success table-striped table-light" align="center">
@@ -123,9 +123,8 @@
 				<td>NAME</td>
 				<td>DateofBirth</td>
 				<td>Address</td>
-				<td>FromDate</td>
-				<td>ToDate</td>
-				<td>Age</td>
+				<td>DOI</td>
+				<td>VALID TILL</td>
 				<td>MobNo</td>
 				<td>vehicleType</td>
 				<td>Update</td>
@@ -142,9 +141,7 @@
 					<td>${dl.address }</td>
 					<td>${dl.fromDate }</td>
 					<td>${dl.toDate }</td>
-					<td>${dl.age}</td>
 					<td>${dl.mobNo}</td>
-					
 					<td><c:forEach var="v" items="${dl.vehicle}">  
 						${v} </c:forEach></td>
 					
