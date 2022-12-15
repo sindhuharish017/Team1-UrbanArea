@@ -1,27 +1,3 @@
-//package com.example.security.SpringSmartVehicle.controller;
-//
-//import java.util.ArrayList;
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-//
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-////import org.springframework.boot.context.properties.bind.BindException;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
-//import org.springframework.ui.ModelMap;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.ModelAttribute;
-//import org.springframework.web.bind.annotation.PathVariable;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.PutMapping;
-//import org.springframework.web.bind.annotation.RequestBody;
-//import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.bind.annotation.ResponseBody;
-//import org.springframework.web.servlet.ModelAndView;
-//
-//import com.example.security.SpringSmartVehicle.Service.AdminService;
 
 package com.example.security.SpringSmartVehicle.controller;
 
@@ -48,6 +24,7 @@ import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 import com.example.security.SpringSmartVehicle.entity.Police;
 
 import com.twilio.Twilio;
+import com.twilio.exception.ApiException;
 import com.twilio.exception.AuthenticationException;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
@@ -67,7 +44,7 @@ public class SpringVehicleController {
 	private PoliceService policeService;
 
 	public static final String ACCOUNT_SID = "AC81b1658cefbeaa45d1e39cfabef3d5d2";
-	public static final String AUTH_TOKEN = "86d1aaee79d58701be43f540ab51b6fa";
+    public static final String AUTH_TOKEN = "44f1f857e31a9df6c679d04537b13356";
 
 	@GetMapping("/home")
 	public String home() {
@@ -117,10 +94,32 @@ public class SpringVehicleController {
 	public ModelAndView newDLRegister(@ModelAttribute DrivingLicense dl, Model model) throws Exception {
 
 		ModelAndView mv = new ModelAndView("redirect:/dllist");
-		dl.setToDate(dl.getFromDate().plusYears(20));
-		model.addAttribute("todate", dl.getToDate());
-		dlService.createDL(dl);
-		return mv;
+		boolean dlname = dlService.checkmobnodlno(dl);
+		boolean dln = dlService.DOBvalidation(dl);
+		if (dlname) {
+			if (dln) {
+
+				dl.setFromDate(LocalDate.now());
+				dl.setToDate(dl.getFromDate().plusYears(20));
+				model.addAttribute("todate", dl.getToDate());
+				dlService.createDL(dl);
+				System.out.println("age validated");
+				return mv;
+			} else {
+
+				model.addAttribute("fail", "Age must above 18 Years");
+				ModelAndView mv1 = new ModelAndView("/createdl");
+				return mv1;
+			}
+		}
+
+		else {
+
+			model.addAttribute("fail", "DL number/Phone number already exist");
+			ModelAndView mv1 = new ModelAndView("/createdl");
+			return mv1;
+		}
+
 	}
 
 	@GetMapping("/updatedl/{id}")
@@ -142,9 +141,7 @@ public class SpringVehicleController {
 
 	@GetMapping("/updateddllist")
 	public String dllist(Model model) {
-		System.out.println("List Of DL");
-
-		System.out.println(dlService.getAll());
+		
 		model.addAttribute("dl", dlService.getAll());
 		return "updateddllist";
 	}
@@ -196,28 +193,35 @@ public class SpringVehicleController {
 
 	@PostMapping("/GenerateOTP")
 	public String Generated(Model model, @ModelAttribute DrivingLicense dl) {
-		System.out.println(dl.getMobNo());
-
+		
+		if ((dlService.checkIfMobNoExist(dl.getMobNo()) == false)){
 		int id = dlService.getIdByMobNo(dl.getMobNo());
 		System.out.println(id);
 		model.addAttribute("mob", dl.getMobNo());
-		// ModelAndView mv = new ModelAndView("redirect:/vehicleType/" + id);
 		int otp = dlService.generateOTP();
 		System.out.println(otp);
 		model.addAttribute("otp", otp);
-		// return "redirect:/vehicleType/" + id;
 
 		Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
 		Message message = Message.creator(new com.twilio.type.PhoneNumber("+91" + dl.getMobNo()),
-				new com.twilio.type.PhoneNumber("+12058508975"), "otp is: " + otp).create();
+				new com.twilio.type.PhoneNumber("+12058508975"),  otp + " is the OTP(One time Password) to authenticate your drive").create();
 
 		System.out.println("MESSAGE SENT");
 		System.out.println(message.getSid());
 
 		return "/GenerateOTP";
+		  }
+		else{
+//			  model.addAttribute("fail", "Dl is not issued for this Number");
+			model.addAttribute("enter", "Dl is not issued for this Number");
+            System.out.println("Dl is not issued for this Number or Validity is Expired");
+            return "redirect:/userlogin";
+		}
+		
 	}
-
+	
+    
 	@GetMapping("/vehicleType/{id}")
 	public String update(@PathVariable("id") int id, Model model, @ModelAttribute DrivingLicense dl) {
 		ModelAndView mv = new ModelAndView();
@@ -235,27 +239,14 @@ public class SpringVehicleController {
 	// To select the Type of Vehicle The User wish to Drive.
 	@PostMapping("/vehicleType/{id}")
 	public String update(@PathVariable("id") int id, @ModelAttribute DrivingLicense dl, Model model) {
-		// ModelAndView mv1 = new ModelAndView("redirect:/userlogin");
+		
 		DrivingLicense dr = dlRepo.findById(id);
 
 		DrivingLicense d = dlRepo.findBymobNo(dr.getMobNo());
 		String[] veh = d.getVehicle();
-		// The user is allow to Drive a Selected Vehicle if and only if the dl
-		// is issued for that Vehicle Type.
-		// for (String element : veh) {
-		// if (element.equals(d.getVehicle())) {
-		// flag = 1;
-		// }
-		// }
-		//
-		// if(flag==1){
-		// System.out.println("Allow to drive");
+		
 		return "redirect:/allowAccess/{id}";
-		// }
-		// else{
-		// System.out.println("notallow");
-		// return "redirect:/accessDenied";
-		// }
+		
 	}
 
 	@GetMapping("/allowAccess/{id}")
@@ -276,16 +267,6 @@ public class SpringVehicleController {
 		System.out.println(police.getDlno());
 		model.addAttribute("police", police);
 		return mv;
-	}
-
-	private boolean checkIfDlnoExist(String dlno, String name) {
-		DrivingLicense dl = dlRepo.findByDlno(dlno);
-		if (dl.getDlno().equals(dlno) && dl.getName().equals(name))
-			return true;
-		else {
-			return false;
-		}
-
 	}
 
 	// If the User Not Allowed To Drive a Vehicle

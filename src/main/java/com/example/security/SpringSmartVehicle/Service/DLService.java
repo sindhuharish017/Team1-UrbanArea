@@ -6,7 +6,17 @@ import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 
 public interface DLService {
 
-	String createDL(DrivingLicense dl);
+	
+
+	
+
+	
+
+	int getIdByMobNo(long mobNo);
+
+	int generateOTP();
+
+	boolean createDL(DrivingLicense dl);
 
 	List<DrivingLicense> getAll();
 
@@ -16,14 +26,11 @@ public interface DLService {
 
 	DrivingLicense getById(int id);
 
-	int getIdByMobNo(long mobNo);
+	boolean DOBvalidation(DrivingLicense dlno);
 
-	int generateOTP();
+	boolean checkmobnodlno(DrivingLicense dl);
 
-	//boolean supports(Class clazz);
+	boolean checkIfMobNoExist(long mobNo);
 
-//	void validate(Object target, Errors errors);
-
-	//void createDL(Model model);
 
 }

@@ -12,89 +12,11 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>   
-<script type="text/javascript">
-        function ValidateDOB() {
-        var Error = document.getElementById("Error");
-       
-        //Get the date from the TextBox.
-        var dateString = document.getElementById("txtDate").value;
-        var regex =   /^(\d{1,2})-(\d{1,2})-(\d{4})$/
-      
-        
-        //Check whether valid dd/MM/yyyy Date Format.
-        if (regex.test(dateString)) {
-        var parts = dateString.split("-");
-        var dtDOB = new Date(parts[1] + "-" + parts[0] + "-" + parts[2]);
-        var dtCurrent = new Date();
-       Error.innerHTML = "Age must be above 18 years"
-        if (dtCurrent.getFullYear() - dtDOB.getFullYear() < 18) {
-        return false;
-       }
-       
-        if (dtCurrent.getFullYear() - dtDOB.getFullYear() == 18) {
-       
-        //CD: 11/06/2018 and DB: 15/07/2000. Will turned 18 on 15/07/2018.
-        if (dtCurrent.getMonth() < dtDOB.getMonth()) {
-        return false;
-       }
-        if (dtCurrent.getMonth() == dtDOB.getMonth()) {
-        //CD: 11/06/2018 and DB: 15/06/2000. Will turned 18 on 15/06/2018.
-        if (dtCurrent.getDate() < dtDOB.getDate()) {
-        return false;
-       }
-       }
-       }
-       Error.innerHTML = "";
-        return true;
-       } else {
-       Error.innerHTML = "Date must be in dd-MM-yyyy format"
-        return false;
-       }
-       }
-      </script> 
-      
-      <script type="text/javascript">
-        function ValidateDOI() {
-        var Error = document.getElementById("Error");
-       
-        //Get the date from the TextBox.
-        var dateString = document.getElementById("txtDate").value;
-        var regex =   /^(\d{1,2})-(\d{1,2})-(\d{4})$/
-      
-        
-        //Check whether valid dd/MM/yyyy Date Format.
-        if (regex.test(dateString)) {
-        var parts = dateString.split("-");
-        var dtDOI = new DateofBirth(parts[1] + "-" + parts[0] + "-" + parts[2]);
-        var dtCurrent = new fromDate();
-       Error.innerHTML = "Age must be above 18 years"
-        if (dtCurrent.getFullYear() - dtDOI.getFullYear() < 18) {
-        return false;
-       }
-       
-        if (dtCurrent.getFullYear() - dtDOI.getFullYear() == 18) {
-       
-        //CD: 11/06/2018 and DB: 15/07/2000. Will turned 18 on 15/07/2018.
-        if (dtCurrent.getMonth() < dtDOI.getMonth()) {
-        return false;
-       }
-        if (dtCurrent.getMonth() == dtDOB.getMonth()) {
-        //CD: 11/06/2018 and DB: 15/06/2000. Will turned 18 on 15/06/2018.
-        if (dtCurrent.getDate() < dtDOI.getDate()) {
-        return false;
-       }
-       }
-       }
-       Error.innerHTML = "";
-        return true;
-       } else {
-       Error.innerHTML = "Date must be in dd-MM-yyyy format"
-        return false;
-       }
-       }
-      </script>  
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+ 
 <style>  
 
 .topnav {
@@ -310,13 +232,18 @@ label {
   <i class = "fa fa-user fa-lg fa-fw" aria-hidden = "true"> </i>  
 </div> 
 <div class = "inputWithIcon">  
-    <input type = "text" placeholder = "DL_NUMBER" name="dlno" required="required" maxlength="16">  
+    <input type = "text" placeholder = "DL_NUMBER" name="dlno" required="required" maxlength="16" pattern="^([A-Z]{2}[0-9]{2})\s((19|20)[0-9]{2}[0-9]{7})$">  
     <i class = "fa fa-id-card-o" aria-hidden = "true"> </i>  
   </div>  
 
 <div class = "inputWithIcon">  
-    <input class="date form-control" type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd-mm-yyyy]" name="DateofBirth" maxlength="10"   required="required"> 
-    <span class="error" id="Error"></span>
+    <input class="date form-control" type = "text" id="txtDate"   placeholder = "D.O.B [dd-mm-yyyy]" name="DateofBirth" maxlength="10"  pattern="^\d{4}-\d{2}-\d{2}$" required="required"> 
+    <script type="text/javascript">  
+   
+             $('.date').datepicker({  
+               format: 'yyyy-mm-dd'  
+             });   
+</script>      
     <i class = "fa fa-calendar" aria-hidden = "true" style="top:2px;"> </i>  
     
   </div>  
@@ -333,17 +260,7 @@ label {
     <i class = "fa fa-address-book" aria-hidden = "true"> </i>  
   </div>  
         
-    <div class = "inputWithIcon" > 
-        <i  class = "fa fa-calendar"  aria-hidden = "true" style="top:2px;"></i>  
-        <!-- <input class="date form-control" type = "text"  placeholder="DOI"  name="fromDate" maxlength="10" required="required">  -->
-        <input class="date form-control" type = "text" id="txtDate" onblur = "ValidateDOI()" placeholder = "DOI" name="fromDate" maxlength="10"   required="required">  
-         <!-- <input type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd/mm/yyyy]" name="DateofBirth" maxlength="10"   required="required"><br>   --> 
-        <script type="text/javascript">  
-            $('.date').datepicker({  
-               format: 'dd-mm-yyyy'  
-             });  
-        </script>       
-       </div>
+  
      
       <div class="form-outline form-white mb-1">
 		  <input type="checkbox" name="vehicle" value="MC 50cc">&nbsp;MC 50cc &nbsp;&nbsp;&nbsp;  
@@ -358,8 +275,9 @@ label {
 
 <table>
     <tr>
-     <!--  <td><input class="btn third" type="submit" name="submit" value="Save"  onclick="return ValidateDOB()"></td> -->
-               <td><input class="btn third" type="submit" name="submit" value="Save"  onclick="var validate=ValidateDOB();ValidateDOI();return validate"></td>
+      <td><input class="btn third" type="submit" name="submit" value="Save"></td> 
+      <center style="color: red;"><b>${fail}</b></center> 
+           
 				<td><input class="btn third" type="submit" name="submit" value="Cancel"></td>
 			</tr>
 </table>

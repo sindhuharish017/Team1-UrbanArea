@@ -1,12 +1,8 @@
 package com.example.security.SpringSmartVehicle;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import java.time.LocalDate;
-
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +14,6 @@ import org.springframework.security.test.context.support.WithAnonymousUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.example.security.SpringSmartVehicle.Service.DLServiceImpl;
-import com.example.security.SpringSmartVehicle.Service.UserServiceImpl;
-import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
-import com.example.security.SpringSmartVehicle.entity.User;
 
 
 @SpringBootTest
@@ -35,8 +28,8 @@ class SpringVehicleApplicationTests {
 	@Autowired
 	private DLServiceImpl dlServiceImpl;
 	
-	@Autowired
-	private UserServiceImpl userserviceimpl;
+	
+	
 	  @Test
 	    @WithAnonymousUser
 		public void testHome() throws Exception{

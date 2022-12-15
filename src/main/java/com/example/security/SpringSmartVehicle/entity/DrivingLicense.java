@@ -38,19 +38,6 @@ public class DrivingLicense {
 	}
 
 	
-	//parametered constructor
-	public DrivingLicense(String name, LocalDate dateofBirth, String address, LocalDate fromDate, LocalDate toDate,
-			 long mobNo, String[] vehicle) {
-		super();
-		this.name = name;
-		this.dateofBirth = dateofBirth;
-		this.address = address;
-		this.fromDate = fromDate;
-		this.toDate = toDate;
-	
-		this.mobNo = mobNo;
-		this.vehicle = vehicle;
-	}
 
 
 
