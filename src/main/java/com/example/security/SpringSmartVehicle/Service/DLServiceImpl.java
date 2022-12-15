@@ -55,8 +55,9 @@ public class DLServiceImpl implements DLService {
 	//update the dl
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void update(DrivingLicense dl) {
+	public String update(DrivingLicense dl) {
 		dlRepo.save(dl);
+		return "dl Updated";
 	}
 
 	//list the dl
