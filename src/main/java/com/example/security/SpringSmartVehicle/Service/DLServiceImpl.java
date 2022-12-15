@@ -1,5 +1,6 @@
 package com.example.security.SpringSmartVehicle.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
 
@@ -20,18 +21,23 @@ public class DLServiceImpl implements DLService {
 	
 	//create a new dl
 	@Override
-	@Transactional(propagation=Propagation.REQUIRED)
-	public String createDL(DrivingLicense dl)  {
-		if(checkIfDLExist(dl.getDlno())!=null ) {
-			return "DL already Exists";
-		}
-		else if(checkIfPhoneNumberExist(dl.getMobNo())!=null){
-			return "Phone Number already Exists";
-		}
-		dlRepo.save(dl);
-		return "Sucessfully Added DL Information";
+	@Transactional(propagation = Propagation.REQUIRED)
+	public boolean createDL(DrivingLicense dl) {
+		
+        dlRepo.save(dl);
+		return true;
 	}
-	
+	@Override
+	public boolean checkmobnodlno(DrivingLicense dl){
+		if (checkIfDLExist(dl.getDlno()) != null) {
+			return false;
+		} else if (checkIfPhoneNumberExist(dl.getMobNo()) != null) {
+			return false;
+		}
+		return true;
+	}
+
+
 	private DrivingLicense checkIfPhoneNumberExist(long mobNo) {
 		// TODO Auto-generated method stub
 
@@ -87,5 +93,28 @@ public class DLServiceImpl implements DLService {
 		    int otp = 100000 + random.nextInt(900000);
 		    return otp;
 }
+	@Override
+	public boolean DOBvalidation(DrivingLicense dlno) {
+		DrivingLicense dl = dlno;
+		LocalDate today = LocalDate.now();
+		LocalDate DOB = dl.getDateofBirth();
+		LocalDate DOI = dl.getFromDate();
+		int diff = today.compareTo(DOB);
+		if (diff>18 ) {
+			return true;
+		} else {
 
+			return false;
+		}
+
+	}
+	@Override
+    public boolean checkIfMobNoExist(long mobNo) {
+        // TODO Auto-generated method stub
+        DrivingLicense d=dlRepo.findBymobNo(mobNo);
+        if(d!=null){
+            return true;
+        }
+        return false;
+    }
 }

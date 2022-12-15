@@ -3,9 +3,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>CreateDL</title>
 <style>
 .topnav {
@@ -227,60 +230,11 @@ label {
             <h2>Updating DL</h2>  
             <h3>${dl.dlno}</h3>
            
- <div class = "inputWithIcon">  
-  <input type = "text" placeholder = "NAME" name="name" required="required">  
-  <i class = "fa fa-user fa-lg fa-fw" aria-hidden = "true"> </i>  
-</div> 
-
-<div class = "inputWithIcon">  
-    <input type = "text" placeholder = "DL_NUMBER" name="dlno" required="required" maxlength="16">  
-    <i class = "fa fa-id-card-o" aria-hidden = "true"> </i>  
-  </div>  
-
-<div class = "inputWithIcon">  
-    <input class="date form-control" type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd-mm-yyyy]" name="DateofBirth" maxlength="10"   required="required"> 
-    <span class="error" id="Error"></span>
-    <i class = "fa fa-calendar" aria-hidden = "true" style="top:2px;"> </i>  
-    
-  </div>  
-  
-
  
-  <div class = "inputWithIcon">  
-    <input type = "text" placeholder = "MOBILE NUMBER" name="mobNo" required="required" minlength="10" maxlength="10" pattern="(0/91)?[6-9][0-9]{9}">  
-   
-    <i class = "fa fa-phone fa-lg fa-fw" aria-hidden = "true"> </i>  
-  </div>  
-  <div class = "inputWithIcon">  
-    <input type = "text" placeholder = "ADDRESS" name="Address" required="required">  
-    <i class = "fa fa-address-book" aria-hidden = "true"> </i>  
-  </div>  
-        
-    <div class = "inputWithIcon" > 
-        <i  class = "fa fa-calendar"  aria-hidden = "true" style="top:2px;"></i>  
-        <!-- <input class="date form-control" type = "text"  placeholder="DOI"  name="fromDate" maxlength="10" required="required">  -->
-        <input class="date form-control" type = "text" id="txtDate" onblur = "ValidateDOI()" placeholder = "DOI" name="fromDate" maxlength="10"   required="required">  
-         <!-- <input type = "text" id="txtDate" onblur = "ValidateDOB()" placeholder = "D.O.B [dd/mm/yyyy]" name="DateofBirth" maxlength="10"   required="required"><br>   --> 
-        <script type="text/javascript">  
-            $('.date').datepicker({  
-               format: 'dd-mm-yyyy'  
-             });  
-        </script>       
-       </div>
-     
-      <div class="form-outline form-white mb-1">
-		  <input type="checkbox" name="vehicle" value="MC 50cc">&nbsp;MC 50cc &nbsp;&nbsp;&nbsp;  
-		  <input type="checkbox" name="vehicle" value="LMV-NT">&nbsp;LMV-NT &nbsp;&nbsp;&nbsp;
-		  <input type="checkbox" name="vehicle" value="FVG">&nbsp;FVG<br>
-		  <input type="checkbox" name="vehicle" value="MC EX 50cc">&nbsp;MC EX 50cc &nbsp;&nbsp;&nbsp;
-		  <input type="checkbox" name="vehicle" value="MCWG">&nbsp;MCWG &nbsp;&nbsp;&nbsp;
-		  <input type="checkbox" name="vehicle" value="HGMV">&nbsp;HGMV &nbsp;&nbsp;&nbsp;
-		  <input type="checkbox" name="vehicle" value="HPMY">&nbsp;HPMY
-	</div>
 
      
-<%-- <div class = "inputWithIcon"> 
-    <input type="text" class="form-control form-control-lg" value="${dl.dlno }" name="dlno" readonly />  
+ <div class = "inputWithIcon"> 
+    <input type="text" class="form-control form-control-lg" value="${dl.dlno }" name="dlno" pattern="^([A-Z]{2}[0-9]{2})\s((19|20)[0-9]{2}[0-9]{7})$" />  
   <i class = "fa fa-id-card-o" aria-hidden = "true"> </i>  
 </div> 
 <div class = "inputWithIcon">  
@@ -289,13 +243,18 @@ label {
   </div>  
 
 <div class = "inputWithIcon">  
-    <input type="text" class="form-control form-control-lg" value="${dl.dateofBirth}" name="dateofBirth" /> 
+    <input type="text" class="date form-control" value="${dl.dateofBirth}" name="dateofBirth" pattern="^\d{4}-\d{2}-\d{2}$" required="required" />
+    <script type="text/javascript">  
+            $('.date').datepicker({  
+               format: 'yyyy-mm-dd'  
+             });  
+        </script>   
     <i class = "fa fa-calendar" aria-hidden = "true"> </i>  
   </div>  
 
 
     <div class = "inputWithIcon">  
-        <input type="text" class="form-control form-control-lg" value="${dl.mobNo}"	 name="mobNo" /> 
+        <input type="text" class="form-control form-control-lg" value="${dl.mobNo}"	 name="mobNo" minlength="10" maxlength="10" pattern="(0/91)?[6-9][0-9]{9}" /> 
             <i class = "fa fa-phone fa-lg fa-fw" aria-hidden = "true"> </i>                 
             </div>  
 
@@ -305,13 +264,18 @@ label {
   </div>  
 
   <div class = "inputWithIcon">  
-    <input type="text" class="form-control form-control-lg" value="${dl.fromDate}" name="fromDate" />
+    <input type="text" class="date form-control" value="${dl.fromDate}" name="fromDate" />
+     <script type="text/javascript">  
+            $('.date').datepicker({  
+               format: 'yyyy-mm-dd'  
+             });  
+        </script>
     <i class ="fa fa-calendar"  aria-hidden = "true"> </i>  
   </div>  
-  <div class = "inputWithIcon">  
-    <input type="text" class="form-control form-control-lg" value="${dl.toDate}" name="toDate" />
-    <i class ="fa fa-calendar"   aria-hidden = "true"> </i>  
-  </div>   
+     <div class = "inputWithIcon">  
+    <input type="text" class="date form-control"  value="${dl.toDate}" name="toDate" />
+    <i class ="fa fa-calendar"  aria-hidden = "true"> </i>  
+  </div>  
             <div class="form-outline form-white mb-1">
                  <input type="checkbox" name="vehicle" value="MC 50cc">&nbsp;MC 50cc &nbsp;&nbsp;&nbsp;  
 							<input type="checkbox" name="vehicle" value="LMV-NT">&nbsp;LMV-NT &nbsp;&nbsp;&nbsp;
@@ -323,7 +287,7 @@ label {
 							
                
             </div>
- --%>
+
 <table>
     <tr>
         <td><input class="btn third" type="submit" name="submit" value="Save"></td>
@@ -338,3 +302,28 @@ label {
 	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
