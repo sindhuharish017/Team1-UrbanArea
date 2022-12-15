@@ -1,6 +1,7 @@
 package com.example.security.SpringSmartVehicle.Service;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -68,8 +69,22 @@ public class DLServiceImpl implements DLService {
 	//listing the no of dl using id(getbyid)
 	@Override
 	public DrivingLicense getById(int id) {
-	return dlRepo.findById(id).get();
+	return dlRepo.findById(id);
 	
+}
+	@Override
+	public int getIdByMobNo(long mobNo) {
+		// TODO Auto-generated method stub
+		DrivingLicense dl=dlRepo.findBymobNo(mobNo);
+		int id=dl.getId();
+		return id;
+	}
+	@Override
+	 public int generateOTP(){
+
+		    Random random = new Random();
+		    int otp = 100000 + random.nextInt(900000);
+		    return otp;
 }
 
 }

@@ -16,6 +16,10 @@ public interface DLService {
 
 	DrivingLicense getById(int id);
 
+	int getIdByMobNo(long mobNo);
+
+	int generateOTP();
+
 	//boolean supports(Class clazz);
 
 //	void validate(Object target, Errors errors);

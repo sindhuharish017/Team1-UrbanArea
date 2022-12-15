@@ -180,7 +180,63 @@ background-repeat: no-repeat;
 </style>
 </head>
 <body>
-<form action="/userlogin" method="post">
+ <form action="/GenerateOTP" method="post">
+		<nav class="navbar fixed-top navbar-dark bg-dark">
+		<div class="topnav">
+			<a href="/home">Home</a> <a href="/about">About</a> <a href="/faq">FAQ</a>
+			<a href="/aboutus">About Us</a>
+			<!--    <a href="/home">Logout</a> -->
+		</div>
+		</nav>
+
+
+
+
+		<section class="vh-100 gradient-custom">
+
+		<div class="container py-5 h-100">
+
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+					<center>
+						<h1 class="head">USER LOGIN</h1><br>
+						${otp}
+					</center>
+					<div class="form-row">
+						<input type="text" class="form-control form-control-lg"
+							id="mobile" placeholder="Phone Number" name="mobNo"
+							required="required" minlength="10" maxlength="10" value="${mob }"
+							pattern="[6-9]{1}[0-9]{9}" /> <!-- <input type="text" id="txtOTP"
+							class="form-control form-control-lg" placeholder="Enter OTP"
+							name="otp" required="required"  > -->
+
+    
+					</div>
+					
+					
+
+					<center style="color: white;">
+						<b>${enter}</b>
+					</center>
+					<center style="color: red;">
+						<b>${fail}</b>
+					</center>
+
+					<table>
+						<tr>
+							
+							
+							<td><input class="btn third" type="submit" name="submit"
+								value="GetOTP" /></td>
+	      
+						</tr>
+					</table>
+				
+
+	
+</form>
+<%-- <form action="/userlogin" method="post">
 
   <nav class="navbar fixed-top navbar-dark bg-dark">
     <div class="topnav">
@@ -245,7 +301,7 @@ background-repeat: no-repeat;
         </section>  
 <h2></h2>
 <p></p>
-</form>
+</form> --%>
 
 
 </body>

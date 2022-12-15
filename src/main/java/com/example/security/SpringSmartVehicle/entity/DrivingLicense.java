@@ -70,46 +70,6 @@ public class DrivingLicense {
 
 
 
-	
-
-
-	public DrivingLicense(String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,
-			LocalDate toDate,  long mobNo, String[] vehicle, User user) {
-		super();
-		this.dlno = dlno;
-		this.name = name;
-		this.dateofBirth = dateofBirth;
-		this.address = address;
-		this.fromDate = fromDate;
-		this.toDate = toDate;
-		
-		this.mobNo = mobNo;
-		this.vehicle = vehicle;
-//		this.user = user;
-	}
-
-
-
-
-
-
-	public DrivingLicense(int id, String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,
-			LocalDate toDate, long mobNo, String[] vehicle, User user) {
-		super();
-		this.id = id;
-		this.dlno = dlno;
-		this.name = name;
-		this.dateofBirth = dateofBirth;
-		this.address = address;
-		this.fromDate = fromDate;
-		this.toDate = toDate;
-	
-		this.mobNo = mobNo;
-		this.vehicle = vehicle;
-//		this.user = user;
-	}
-
-
 
 	public DrivingLicense(int id, String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,
 			LocalDate toDate,  long mobNo, String[] vehicle) {
@@ -240,27 +200,5 @@ public class DrivingLicense {
 	}
 
 
-
-//	public User getUser() {
-//		return user;
-//	}
-//
-//
-//
-//	public void setUser(User user) {
-//		this.user = user;
-//		user.setId(getId());
-//	}
-
-//
-//
-//	@Override
-//	public String toString() {
-//		return "DrivingLicense [id=" + id + ", dlno=" + dlno + ", name=" + name + ", dateofBirth=" + dateofBirth
-//				+ ", address=" + address + ", fromDate=" + fromDate + ", toDate=" + toDate + ", age=" + age + ", mobNo="
-////				+ mobNo + ", vehicle=" + Arrays.toString(vehicle) + ", user=" + user + "]";
-//	}
-//
-//	
 
 }

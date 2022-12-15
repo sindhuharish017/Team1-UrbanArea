@@ -206,14 +206,7 @@ label {
            <br>
 
      <div class = "inputWithIcon">  
-          <%--   <select id = "vehicleList" name = "vehicleType" value="${vehicleType}" style="color: rgb(129, 8, 89) ; background-color: rgb(219, 233, 231); width: 105px; height: 30px; font-size: 20px;" >
-					
-                <option value = "NONE">Select</option>
-                <option value = "2Wheeler">2Wheeler</option>
-                <option value = "3Wheeler">3Wheeler</option>
-                <option value = "4Wheeler">4Wheeler</option>
-             
-           </select> --%>
+         
            
            
  <select id = "vehicleList" name = "vehicleType"  style="color: rgb(129, 8, 89) ; background-color: rgb(219, 233, 231); width: 105px; height: 30px; font-size: 20px;" >
