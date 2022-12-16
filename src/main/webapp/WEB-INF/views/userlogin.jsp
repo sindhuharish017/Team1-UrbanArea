@@ -5,6 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
         <meta charset="UTF-8">
        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -185,7 +187,7 @@ background-repeat: no-repeat;
 		<div class="topnav">
 			<a href="/home">Home</a> <a href="/about">About</a> <a href="/faq">FAQ</a>
 			<a href="/aboutus">About Us</a>
-			<!--    <a href="/home">Logout</a> -->
+			
 		</div>
 		</nav>
 
@@ -193,7 +195,7 @@ background-repeat: no-repeat;
 
 
 		<section class="vh-100 gradient-custom">
-
+       
 		<div class="container py-5 h-100">
 
 			<div
@@ -207,10 +209,7 @@ background-repeat: no-repeat;
 						<input type="text" class="form-control form-control-lg"
 							id="mobile" placeholder="Phone Number" name="mobNo"
 							required="required" minlength="10" maxlength="10" value="${mob }"
-							pattern="[6-9]{1}[0-9]{9}" /> <!-- <input type="text" id="txtOTP"
-							class="form-control form-control-lg" placeholder="Enter OTP"
-							name="otp" required="required"  > -->
-
+							pattern="[6-9]{1}[0-9]{9}" /> 
     
 					</div>
 					
@@ -228,7 +227,7 @@ background-repeat: no-repeat;
 							
 							
 							<td><input class="btn third" type="submit" name="submit"
-								value="GetOTP" /></td>
+								value="Get OTP" /></td>
 	      
 						</tr>
 					</table>
@@ -236,72 +235,6 @@ background-repeat: no-repeat;
 
 	
 </form>
-<%-- <form action="/userlogin" method="post">
-
-  <nav class="navbar fixed-top navbar-dark bg-dark">
-    <div class="topnav">
-      <a href="/home">Home</a>
-      <a href="/about">About</a>
-      <a href="/faq">FAQ</a>
-      <a href="/aboutus">About Us</a>
-   <!--    <a href="/home">Logout</a> -->
-    </div>
-  </nav>
-
-
-
-       
-        <section class="vh-100 gradient-custom">
-               
-          <div class="container py-5 h-100">
-              
-            <div class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <center><h1 class="head">USER LOGIN</h1></center>
-                <br>
-                <div class="card bg-transparent text-dark" >
-
-                      <div class="form-outline form-white mb-4">
-                        <input type="text" class="form-control form-control-lg"  placeholder="Phone Number" name="mobNumber"  required="required" minlength="10" maxlength="10" pattern="[6-9]{1}[0-9]{9}"/>
-                        <label class="form-label" for="typeusername" ></label>
-                      </div>
-        
-                      <div class="form-outline form-white mb-4">
-                        <input type="Password" class="form-control form-control-lg" placeholder="Password" name="pass"  required="required" />
-                        <label class="form-label" for="typepass"></label>
-                      </div> 
-                           <div class="form-outline form-white mb-4">
-                        
-                        <input type="text" class="form-control form-control-lg"  placeholder="Enter OTP"name="otp" minlength="4" maxlength="4" required="required" />
-                 
-                 <input class="btn third"  type="submit" name="submit" value="Generate OTP"/>
-                        <label class="form-label" for="typepass"></label>
-                      </div>  
-                   <center style="color: white;"><b>${enter}</b></center> 
-                   <center style="color: red;"><b>${fail}</b></center> 
-	   					
-                       <table>
-                        <tr>
-                            <td><input class="btn third"  type="submit" name="submit" value="LOGIN"/>
-                              
-                        </div> 
-                      </td>
-                       <form action="register" method="get">
-                        <td>
-                      <a href="register" class="btn third">New User</a> 
-                       </form></td> 
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>  
-<h2></h2>
-<p></p>
-</form> --%>
 
 
 </body>

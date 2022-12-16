@@ -9,7 +9,7 @@ public interface PoliceService {
 
 //	void save(Police police);
 
-	List<Police> getAll();
+	
 
 	
 

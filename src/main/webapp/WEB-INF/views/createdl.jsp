@@ -237,7 +237,7 @@ label {
   </div>  
 
 <div class = "inputWithIcon">  
-    <input class="date form-control" type = "text" id="txtDate"   placeholder = "D.O.B [dd-mm-yyyy]" name="DateofBirth" maxlength="10"  pattern="^\d{4}-\d{2}-\d{2}$" required="required"> 
+    <input class="date form-control" type = "text" id="txtDate"   placeholder = "D.O.B [yyyy-mm-dd]" name="DateofBirth" maxlength="10"  pattern="^\d{4}-\d{2}-\d{2}$" required="required"> 
     <script type="text/javascript">  
    
              $('.date').datepicker({  

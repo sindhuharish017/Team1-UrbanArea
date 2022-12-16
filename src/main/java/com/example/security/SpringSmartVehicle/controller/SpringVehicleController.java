@@ -44,7 +44,7 @@ public class SpringVehicleController {
 	private PoliceService policeService;
 
 	public static final String ACCOUNT_SID = "AC81b1658cefbeaa45d1e39cfabef3d5d2";
-    public static final String AUTH_TOKEN = "44f1f857e31a9df6c679d04537b13356";
+	public static final String AUTH_TOKEN = "44f1f857e31a9df6c679d04537b13356";
 
 	@GetMapping("/home")
 	public String home() {
@@ -141,7 +141,7 @@ public class SpringVehicleController {
 
 	@GetMapping("/updateddllist")
 	public String dllist(Model model) {
-		
+
 		model.addAttribute("dl", dlService.getAll());
 		return "updateddllist";
 	}
@@ -186,42 +186,65 @@ public class SpringVehicleController {
 	}
 
 	@GetMapping("/GenerateOTP")
-	public String Generate(Model model, @ModelAttribute DrivingLicense d) {
-		//
-		return "redirect:/GenerateOTP";
+	public String Generate(Model model, @ModelAttribute DrivingLicense dl) {
+		return "/GenerateOTP";
 	}
 
 	@PostMapping("/GenerateOTP")
-	public String Generated(Model model, @ModelAttribute DrivingLicense dl) {
-		
-		if ((dlService.checkIfMobNoExist(dl.getMobNo()) == false)){
-		int id = dlService.getIdByMobNo(dl.getMobNo());
-		System.out.println(id);
-		model.addAttribute("mob", dl.getMobNo());
-		int otp = dlService.generateOTP();
-		System.out.println(otp);
-		model.addAttribute("otp", otp);
+	public String Generated(Model model, @ModelAttribute DrivingLicense dl) throws NullPointerException, ApiException{
+		System.out.println(LocalDate.now());
+		DrivingLicense d = dlRepo.findBymobNo(dl.getMobNo());
+		System.out.println(dl.getMobNo());
+		try {
+			if (dlService.checkIfMobNoExist(dl.getMobNo()) == true) {
+				if (d.getToDate().compareTo(LocalDate.now()) > 0) {
 
-		Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+					int id = dlService.getIdByMobNo(dl.getMobNo());
+					System.out.println(id);
+					model.addAttribute("mob", dl.getMobNo());
+					int otp = dlService.generateOTP();
+					System.out.println(otp);
+					model.addAttribute("otp", otp);
 
-		Message message = Message.creator(new com.twilio.type.PhoneNumber("+91" + dl.getMobNo()),
-				new com.twilio.type.PhoneNumber("+12058508975"),  otp + " is the OTP(One time Password) to authenticate your drive").create();
+					Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
-		System.out.println("MESSAGE SENT");
-		System.out.println(message.getSid());
+					Message message = Message.creator(new com.twilio.type.PhoneNumber("+91" + dl.getMobNo()),
+							new com.twilio.type.PhoneNumber("+12058508975"),
+							otp + " is the OTP(One time Password) to authenticate your drive").create();
 
-		return "/GenerateOTP";
-		  }
-		else{
-//			  model.addAttribute("fail", "Dl is not issued for this Number");
+					System.out.println("MESSAGE SENT");
+					System.out.println(message.getSid());
+
+					return "/GenerateOTP";
+				}
+
+				else {
+					// model.addAttribute("fail", "Dl is not issued for this
+					// Number");
+					model.addAttribute("enter", "Dl is not issued for this Number");
+					System.out.println(" Validity is Expired");
+					return "redirect:/userlogin";
+				}
+			} else {
+				// model.addAttribute("fail", "Dl is not issued for this
+				// Number");
+				model.addAttribute("enter", "Dl is not issued for this Number");
+				System.out.println("Dl is not issued for this Number");
+				return "redirect:/userlogin";
+			}
+
+		} catch (NullPointerException e) {
 			model.addAttribute("enter", "Dl is not issued for this Number");
-            System.out.println("Dl is not issued for this Number or Validity is Expired");
-            return "redirect:/userlogin";
+			System.out.println("Dl is not issued for this Number");
+			return "redirect:/userlogin";
 		}
-		
+		catch (ApiException e) {
+			model.addAttribute("enter", "Number is not verified by Twillio");
+			System.out.println("Number is not verified by Twillio");
+			return "redirect:/userlogin";
+		}
 	}
-	
-    
+
 	@GetMapping("/vehicleType/{id}")
 	public String update(@PathVariable("id") int id, Model model, @ModelAttribute DrivingLicense dl) {
 		ModelAndView mv = new ModelAndView();
@@ -239,14 +262,14 @@ public class SpringVehicleController {
 	// To select the Type of Vehicle The User wish to Drive.
 	@PostMapping("/vehicleType/{id}")
 	public String update(@PathVariable("id") int id, @ModelAttribute DrivingLicense dl, Model model) {
-		
+
 		DrivingLicense dr = dlRepo.findById(id);
 
 		DrivingLicense d = dlRepo.findBymobNo(dr.getMobNo());
 		String[] veh = d.getVehicle();
-		
+
 		return "redirect:/allowAccess/{id}";
-		
+
 	}
 
 	@GetMapping("/allowAccess/{id}")
