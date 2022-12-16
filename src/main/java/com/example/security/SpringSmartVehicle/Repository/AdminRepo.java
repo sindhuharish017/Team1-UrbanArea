@@ -7,5 +7,6 @@ import com.example.security.SpringSmartVehicle.entity.Admin;
 public interface AdminRepo extends JpaRepository<Admin, Integer>{
 
 	Admin findByUsername(String username);
+	Admin findBypass(String pass);
 
 }

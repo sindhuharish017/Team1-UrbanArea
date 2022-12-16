@@ -100,14 +100,11 @@ body {
 }
 </style>
 </head>
-<!-- <body> -->
-<!-- <h2>updated dl list</h2>
-<table align="center" class="table table-dark table-striped">
- -->
+
 <body class="w-100">
 	<div class="topnav">
 		<a href="/home">Home</a> <a href="/createdl">Create</a> <a
-			href="/home">Logout</a>
+			href="/admin">Logout</a>
 	</div>
 	<center>
 		<h2 class="head">Updated DL List</h2>

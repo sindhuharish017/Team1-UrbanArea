@@ -184,11 +184,13 @@ body {
 .third:hover {
 	box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
-
 </style>
 <script type="text/javascript">
 	var validate = function() {
-		var msg = ${otp}
+		var msg = $
+		{
+			otp
+		}
 		var otp = document.getElementById('txtOTP').value
 
 		var countdigit = otp.length;
@@ -210,61 +212,61 @@ body {
 	<form action="/userlogin" method="post" onsubmit="return validate()">
 		<nav class="navbar fixed-top navbar-dark bg-dark">
 		<div class="topnav">
-			<a href="/home">Home</a> <a href="/about">About</a> <a href="/faq">FAQ</a>
-			<a href="/aboutus">About Us</a>
-			<!--    <a href="/home">Logout</a> -->
+			<a href="/home">Home</a>
+			<!-- <a href="/about">About</a> <a href="/faq">FAQ</a>
+			<a href="/aboutus">About Us</a> -->
+			<a href="/userlogin">Logout</a>
 		</div>
 		</nav>
 
 		<section class="vh-100 gradient-custom">
-               
-			<div class="container py-5 h-100">
-				
-			  <div class="row d-flex justify-content-center align-items-center h-100">
+
+		<div class="container py-5 h-100">
+
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
 				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
-				  <center><h1 class="head"></h1></center>
-				  <br>
-				  <div class="card bg-transparent text-dark" >
-  
-						 
+					<center>
+						<h1 class="head"></h1>
+					</center>
+					<br>
+					<div class="card bg-transparent text-dark">
+
+
 						<div class="form-outline form-white mb-4">
-						
-						  <input type="text" id="mobile" placeholder="Phone Number" style="width: 443px; height: 48px;padding: 1.1em 1.8em;  "
-						  name="mobNo" required="required" minlength="10" maxlength="10"
-						  pattern="[6-9]{1}[0-9]{9}" value="${mob }" readonly/> 
-						  
+
+							<input type="text" id="mobile" placeholder="Phone Number"
+								style="width: 443px; height: 48px; padding: 1.1em 1.8em;"
+								name="mobNo" required="required" minlength="10" maxlength="10"
+								pattern="[6-9]{1}[0-9]{9}" value="${mob }" readonly />
+
 						</div>
-						  
+
 						<div class="form-outline form-white mb-4">
-						  <input type="text" &nbps
-						  placeholder="Enter OTP" id="txtOTP" name="otp" required="required" style="width: 443px; height: 48px; padding: 1.1em 1.8em;"
-						  minlength="6" maxlength="6" /> 
+							<input type="text" &nbps placeholder="Enter OTP" id="txtOTP"
+								name="otp" required="required"
+								style="width: 443px; height: 48px; padding: 1.1em 1.8em;"
+								minlength="6" maxlength="6" />
 						</div>
-  
+
 						<div>
-						  <center>
-						  <input class="btn third" style="width: 243px; padding-left: 21%;"
-						  type="submit" name="submit" value="LOGIN" onclick="validate();"/> 
-					  </center>
+							<center>
+								<input class="btn third"
+									style="width: 243px; padding-left: 21%;" type="submit"
+									name="submit" value="LOGIN" onclick="validate();" />
+							</center>
 						</div>
-					   
-					   
-		
-		  
-					   
-		
-					   
-		
-					  </div>
+
 					</div>
-  
-				  </div>
 				</div>
-			  
-		  </section>  
+
+			</div>
+		</div>
+
+		</section>
 
 
-		
+
 	</form>
 
 

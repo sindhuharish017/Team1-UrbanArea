@@ -7,16 +7,17 @@ import com.example.security.SpringSmartVehicle.Repository.AdminRepo;
 
 @Service
 public class AdminServiceImpl implements AdminService {
-	
+
 	@Autowired
 	private AdminRepo adminRepo;
 
-//	@Override
-	public int loginValidator(String username) {
-		if(adminRepo.findByUsername(username)!= null){
+	@Override
+	public int loginValidator(String username, String pass) {
+		if (adminRepo.findByUsername(username) != null && adminRepo.findBypass(pass) != null) {
 			return 1;
-	}
-	return 0;
+		}
+		return 0;
+
 	}
 
 }

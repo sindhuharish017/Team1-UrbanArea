@@ -20,9 +20,9 @@ public interface DLService {
 
 	List<DrivingLicense> getAll();
 
-	void update(DrivingLicense dl);
+	String update(DrivingLicense dl);
 
-	DrivingLicense getAlldls();
+	
 
 	DrivingLicense getById(int id);
 

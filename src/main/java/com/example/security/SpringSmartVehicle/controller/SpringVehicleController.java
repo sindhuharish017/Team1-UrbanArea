@@ -2,10 +2,8 @@
 package com.example.security.SpringSmartVehicle.controller;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.context.properties.bind.BindException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -59,12 +57,12 @@ public class SpringVehicleController {
 	@PostMapping("/admin")
 	public ModelAndView admin(@ModelAttribute Admin admin, Model model) throws Exception {
 
-		if (adminService.loginValidator(admin.getUsername()) == 1) {
+		if (adminService.loginValidator(admin.getUsername(), admin.getPass()) == 1) {
 			ModelAndView mv = new ModelAndView("redirect:/createdl");
 			return mv;
 		}
 		ModelAndView mv = new ModelAndView();
-		model.addAttribute("fail", "login failed");
+		model.addAttribute("fail", "Invalid UserName or Password");
 		return mv;
 
 	}
@@ -191,7 +189,7 @@ public class SpringVehicleController {
 	}
 
 	@PostMapping("/GenerateOTP")
-	public String Generated(Model model, @ModelAttribute DrivingLicense dl) throws NullPointerException, ApiException{
+	public String Generated(Model model, @ModelAttribute DrivingLicense dl) throws NullPointerException, ApiException {
 		System.out.println(LocalDate.now());
 		DrivingLicense d = dlRepo.findBymobNo(dl.getMobNo());
 		System.out.println(dl.getMobNo());
@@ -219,15 +217,13 @@ public class SpringVehicleController {
 				}
 
 				else {
-					// model.addAttribute("fail", "Dl is not issued for this
-					// Number");
+
 					model.addAttribute("enter", "Dl is not issued for this Number");
 					System.out.println(" Validity is Expired");
 					return "redirect:/userlogin";
 				}
 			} else {
-				// model.addAttribute("fail", "Dl is not issued for this
-				// Number");
+
 				model.addAttribute("enter", "Dl is not issued for this Number");
 				System.out.println("Dl is not issued for this Number");
 				return "redirect:/userlogin";
@@ -237,8 +233,7 @@ public class SpringVehicleController {
 			model.addAttribute("enter", "Dl is not issued for this Number");
 			System.out.println("Dl is not issued for this Number");
 			return "redirect:/userlogin";
-		}
-		catch (ApiException e) {
+		} catch (ApiException e) {
 			model.addAttribute("enter", "Number is not verified by Twillio");
 			System.out.println("Number is not verified by Twillio");
 			return "redirect:/userlogin";

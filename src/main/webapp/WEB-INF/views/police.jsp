@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,6 +59,7 @@ background-repeat: no-repeat;
     <nav class="navbar fixed-top navbar-dark bg-dark">
     <div class="topnav">
       <a href="/home">Home</a>
+        <a href="/userlogin">logout</a>
     </div>
   </nav>
         <section class="vh-100" style="background-color:;">
@@ -87,8 +89,6 @@ background-repeat: no-repeat;
                             </table>
                            
           
-                           
-                    
                            
                           </form>
           

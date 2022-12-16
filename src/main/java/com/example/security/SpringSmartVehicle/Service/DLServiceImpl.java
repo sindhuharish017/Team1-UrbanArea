@@ -63,30 +63,29 @@ public class DLServiceImpl implements DLService {
 	// list the dl
 	@Override
 	public List<DrivingLicense> getAll() {
+
 		logger.info("loading all DL");
 		List<DrivingLicense> d = dlRepo.findAll();
 		logger.info("loaded " + d.size() + " DL");
 		logger.debug("DL are" + d);
 		return d;
-	}
 
+		
+	}
+	
+	
 	// update the dl
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED)
-	public void update(DrivingLicense dl) {
+	public String update(DrivingLicense dl) {
 		logger.info("updating Driving license with id " + dl.getId());
-		DrivingLicense d = dlRepo.save(dl);
+		dlRepo.save(dl);
 		logger.debug("Driving license updated with id =" + dl.getId() + " is " + dl);
-
+		
+        return "dl updated";
 	}
 
-	// list the dl
-	@Override
-	public DrivingLicense getAlldls() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	// listing the no of dl using id(getbyid)
 	@Override
 	public DrivingLicense getById(int id) {
@@ -119,7 +118,7 @@ public class DLServiceImpl implements DLService {
 		DrivingLicense dl = dlno;
 		LocalDate today = LocalDate.now();
 		LocalDate DOB = dl.getDateofBirth();
-		LocalDate DOI = dl.getFromDate();
+	
 		int diff = today.compareTo(DOB);
 		logger.info("checking whether DOB greater than 18");
 		if (diff > 18) {
@@ -143,4 +142,7 @@ public class DLServiceImpl implements DLService {
 		}
 		return false;
 	}
+
+
+	
 }
