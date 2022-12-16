@@ -216,7 +216,7 @@ label {
       <a href="/home">Home</a>
       <a href="/createdl">Create</a>
       <a href="/dllist">View</a>
-      <a href="/home">Logout</a>
+      <a href="/logout">Logout</a>
     </div>
   
     <center>  
@@ -237,7 +237,7 @@ label {
   </div>  
 
 <div class = "inputWithIcon">  
-    <input class="date form-control" type = "text" id="txtDate"   placeholder = "D.O.B [dd-mm-yyyy]" name="DateofBirth" maxlength="10"  pattern="^\d{4}-\d{2}-\d{2}$" required="required"> 
+    <input class="date form-control" type = "text" id="txtDate"   placeholder = "D.O.B [yyyy-MM-dd]" name="DateofBirth" maxlength="10"  pattern="^\d{4}-\d{2}-\d{2}$" required="required"> 
     <script type="text/javascript">  
    
              $('.date').datepicker({  

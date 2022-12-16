@@ -58,6 +58,7 @@
 <nav class="navbar fixed-top navbar-dark bg-dark">
     <div class="topnav">
       <a href="/home">Home</a>
+       <a href="/logout">logout</a>
     </div>
   </nav>
     <br>

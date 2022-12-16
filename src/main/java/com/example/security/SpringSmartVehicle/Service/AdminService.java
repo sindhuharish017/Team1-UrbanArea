@@ -2,6 +2,6 @@ package com.example.security.SpringSmartVehicle.Service;
 
 public interface AdminService {
 
-	public int loginValidator(String username);
+	public int loginValidator(String username,String pass);
 
 }

@@ -180,7 +180,7 @@ background-repeat: no-repeat;
 </style>
 </head>
 <body>
- <form action="/GenerateOTP" method="post">
+ <form action="/userlogin" method="post">
 		<nav class="navbar fixed-top navbar-dark bg-dark">
 		<div class="topnav">
 			<a href="/home">Home</a> <a href="/about">About</a> <a href="/faq">FAQ</a>

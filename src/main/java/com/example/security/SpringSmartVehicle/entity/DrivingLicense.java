@@ -38,10 +38,10 @@ public class DrivingLicense {
 	}
 
 	
-<<<<<<< HEAD
-=======
-
->>>>>>> 75baa104f173af6ea764ceb2bfed8a644373b36f
+//<<<<<<< HEAD
+//=======
+//
+//>>>>>>> 75baa104f173af6ea764ceb2bfed8a644373b36f
 
 
 	public DrivingLicense(String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,

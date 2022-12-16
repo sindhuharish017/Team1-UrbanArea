@@ -56,17 +56,30 @@ public class SpringVehicleController {
 		return "admin";
 	}
 
+//	@PostMapping("/admin")
+//	public ModelAndView admin(@ModelAttribute Admin admin, Model model) throws Exception {
+//
+//		if (adminService.loginValidator(admin.getUsername()) == 1) {
+//			ModelAndView mv = new ModelAndView("redirect:/createdl");
+//			return mv;
+//		}
+//		ModelAndView mv = new ModelAndView();
+//		model.addAttribute("fail", "login failed");
+//		return mv;
+//
+//	}
+	
 	@PostMapping("/admin")
-	public ModelAndView admin(@ModelAttribute Admin admin, Model model) throws Exception {
+	public ModelAndView admin(@ModelAttribute Admin admin ,Model model) throws Exception {
 
-		if (adminService.loginValidator(admin.getUsername()) == 1) {
+		if (adminService.loginValidator(admin.getUsername(), admin.getPass()) == 1) {
 			ModelAndView mv = new ModelAndView("redirect:/createdl");
 			return mv;
 		}
 		ModelAndView mv = new ModelAndView();
-		model.addAttribute("fail", "login failed");
+     	model.addAttribute("fail", "login failed");
 		return mv;
-
+		
 	}
 
 	@GetMapping("/about")

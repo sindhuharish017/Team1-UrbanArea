@@ -70,7 +70,7 @@
       <a href="/about">About</a>
       <a href="/faq">FAQ</a>
       <a href="/aboutus">About Us</a>
-      <a href="/home">Logout</a>
+    
       
     </div>
   </nav>
