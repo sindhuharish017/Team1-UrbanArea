@@ -127,7 +127,7 @@ body {
 					<td>FromDate</td>
 					<td>ToDate</td>
 
-					<td>MobNo</td>
+					<!-- <td>MobNo</td> -->
 					<td>vehicleType</td>
 					<td>Update</td>
 				</div>
@@ -144,8 +144,8 @@ body {
 					<td>${dl.fromDate }</td>
 					<td>${dl.toDate }</td>
 
-					<td>${dl.mobNo}</td>
-
+				<%-- 	<td>${dl.mobNo}</td>
+ --%>
 					<td><c:forEach var="v" items="${dl.vehicle}">  
 						${v} </c:forEach></td>
 

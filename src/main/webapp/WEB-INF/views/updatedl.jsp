@@ -263,7 +263,7 @@ label {
 
 				<div class="inputWithIcon">
 					<input type="text" class="form-control form-control-lg"
-						value="${dl.mobNo}" name="mobNo" minlength="10" maxlength="10"
+						value="${phno}" name="mobNo" minlength="10" maxlength="10"
 						pattern="(0/91)?[6-9][0-9]{9}" /> <i
 						class="fa fa-phone fa-lg fa-fw" aria-hidden="true"> </i>
 				</div>

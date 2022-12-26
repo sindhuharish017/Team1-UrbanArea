@@ -92,17 +92,17 @@ class SpringVehicleApplicationTests {
 		mvc.perform(get("/police/{id}", id)).andDo(print()).andExpect(content().string("")).andExpect(status().isOk());
 	}
 
-	@Test
-	public void testCreateDl() {
-		LocalDate d = LocalDate.parse("2001-05-07");
-		LocalDate fd = LocalDate.now();
-		LocalDate td = fd.plusYears(21);
-		String[] str = { "MC 50cc", "MAWG" };
-		DrivingLicense dl = new DrivingLicense(58,"KA06 20201671902", "Vaikumar", d, "Vumkur", fd, td, 76930991135L, str);
-
-		assertEquals(true, dlServiceImpl.createDL(dl));
-
-	}
+//	@Test
+//	public void testCreateDl() {
+//		LocalDate d = LocalDate.parse("2001-05-07");
+//		LocalDate fd = LocalDate.now();
+//		LocalDate td = fd.plusYears(21);
+//		String[] str = { "MC 50cc", "MAWG" };
+//		DrivingLicense dl = new DrivingLicense(58,"KA06 20201671902", "Vaikumar", d, "Vumkur", fd, td, 76930991135L, str);
+//
+//		assertEquals(true, dlServiceImpl.createDL(dl));
+//
+//	}
 
 	
 
@@ -125,18 +125,18 @@ class SpringVehicleApplicationTests {
 
 	
 
-	@Test
-	public void testUpdate() {
-	
-
-		LocalDate d = LocalDate.parse("2000-05-07");
-		LocalDate fd = LocalDate.now();
-		LocalDate td = fd.plusYears(20);
-		String[] str = { "MC 50cc", "MCWG" };
-		DrivingLicense dl = new DrivingLicense(1,"ka06 12345678901", "saikumar", d, "Banglore", fd, td, 7683991135L, str);
-
-		assertEquals("dl Updated", dlServiceImpl.update(dl));
-
-	}
+//	@Test
+//	public void testUpdate() {
+//	
+//
+//		LocalDate d = LocalDate.parse("2000-05-07");
+//		LocalDate fd = LocalDate.now();
+//		LocalDate td = fd.plusYears(20);
+//		String[] str = { "MC 50cc", "MCWG" };
+//		DrivingLicense dl = new DrivingLicense(1,"ka06 12345678901", "saikumar", d, "Banglore", fd, td, 7683991135L, str);
+//
+//		assertEquals("dl Updated", dlServiceImpl.update(dl));
+//
+//	}
 
 }

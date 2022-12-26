@@ -12,7 +12,7 @@ public interface DLService {
 
 	
 
-	int getIdByMobNo(long mobNo);
+	int getIdByMobNo(String mobNo);
 
 	int generateOTP();
 
@@ -30,7 +30,7 @@ public interface DLService {
 
 	boolean checkmobnodlno(DrivingLicense dl);
 
-	boolean checkIfMobNoExist(long mobNo);
+	boolean checkIfMobNoExist(String mobNo);
 
 
 }

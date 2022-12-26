@@ -12,7 +12,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.security.SpringSmartVehicle.Repository.DLRepo;
+import com.example.security.SpringSmartVehicle.Repository.UserRepo;
 import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
+import com.example.security.SpringSmartVehicle.entity.User;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS)
@@ -20,6 +22,9 @@ public class DLServiceImpl implements DLService {
 
 	@Autowired
 	private DLRepo dlRepo;
+	
+	@Autowired
+	private UserRepo userRepo;
 
 	private static final Logger logger = LoggerFactory.getLogger(DLServiceImpl.class);
 
@@ -42,17 +47,17 @@ public class DLServiceImpl implements DLService {
 			return false;
 		}
 
-		else if (checkIfPhoneNumberExist(dl.getMobNo()) != null) {
-			return false;
-		}
+//		else if (checkIfPhoneNumberExist(dl.getMobNo()) != null) {
+//			return false;
+//		}
 		return true;
 	}
 
-	private DrivingLicense checkIfPhoneNumberExist(long mobNo) {
-
-		DrivingLicense d = dlRepo.findBymobNo(mobNo);
-		return d;
-	}
+//	private DrivingLicense checkIfPhoneNumberExist(long mobNo) {
+//
+//		DrivingLicense d = dlRepo.findBymobNo(mobNo);
+//		return d;
+//	}
 
 	// check if the dl exist or not
 	private DrivingLicense checkIfDLExist(String dlno) {
@@ -97,11 +102,13 @@ public class DLServiceImpl implements DLService {
 	}
 
 	@Override
-	public int getIdByMobNo(long mobNo) {
+	public int getIdByMobNo(String mobNo) {
 		logger.info("fetch moblie number ");
-		DrivingLicense dl = dlRepo.findBymobNo(mobNo);
+//		DrivingLicense dl = dlRepo.findBymobNo(mobNo);
+		User u = userRepo.findBymobNo(mobNo);
+		DrivingLicense dl= dlRepo.findByDlno(u.getDlNo());
 		int id = dl.getId();
-		logger.debug("Moblie Number " + dl.getMobNo());
+//		logger.debug("Moblie Number " + dl.getMobNo());
 		return id;
 	}
 
@@ -132,9 +139,11 @@ public class DLServiceImpl implements DLService {
 	}
 
 	@Override
-	public boolean checkIfMobNoExist(long mobNo) {
+	public boolean checkIfMobNoExist(String mobNo) {
 
-		DrivingLicense d = dlRepo.findBymobNo(mobNo);
+//		DrivingLicense d = dlRepo.findBymobNo(mobNo);
+		User u = userRepo.findBymobNo(mobNo);
+		DrivingLicense d= dlRepo.findByDlno(u.getDlNo());
 		logger.info("checking whether DOB greater than 18");
 		if (d != null) {
 

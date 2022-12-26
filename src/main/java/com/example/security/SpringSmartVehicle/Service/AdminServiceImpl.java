@@ -13,11 +13,11 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public int loginValidator(String username, String pass) {
-		if (adminRepo.findByUsername(username) != null && adminRepo.findBypass(pass) != null) {
+
+		if (username.equals("admin") && (pass.equals("admin"))) {
 			return 1;
 		}
 		return 0;
-
 	}
 
 }

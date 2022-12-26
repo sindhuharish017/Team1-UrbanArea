@@ -11,16 +11,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.security.SpringSmartVehicle.Repository.DLRepo;
+import com.example.security.SpringSmartVehicle.Repository.UserRepo;
 import com.example.security.SpringSmartVehicle.Service.AdminService;
 import com.example.security.SpringSmartVehicle.Service.DLService;
 import com.example.security.SpringSmartVehicle.Service.PoliceService;
 import com.example.security.SpringSmartVehicle.entity.Admin;
 import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 import com.example.security.SpringSmartVehicle.entity.Police;
-
+import com.example.security.SpringSmartVehicle.entity.User;
 import com.twilio.Twilio;
 import com.twilio.exception.ApiException;
 import com.twilio.exception.AuthenticationException;
@@ -37,12 +39,13 @@ public class SpringVehicleController {
 
 	@Autowired
 	private DLRepo dlRepo;
-
+	@Autowired
+	private UserRepo userRepo;
 	@Autowired
 	private PoliceService policeService;
 
 	public static final String ACCOUNT_SID = "AC81b1658cefbeaa45d1e39cfabef3d5d2";
-	public static final String AUTH_TOKEN = "44f1f857e31a9df6c679d04537b13356";
+	public static final String AUTH_TOKEN = "4a91ba4d67ddde94a9d8cc8bd8dda21c";
 
 	@GetMapping("/home")
 	public String home() {
@@ -58,6 +61,7 @@ public class SpringVehicleController {
 	public ModelAndView admin(@ModelAttribute Admin admin, Model model) throws Exception {
 
 		if (adminService.loginValidator(admin.getUsername(), admin.getPass()) == 1) {
+
 			ModelAndView mv = new ModelAndView("redirect:/createdl");
 			return mv;
 		}
@@ -89,18 +93,26 @@ public class SpringVehicleController {
 
 	// To Create DL
 	@PostMapping("/createdl")
-	public ModelAndView newDLRegister(@ModelAttribute DrivingLicense dl, Model model) throws Exception {
+	public ModelAndView newDLRegister(@ModelAttribute DrivingLicense dl, @ModelAttribute User user, Model model)
+			throws Exception {
 
 		ModelAndView mv = new ModelAndView("redirect:/dllist");
-		boolean dlname = dlService.checkmobnodlno(dl);
-		boolean dln = dlService.DOBvalidation(dl);
-		if (dlname) {
-			if (dln) {
+		boolean dlmob = dlService.checkmobnodlno(dl);
+		boolean dldob = dlService.DOBvalidation(dl);
+		if (dlmob) {
+			if (dldob) {
 
 				dl.setFromDate(LocalDate.now());
 				dl.setToDate(dl.getFromDate().plusYears(20));
 				model.addAttribute("todate", dl.getToDate());
 				dlService.createDL(dl);
+
+				user.setMobNo(user.getMobNo());
+				user.setDlNo(dl.getDlno());
+				user.setDrivingLicense(dl);
+
+				userRepo.save(user);
+
 				System.out.println("age validated");
 				return mv;
 			} else {
@@ -123,17 +135,23 @@ public class SpringVehicleController {
 	@GetMapping("/updatedl/{id}")
 	// @ResponseBody
 	public String updateDL(@PathVariable("id") int id, Model model) {
-
+		DrivingLicense d=dlService.getById(id);
 		model.addAttribute("dl", dlService.getById(id));
-
+		User u=userRepo.findByDlNo(d.getDlno());
+		model.addAttribute("phno", u.getMobNo());
 		return "/updatedl";
 	}
 
 	// To list the Updated Dl Information.
 	@PostMapping("/updatedl/{id}")
-	public ModelAndView saveUpdatedl(@PathVariable("id") int id, @ModelAttribute DrivingLicense dl) {
+	public ModelAndView saveUpdatedl(@PathVariable("id") int id, @ModelAttribute DrivingLicense dl,@ModelAttribute User user) {
 		ModelAndView view = new ModelAndView("redirect:/updateddllist");
 		dlService.update(dl);
+		user.setMobNo(user.getMobNo());
+		user.setDlNo(dl.getDlno());
+		user.setDrivingLicense(dl);
+		userRepo.save(user);
+		
 		return view;
 	}
 
@@ -150,26 +168,28 @@ public class SpringVehicleController {
 	}
 
 	@PostMapping("/userlogin")
-	public ModelAndView login(@ModelAttribute DrivingLicense dl, ModelMap model) throws NullPointerException {
+	public ModelAndView login(@ModelAttribute DrivingLicense dl, User user, ModelMap model)
+			throws NullPointerException {
 		try {
 
-			if (Long.valueOf(dl.getMobNo()) == null) {
+			if (Long.valueOf(user.getMobNo()) == null) {
 				model.addAttribute("enter", "enter Phone NUmber");
 				ModelAndView mv = new ModelAndView("/userlogin");
 				return mv;
 			}
 			// User can only login if the dlno and Password Matches.
-			System.out.println(dl.getMobNo());
-			dl = dlRepo.findBymobNo(dl.getMobNo());
+			System.out.println(user.getMobNo());
+			User u = userRepo.findBymobNo(user.getMobNo());
+			dl = dlRepo.findByDlno(u.getDlNo());
 			System.out.println(dl);
 			if (dl.getToDate().compareTo(LocalDate.now()) > 0) {
 
 				System.out.println("User Page Requested");
 
-				int id = dlService.getIdByMobNo(dl.getMobNo());
+				int id = dlService.getIdByMobNo(user.getMobNo());
 				System.out.println(id);
 				ModelAndView mv = new ModelAndView("redirect:/vehicleType/" + id);
-				mv.addObject("mobno", dl.getMobNo());
+				mv.addObject("mobno", user.getMobNo());
 				return mv;
 			} else {
 				model.addAttribute("fail", "Validity Expired ");
@@ -184,29 +204,31 @@ public class SpringVehicleController {
 	}
 
 	@GetMapping("/GenerateOTP")
-	public String Generate(Model model, @ModelAttribute DrivingLicense dl) {
+	public String Generate() {
 		return "/GenerateOTP";
 	}
 
 	@PostMapping("/GenerateOTP")
-	public String Generated(Model model, @ModelAttribute DrivingLicense dl) throws NullPointerException, ApiException {
-		System.out.println(LocalDate.now());
-		DrivingLicense d = dlRepo.findBymobNo(dl.getMobNo());
-		System.out.println(dl.getMobNo());
+	public String Generated(Model model, @ModelAttribute User user) throws NullPointerException, ApiException {
+
 		try {
-			if (dlService.checkIfMobNoExist(dl.getMobNo()) == true) {
+			System.out.println(LocalDate.now());
+			User u = userRepo.findBymobNo(user.getMobNo());
+			DrivingLicense d = dlRepo.findByDlno(u.getDlNo());
+			System.out.println(user.getMobNo());
+			if (dlService.checkIfMobNoExist(user.getMobNo()) == true) {
 				if (d.getToDate().compareTo(LocalDate.now()) > 0) {
 
-					int id = dlService.getIdByMobNo(dl.getMobNo());
+					int id = dlService.getIdByMobNo(user.getMobNo());
 					System.out.println(id);
-					model.addAttribute("mob", dl.getMobNo());
+					model.addAttribute("mob", user.getMobNo());
 					int otp = dlService.generateOTP();
 					System.out.println(otp);
 					model.addAttribute("otp", otp);
 
 					Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
-					Message message = Message.creator(new com.twilio.type.PhoneNumber("+91" + dl.getMobNo()),
+					Message message = Message.creator(new com.twilio.type.PhoneNumber("+91" + user.getMobNo()),
 							new com.twilio.type.PhoneNumber("+12058508975"),
 							otp + " is the OTP(One time Password) to authenticate your drive").create();
 
@@ -222,11 +244,6 @@ public class SpringVehicleController {
 					System.out.println(" Validity is Expired");
 					return "redirect:/userlogin";
 				}
-			} else {
-
-				model.addAttribute("enter", "Dl is not issued for this Number");
-				System.out.println("Dl is not issued for this Number");
-				return "redirect:/userlogin";
 			}
 
 		} catch (NullPointerException e) {
@@ -238,31 +255,23 @@ public class SpringVehicleController {
 			System.out.println("Number is not verified by Twillio");
 			return "redirect:/userlogin";
 		}
+		return "redirect:/userlogin";
 	}
 
 	@GetMapping("/vehicleType/{id}")
-	public String update(@PathVariable("id") int id, Model model, @ModelAttribute DrivingLicense dl) {
+	public String update(@PathVariable("id") int id, Model model, @RequestParam String mobno) {
 		ModelAndView mv = new ModelAndView();
-
-		DrivingLicense dr = dlRepo.findById(id);
-
-		DrivingLicense d = dlRepo.findBymobNo(dr.getMobNo());
+		User u = userRepo.findBymobNo(mobno);
+		DrivingLicense d = dlRepo.findByDlno(u.getDlNo());
 		mv.setViewName("vehicleType");
 		String[] veh = d.getVehicle();
 		model.addAttribute("dl", veh);
-
 		return "/vehicleType";
 	}
 
 	// To select the Type of Vehicle The User wish to Drive.
 	@PostMapping("/vehicleType/{id}")
-	public String update(@PathVariable("id") int id, @ModelAttribute DrivingLicense dl, Model model) {
-
-		DrivingLicense dr = dlRepo.findById(id);
-
-		DrivingLicense d = dlRepo.findBymobNo(dr.getMobNo());
-		String[] veh = d.getVehicle();
-
+	public String update() {
 		return "redirect:/allowAccess/{id}";
 
 	}
@@ -275,12 +284,12 @@ public class SpringVehicleController {
 	// while driving a Vehicle, If Accident happens The police want to know the
 	// identity of user using userid.
 	@PostMapping("/allowAccess/{id}")
-	public ModelAndView AllowAccess(@PathVariable("id") int id, Model model) throws Exception {
+	public ModelAndView AllowAccess(@PathVariable("id") int id, User user, Model model) throws Exception {
 		ModelAndView mv = new ModelAndView("redirect:/police/{id}");
 		DrivingLicense dr = dlRepo.findById(id);
-		DrivingLicense dl = dlRepo.findBymobNo(dr.getMobNo());
+
 		Police police = new Police();
-		police.setAddress(dl.getAddress());
+		police.setAddress(dr.getAddress());
 		policeService.ProvideUserIdentity(police);
 		System.out.println(police.getDlno());
 		model.addAttribute("police", police);
@@ -302,16 +311,15 @@ public class SpringVehicleController {
 	}
 
 	@GetMapping("/police/{id}")
-	public String PoliceNotified(@PathVariable("id") int id, Model model) {
-		System.out.println("information of user");
+	public String PoliceNotified(@PathVariable("id") int id, User user, Model model) {
 		DrivingLicense dr = dlRepo.findById(id);
-		DrivingLicense dl = dlRepo.findBymobNo(dr.getMobNo());
+		User u = userRepo.findByDlNo(dr.getDlno());
 		Police p = new Police();
-		p.setDlno(dl.getDlno());
-		p.setAddress(dl.getAddress());
-		p.setDateofBirth(dl.getDateofBirth());
-		p.setName(dl.getName());
-		p.setPhonenumber(dl.getMobNo());
+		p.setDlno(dr.getDlno());
+		p.setAddress(dr.getAddress());
+		p.setDateofBirth(dr.getDateofBirth());
+		p.setName(dr.getName());
+		p.setPhonenumber(u.getMobNo());
 
 		model.addAttribute("phno", p.getPhonenumber());
 		model.addAttribute("name", p.getName());

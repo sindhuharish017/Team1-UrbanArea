@@ -2,63 +2,65 @@ package com.example.security.SpringSmartVehicle.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Past;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 
 @Entity
 public class DrivingLicense {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
 	@Column(unique = true)
 	private String dlno;
 	private String name;
 	private LocalDate dateofBirth;
 	private String address;
-	private LocalDate fromDate;
-	private LocalDate toDate;
-
-	@Column(unique = true)
-	private long mobNo;
-
+	private LocalDate dateofIssue;
+	private LocalDate validTill;
 	private String[] vehicle;
-
+	
+	@OneToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL,mappedBy="drivingLicense")
+	@JoinColumn(name="userid",nullable=false)
+	private User user;
+	
 	// parameter less constructor
 	public DrivingLicense() {
 
 	}
 
-	public DrivingLicense(String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,
-			LocalDate toDate, long mobNo, String[] vehicle) {
+	public DrivingLicense(String dlno, String name, LocalDate dateofBirth, String address, LocalDate dateofIssue,
+			LocalDate validTill, String[] vehicle) {
 		super();
 		this.dlno = dlno;
 		this.name = name;
 		this.dateofBirth = dateofBirth;
 		this.address = address;
-		this.fromDate = fromDate;
-		this.toDate = toDate;
+		this.dateofIssue = dateofIssue;
+		this.validTill = validTill;
 
-		this.mobNo = mobNo;
+	
 		this.vehicle = vehicle;
 	}
 
-	public DrivingLicense(int id, String dlno, String name, LocalDate dateofBirth, String address, LocalDate fromDate,
-			LocalDate toDate, long mobNo, String[] vehicle) {
+	public DrivingLicense(int id, String dlno, String name, LocalDate dateofBirth, String address, LocalDate dateofIssue,
+			LocalDate validTill, String[] vehicle) {
 		super();
 		this.id = id;
 		this.dlno = dlno;
 		this.name = name;
 		this.dateofBirth = dateofBirth;
 		this.address = address;
-		this.fromDate = fromDate;
-		this.toDate = toDate;
-
-		this.mobNo = mobNo;
+		this.dateofIssue = dateofIssue;
+		this.validTill = validTill;
 		this.vehicle = vehicle;
 	}
 
@@ -104,28 +106,21 @@ public class DrivingLicense {
 	}
 
 	public LocalDate getFromDate() {
-		return fromDate;
+		return dateofIssue;
 	}
 
-	public void setFromDate(LocalDate fromDate) {
-		this.fromDate = fromDate;
+	public void setFromDate(LocalDate dateofIssue) {
+		this.dateofIssue = dateofIssue;
 	}
 
 	public LocalDate getToDate() {
-		return toDate;
+		return validTill;
 	}
 
-	public void setToDate(LocalDate toDate) {
-		this.toDate = toDate;
+	public void setToDate(LocalDate validTill) {
+		this.validTill = validTill;
 	}
 
-	public long getMobNo() {
-		return mobNo;
-	}
-
-	public void setMobNo(long mobNo) {
-		this.mobNo = mobNo;
-	}
 
 	public String[] getVehicle() {
 		return vehicle;
@@ -133,6 +128,30 @@ public class DrivingLicense {
 
 	public void setVehicle(String[] vehicle) {
 		this.vehicle = vehicle;
+	}
+
+	public LocalDate getDateofIssue() {
+		return dateofIssue;
+	}
+
+	public void setDateofIssue(LocalDate dateofIssue) {
+		this.dateofIssue = dateofIssue;
+	}
+
+	public LocalDate getValidTill() {
+		return validTill;
+	}
+
+	public void setValidTill(LocalDate validTill) {
+		this.validTill = validTill;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }

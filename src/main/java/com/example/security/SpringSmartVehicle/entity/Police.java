@@ -11,20 +11,20 @@ import javax.persistence.Id;
 public class Police {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
 	private String dlno;
 	private String name;
 	private LocalDate dateofBirth;
 	private String address;
-	private long phonenumber;
+	private String phonenumber;
 
 	public Police() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Police(int id, String dlno, String name, LocalDate dateofBirth, String address, long phonenumber) {
+	public Police(int id, String dlno, String name, LocalDate dateofBirth, String address, String phonenumber) {
 		super();
 		this.id = id;
 		this.dlno = dlno;
@@ -34,7 +34,7 @@ public class Police {
 		this.phonenumber = phonenumber;
 	}
 
-	public Police(String dlno, String name, LocalDate dateofBirth, String address, long phonenumber) {
+	public Police(String dlno, String name, LocalDate dateofBirth, String address, String phonenumber) {
 		super();
 		this.dlno = dlno;
 		this.name = name;
@@ -83,11 +83,11 @@ public class Police {
 		this.address = address;
 	}
 
-	public long getPhonenumber() {
+	public String getPhonenumber() {
 		return phonenumber;
 	}
 
-	public void setPhonenumber(long phonenumber) {
+	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 
