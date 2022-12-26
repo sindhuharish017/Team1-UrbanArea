@@ -56,6 +56,11 @@ public class User {
 	public void setMobNo(String mobNo) {
 		this.mobNo = mobNo;
 	}
+//	@Override
+//	public String toString() {
+//		return "User [id=" + id + ", mobNo=" + mobNo + ", drivingLicense=" + drivingLicense + "]";
+//	}
+	
 	
 	
 }

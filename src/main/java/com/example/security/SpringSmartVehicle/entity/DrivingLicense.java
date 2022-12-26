@@ -1,6 +1,7 @@
 package com.example.security.SpringSmartVehicle.entity;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -153,5 +154,14 @@ public class DrivingLicense {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	@Override
+	public String toString() {
+		return "DrivingLicense [id=" + id + ", dlno=" + dlno + ", name=" + name + ", dateofBirth=" + dateofBirth
+				+ ", address=" + address + ", dateofIssue=" + dateofIssue + ", validTill=" + validTill + ", vehicle="
+				+ Arrays.toString(vehicle) + ", user=" + user + "]";
+	}
+	
+	
 
 }

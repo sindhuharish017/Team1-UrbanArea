@@ -65,7 +65,7 @@ public class DLServiceImpl implements DLService {
 
 		logger.info("loading all DL");
 		List<DrivingLicense> d = dlRepo.findAll();
-		logger.info("loaded " + d.size() + " DL");
+	logger.info("loaded " + d.size() + " DL");
 		logger.debug("DL are" + d);
 		return d;
 
@@ -97,12 +97,12 @@ public class DLServiceImpl implements DLService {
 
 	@Override
 	public int getIdByMobNo(String mobNo) {
-		logger.info("fetch moblie number ");
+		logger.info("fetch mob number ");
 
 		User u = userRepo.findBymobNo(mobNo);
 		DrivingLicense dl= dlRepo.findByUser(u);
 		int id = dl.getId();
-//		logger.debug("Moblie Number " + dl.getMobNo());
+		logger.debug("Moblie Number " +mobNo);
 		return id;
 	}
 
@@ -134,14 +134,17 @@ public class DLServiceImpl implements DLService {
 
 	@Override
 	public DrivingLicense findDrivingLicenseByUser(User u) {
+		logger.info("find Driving license Using User");
 		DrivingLicense dl=dlRepo.findByUser(u);
+		logger.debug("User " + dl);
 		return dl;
 	}
 
 	@Override
 	public DrivingLicense findDlById(int id) {
-		// TODO Auto-generated method stub
+		logger.info("find Driving license Using Id");
 		DrivingLicense d=dlRepo.findById(id);
+		logger.debug("Id " + d);
 		return d;
 	}
 
