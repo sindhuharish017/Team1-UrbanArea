@@ -124,13 +124,14 @@ body {
 							<td>ADDRESS</td>
 							<td>DOI</td>
 							<td>VALID TILL</td>
-							<td>MOB No</td>
+							<!-- <td>MOB No</td> -->
 							<td>VEHICLE TYPE</td>
 				</div>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${dl}" var="dl">
+		<%-- 	<c:forEach items="${user}" var="user"> --%>
 				<tr>
 					<td>${dl.id}</td>
 					<td>${dl.dlno }</td>
@@ -139,12 +140,17 @@ body {
 					<td>${dl.address }</td>
 					<td>${dl.fromDate }</td>
 					<td>${dl.toDate }</td>
-					<td>${dl.mobNo}</td>
+				<%-- 	<td>${user.mob_no}</td> --%>
+					
 					<td><c:forEach var="v" items="${dl.vehicle}">  
 						${v} </c:forEach></td>
 
+					
+				
 				</tr>
-			</c:forEach>
+				</c:forEach>
+		<%-- 	</c:forEach> --%>
+				
 		</tbody>
 	</table>
 </body>

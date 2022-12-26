@@ -3,14 +3,12 @@ package com.example.security.SpringSmartVehicle.Service;
 import java.util.List;
 
 import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
+import com.example.security.SpringSmartVehicle.entity.User;
 
 public interface DLService {
 
-	
 
-	
-
-	
+	DrivingLicense findDrivingLicenseByUser(User u);
 
 	int getIdByMobNo(String mobNo);
 
@@ -22,15 +20,12 @@ public interface DLService {
 
 	String update(DrivingLicense dl);
 
-	
-
 	DrivingLicense getById(int id);
 
 	boolean DOBvalidation(DrivingLicense dlno);
 
-	boolean checkmobnodlno(DrivingLicense dl);
+	boolean checkdlno(DrivingLicense dl);
 
-	boolean checkIfMobNoExist(String mobNo);
-
+	DrivingLicense findDlById(int id);
 
 }

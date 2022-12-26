@@ -40,24 +40,18 @@ public class DLServiceImpl implements DLService {
 
 	// To Check Whether the DL number and Phone number exist
 	@Override
-	public boolean checkmobnodlno(DrivingLicense dl) {
-		logger.info("check DL number and phone number exist");
+	public boolean checkdlno(DrivingLicense dl) {
+		logger.info("check DL number exist");
 		if (checkIfDLExist(dl.getDlno()) != null) {
 
 			return false;
 		}
 
-//		else if (checkIfPhoneNumberExist(dl.getMobNo()) != null) {
-//			return false;
-//		}
+
 		return true;
 	}
 
-//	private DrivingLicense checkIfPhoneNumberExist(long mobNo) {
-//
-//		DrivingLicense d = dlRepo.findBymobNo(mobNo);
-//		return d;
-//	}
+
 
 	// check if the dl exist or not
 	private DrivingLicense checkIfDLExist(String dlno) {
@@ -104,9 +98,9 @@ public class DLServiceImpl implements DLService {
 	@Override
 	public int getIdByMobNo(String mobNo) {
 		logger.info("fetch moblie number ");
-//		DrivingLicense dl = dlRepo.findBymobNo(mobNo);
+
 		User u = userRepo.findBymobNo(mobNo);
-		DrivingLicense dl= dlRepo.findByDlno(u.getDlNo());
+		DrivingLicense dl= dlRepo.findByUser(u);
 		int id = dl.getId();
 //		logger.debug("Moblie Number " + dl.getMobNo());
 		return id;
@@ -139,18 +133,19 @@ public class DLServiceImpl implements DLService {
 	}
 
 	@Override
-	public boolean checkIfMobNoExist(String mobNo) {
-
-//		DrivingLicense d = dlRepo.findBymobNo(mobNo);
-		User u = userRepo.findBymobNo(mobNo);
-		DrivingLicense d= dlRepo.findByDlno(u.getDlNo());
-		logger.info("checking whether DOB greater than 18");
-		if (d != null) {
-
-			return true;
-		}
-		return false;
+	public DrivingLicense findDrivingLicenseByUser(User u) {
+		DrivingLicense dl=dlRepo.findByUser(u);
+		return dl;
 	}
+
+	@Override
+	public DrivingLicense findDlById(int id) {
+		// TODO Auto-generated method stub
+		DrivingLicense d=dlRepo.findById(id);
+		return d;
+	}
+
+
 
 
 	

@@ -18,7 +18,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithAnonymousUser;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.example.security.SpringSmartVehicle.Service.AdminServiceImpl;
 import com.example.security.SpringSmartVehicle.Service.DLServiceImpl;
 import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 
@@ -33,9 +32,7 @@ class SpringVehicleApplicationTests {
 	@Autowired
 	private DLServiceImpl dlServiceImpl;
 
-	@Autowired
-	private AdminServiceImpl adminserviceimpl;
-
+	
 	
 
 
@@ -106,13 +103,7 @@ class SpringVehicleApplicationTests {
 
 	
 
-	@Test
-	public void testLoginvalidator() throws Exception {
-
-		assertEquals(1, adminserviceimpl.loginValidator("admin","admin"));
-
-	}
-
+	
 	
 
 	@Test

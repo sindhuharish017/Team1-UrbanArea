@@ -1,6 +1,5 @@
 package com.example.security.SpringSmartVehicle.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,8 +16,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int id;
-	@Column(unique = true)
-	private String dlNo;
+	
 	@Column(unique = true)
 	private String mobNo;
 	@OneToOne(fetch=FetchType.LAZY)
@@ -33,28 +31,24 @@ public class User {
 	public User() {
 		super();
 	}
-	public User(int id, String dlNo, String mobNo) {
+	
+	public User(String mobNo, DrivingLicense drivingLicense) {
+		super();
+		this.mobNo = mobNo;
+		this.drivingLicense = drivingLicense;
+	}
+	
+	public User(int id, String mobNo, DrivingLicense drivingLicense) {
 		super();
 		this.id = id;
-		this.dlNo = dlNo;
 		this.mobNo = mobNo;
-	}
-	public User(String dlNo, String mobNo) {
-		super();
-		this.dlNo = dlNo;
-		this.mobNo = mobNo;
+		this.drivingLicense = drivingLicense;
 	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getDlNo() {
-		return dlNo;
-	}
-	public void setDlNo(String dlNo) {
-		this.dlNo = dlNo;
 	}
 	public String getMobNo() {
 		return mobNo;

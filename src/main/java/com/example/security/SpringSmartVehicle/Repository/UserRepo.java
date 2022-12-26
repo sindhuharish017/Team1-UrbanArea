@@ -11,9 +11,10 @@ public interface UserRepo extends JpaRepository<User, Integer>{
 
 	User findBymobNo(String mobNo);
 
-	User findByDlNo(String dlNo);
 
-	User findById(String mobNo);
+
+	User findByDrivingLicense(DrivingLicense d);
+
 	
 	
 }
