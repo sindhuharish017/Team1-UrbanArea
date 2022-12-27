@@ -230,7 +230,7 @@ label {
 
 <body>
 	<div class="topnav">
-		<a href="/home">Home</a> <a href="/userlogin">Logout</a>
+		<!-- <a href="/home">Home</a> --> <a href="/userlogin">Logout</a>
 	</div>
 	<br>
 	<br>

@@ -227,7 +227,7 @@ label {
 
 <body>
 	<div class="topnav">
-		<a href="/home">Home</a> <a href="/createdl">Create</a> <a
+		<!-- <a href="/home">Home</a> --> <a href="/createdl">Create</a> <a
 			href="/dllist">View</a> <a href="/admin">Logout</a>
 	</div>
 
@@ -241,7 +241,7 @@ label {
 
 				<div class="inputWithIcon">
 					<input type="text" placeholder="NAME" name="name"
-						required="required"> <i class="fa fa-user fa-lg fa-fw"
+						pattern="^[A-Za-z -]+$" required="required"> <i class="fa fa-user fa-lg fa-fw"
 						aria-hidden="true"> </i>
 				</div>
 				<div class="inputWithIcon">

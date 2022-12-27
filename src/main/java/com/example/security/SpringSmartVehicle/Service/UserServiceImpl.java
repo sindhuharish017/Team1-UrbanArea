@@ -21,6 +21,9 @@ public class UserServiceImpl implements UserService {
 	private JdbcTemplate jdbcTemplate;
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	
+	public static final String USER_NAME="admin";
+	public  static final String PASSWORD="admin";
 
 	/*
 	 * (non-Javadoc)
@@ -61,7 +64,7 @@ public class UserServiceImpl implements UserService {
 //		System.out.println(mobNo);
 		logger.info("mob_no" +mobNo);
 		User u = userRepo.findBymobNo(mobNo);
-		if (u != null) {
+		if (u == null) {
 			return false;
 		}
 		return true;

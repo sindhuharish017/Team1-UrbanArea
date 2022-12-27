@@ -212,7 +212,7 @@ body {
 	<form action="/userlogin" method="post" onsubmit="return validate()">
 		<nav class="navbar fixed-top navbar-dark bg-dark">
 		<div class="topnav">
-			<a href="/home">Home</a>
+			<!-- <a href="/home">Home</a> -->
 			<!-- <a href="/about">About</a> <a href="/faq">FAQ</a>
 			<a href="/aboutus">About Us</a> -->
 			<a href="/userlogin">Logout</a>

@@ -21,10 +21,7 @@ public class WebSecurityConfig1 {
 
 	@Bean
 public SecurityFilterChain securityFilterChain(HttpSecurity http)  throws Exception{  // (2)
-//     http
-//       .authorizeRequests()
-//         .antMatchers("/", "/home").permitAll() // (3)
-//         .anyRequest().authenticated() // (4)
+
 	 	http.csrf().disable();
 	 	
 		http.headers().frameOptions().disable();
@@ -44,7 +41,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http)  throws Except
 		.anyRequest().permitAll()
          .and()
       .formLogin()
-//      .loginPage("/login")// (5)
+
         .defaultSuccessUrl("/createdl").failureUrl("/login?error=true")// (5)
         .permitAll()
         .and()

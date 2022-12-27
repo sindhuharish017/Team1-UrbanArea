@@ -221,7 +221,7 @@ label {
 <body>
 
 	<div class="topnav">
-		<a href="/home">Home</a> <a href="/createdl">Create</a> <a
+		<!-- <a href="/home">Home</a>  --><a href="/createdl">Create</a> <a
 			href="/updateddllist">View</a> <a href="/admin">Logout</a>
 	</div>
 	<center>
@@ -244,14 +244,14 @@ label {
 				</div>
 				<div class="inputWithIcon">
 					<input type="text" class="form-control form-control-lg"
-						value="${dl.name}" name="name" /> <i
+						value="${dl.name}" name="name" pattern="^[A-Za-z -]+$" title=" enter Valid name" /> <i
 						class="fa fa-user fa-lg fa-fw" aria-hidden="true"> </i>
 				</div>
 
 				<div class="inputWithIcon">
 					<input type="text" class="date form-control"
 						value="${dl.dateofBirth}" name="dateofBirth"
-						pattern="^\d{4}-\d{2}-\d{2}$" required="required" />
+						pattern="^\d{4}-\d{2}-\d{2}$" required="required" readonly />
 					<script type="text/javascript">
 						$('.date').datepicker({
 							format : 'yyyy-mm-dd'

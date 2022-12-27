@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.security.SpringSmartVehicle.Service.DLService;
+import com.example.security.SpringSmartVehicle.Service.EmailServiceImpl;
 import com.example.security.SpringSmartVehicle.Service.PoliceService;
+import com.example.security.SpringSmartVehicle.Service.SendMailImpl;
 import com.example.security.SpringSmartVehicle.Service.UserService;
 import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 import com.example.security.SpringSmartVehicle.entity.Police;
@@ -35,6 +37,10 @@ public class SpringVehicleController {
 
 	@Autowired
 	private PoliceService policeService;
+	
+	private SendMailImpl sendMailImpl;
+	
+	private EmailServiceImpl emailServiceImpl;
 
 	public static final String ACCOUNT_SID = "AC81b1658cefbeaa45d1e39cfabef3d5d2";
 	public static final String AUTH_TOKEN = "4a91ba4d67ddde94a9d8cc8bd8dda21c";
@@ -82,6 +88,8 @@ public class SpringVehicleController {
 	public String dl() {
 		return "createdl";
 	}
+	
+	
 
 	// To Create DL
 	@PostMapping("/createdl")
@@ -93,7 +101,7 @@ public class SpringVehicleController {
 		boolean dldob = dlService.DOBvalidation(dl);
 		boolean userphno=userService.checkIfPhoneNumberExist(user.getMobNo());
 		if (dlno) {
-			if(userphno){
+			if(userphno==false){
 			if (dldob) {
 
 				dl.setFromDate(LocalDate.now());
@@ -178,14 +186,14 @@ public class SpringVehicleController {
 			}
 			// User can only login if the dlno and Password Matches.
 			System.out.println(user.getMobNo());
-			User u =userService.findUserByMobileNumber(user.getMobNo());
-			dl = dlService.findDrivingLicenseByUser(u);
+			dl =userService.findUserByMobileNumber(user.getMobNo()).getDrivingLicense();
+			
 			System.out.println(dl);
 			if (dl.getToDate().compareTo(LocalDate.now()) > 0) {
 
 				System.out.println("User Page Requested");
 
-				int id = dlService.getIdByMobNo(user.getMobNo());
+				int id =dl.getId();
 				System.out.println(id);
 				ModelAndView mv = new ModelAndView("redirect:/vehicleType/" + id);
 				mv.addObject("mobno", user.getMobNo());
@@ -212,13 +220,14 @@ public class SpringVehicleController {
 
 		try {
 			System.out.println(LocalDate.now());
-			User u = userService.findUserByMobileNumber(user.getMobNo());
-			DrivingLicense d = dlService.findDrivingLicenseByUser(u);
-			System.out.println(user.getMobNo());
-			if (userService.checkIfPhoneNumberExist(u.getMobNo()) == true) {
+			 userService.findUserByMobileNumber(user.getMobNo());
+			DrivingLicense d = userService.findUserByMobileNumber(user.getMobNo()).getDrivingLicense();
+			System.out.println(d);
+			if (userService.checkIfPhoneNumberExist(user.getMobNo()) == true) {
+				System.out.println(d.getToDate());
 				if (d.getToDate().compareTo(LocalDate.now()) > 0) {
 
-					int id = dlService.getIdByMobNo(user.getMobNo());
+					int id = d.getId();
 					System.out.println(id);
 					model.addAttribute("mob", user.getMobNo());
 					int otp = dlService.generateOTP();
@@ -239,20 +248,20 @@ public class SpringVehicleController {
 
 				else {
 
-					model.addAttribute("enter", "Dl is not issued for this Number");
+					model.addAttribute("fail", "Validity is Expired");
 					System.out.println(" Validity is Expired");
-					return "redirect:/userlogin";
+					return "userlogin";
 				}
 			}
 
 		} catch (NullPointerException e) {
-			model.addAttribute("enter", "Dl is not issued for this Number");
+			model.addAttribute("fail", "Dl is not issued for this Number");
 			System.out.println("Dl is not issued for this Number");
-			return "redirect:/userlogin";
+			return "userlogin";
 		} catch (ApiException e) {
-			model.addAttribute("enter", "Number is not verified by Twillio");
+			model.addAttribute("fail", "Number is not verified by Twillio");
 			System.out.println("Number is not verified by Twillio");
-			return "redirect:/userlogin";
+			return "userlogin";
 		}
 		return "redirect:/userlogin";
 	}
@@ -260,8 +269,8 @@ public class SpringVehicleController {
 	@GetMapping("/vehicleType/{id}")
 	public String update(@PathVariable("id") int id, Model model, @RequestParam String mobno) {
 		ModelAndView mv = new ModelAndView();
-		User u =  userService.findUserByMobileNumber(mobno);
-		DrivingLicense d = dlService.findDrivingLicenseByUser(u);
+	
+		DrivingLicense d = userService.findUserByMobileNumber(mobno).getDrivingLicense();
 		mv.setViewName("vehicleType");
 		String[] veh = d.getVehicle();
 		model.addAttribute("dl", veh);
@@ -331,6 +340,12 @@ public class SpringVehicleController {
 	@PostMapping("/police/{id}")
 	public String police(@PathVariable("id") int id) {
 		return "police";
+	}
+	
+	@PostMapping("/forgotPassword")
+	public String forgotPassword(){
+		emailServiceImpl.SendMail("smartvehicle002@gmail.com", "smartrto123@gmail.com", "PASSWORD RECOVERY", "xyz");
+		return "forgotPassword";
 	}
 
 }

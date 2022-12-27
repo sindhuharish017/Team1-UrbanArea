@@ -103,7 +103,7 @@ body {
 
 <body class="w-100">
 	<div class="topnav">
-		<a href="/home">Home</a> <a href="/createdl">Create</a> <a
+		<!-- <a href="/home">Home</a> --> <a href="/createdl">Create</a> <a
 			href="/admin">Logout</a>
 	</div>
 	<center>

@@ -6,6 +6,9 @@ import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 import com.example.security.SpringSmartVehicle.entity.User;
 
 public interface UserService {
+	
+	
+	
 
 	void userUpdate(String phno, int id) throws Exception;
 
