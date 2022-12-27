@@ -20,7 +20,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig1 {
 
 	@Bean
-public SecurityFilterChain securityFilterChain(HttpSecurity http)  throws Exception{  // (2)
+public SecurityFilterChain securityFilterChain(HttpSecurity http)  throws Exception{  
 
 	 	http.csrf().disable();
 	 	
@@ -41,15 +41,20 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http)  throws Except
 		.anyRequest().permitAll()
          .and()
       .formLogin()
-
-        .defaultSuccessUrl("/createdl").failureUrl("/login?error=true")// (5)
+      .loginPage("/admin")
+      .usernameParameter("username")
+      .passwordParameter("pass")
+        .defaultSuccessUrl("/createdl").failureUrl("/admin?error=true")
         .permitAll()
         .and()
         .httpBasic(); 
-     http.logout() // (6)
+	
+     http.logout() 
        .permitAll()
+       
        .and()
-     .httpBasic(); // (7)
+       .exceptionHandling().accessDeniedPage("/403");
+//     .httpBasic(); 
 		return http.build();
  }
 	@Bean
@@ -63,8 +68,8 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http)  throws Except
 		InMemoryUserDetailsManager udm =new InMemoryUserDetailsManager();
 	
 		
-//		udm.createUser(User.withUsername("scott").password(passwordEncoder.encode("tiger")).roles("USER").build());
-		udm.createUser(User.withUsername("admin").password(passwordEncoder.encode("admin")).roles("ADMIN","USER").build());
+
+		udm.createUser(User.withUsername("admin").password(passwordEncoder.encode("admin@123")).roles("ADMIN","USER").build());
 
 		return udm;
 		

@@ -7,14 +7,10 @@ import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 import com.example.security.SpringSmartVehicle.entity.User;
 
 @Repository
-public interface UserRepo extends JpaRepository<User, Integer>{
+public interface UserRepo extends JpaRepository<User, Integer> {
 
 	User findBymobNo(String mobNo);
 
-
-
 	User findByDrivingLicense(DrivingLicense d);
 
-	
-	
 }

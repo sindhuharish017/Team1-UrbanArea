@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.security.SpringSmartVehicle.Service.DLService;
-import com.example.security.SpringSmartVehicle.Service.EmailServiceImpl;
 import com.example.security.SpringSmartVehicle.Service.PoliceService;
-import com.example.security.SpringSmartVehicle.Service.SendMailImpl;
 import com.example.security.SpringSmartVehicle.Service.UserService;
 import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 import com.example.security.SpringSmartVehicle.entity.Police;
@@ -38,14 +36,13 @@ public class SpringVehicleController {
 	@Autowired
 	private PoliceService policeService;
 
-	private SendMailImpl sendMailImpl;
-
-	private EmailServiceImpl emailServiceImpl;
 
 	public static final String ACCOUNT_SID = "AC81b1658cefbeaa45d1e39cfabef3d5d2";
     public static final String AUTH_TOKEN = "277ec74357cead14dc7ef409aa0ec202";
 
 	
+
+
 	@GetMapping("/home")
 	public String home() {
 		return "home";
@@ -57,26 +54,9 @@ public class SpringVehicleController {
 		return "admin";
 	}
 
-	@PostMapping("/admin")
-	public ModelAndView admin(@RequestParam String username, @RequestParam String pass, Model model) throws Exception {
-		try {
-			//checks whether username= admin and pass=admin
-			if (username.equals("admin") && (pass.equals("admin"))) {
-				ModelAndView mv = new ModelAndView("redirect:/createdl");
-				return mv;
 
-			} else {
-				ModelAndView mv = new ModelAndView();
-				model.addAttribute("fail", "Invalid UserName or Password");
-				return mv;
-			}
+	
 
-		} catch (Exception e) {
-			model.addAttribute("fail", e);
-			ModelAndView mv = new ModelAndView("redirect:/admin");
-			return mv;
-		}
-	}
 
 	//directs to about page
 	@GetMapping("/about")
@@ -391,4 +371,38 @@ public class SpringVehicleController {
 
 	
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

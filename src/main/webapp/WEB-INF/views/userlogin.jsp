@@ -207,7 +207,11 @@ body {
 				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
 					<center>
 						<h1 class="head">USER LOGIN</h1>
+
 						<br>
+
+						<br> 
+
 					</center>
 					<div class="form-row">
 						<input type="text" class="form-control form-control-lg"

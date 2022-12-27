@@ -43,11 +43,8 @@ public class DLServiceImpl implements DLService {
 	public boolean checkdlno(DrivingLicense dl) {
 		logger.info("check DL number exist");
 		if (checkIfDLExist(dl.getDlno()) != null) {
-
 			return false;
 		}
-
-
 		return true;
 	}
 
