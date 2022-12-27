@@ -86,7 +86,7 @@ body {
 				class="row d-flex justify-content-center align-items-center h-100">
 				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
 					<center>
-						<h1 class="head">RTO OFFICER</h1>
+						<h1 class="head">LOGIN PAGE</h1>
 					</center>
 					<br>
 					<div class="card bg-transparent text-dark">

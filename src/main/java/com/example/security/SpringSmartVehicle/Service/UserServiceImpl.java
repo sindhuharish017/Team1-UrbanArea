@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.example.security.SpringSmartVehicle.Repository.UserRepo;
 import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 import com.example.security.SpringSmartVehicle.entity.User;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -19,19 +20,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
-	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
-	
-	public static final String USER_NAME="admin";
-	public  static final String PASSWORD="admin";
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * com.example.security.SpringSmartVehicle.Service.UserService#userUpdate(
-	 * java.lang.String, int)
-	 */
+	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
 	@Override
 	public void userUpdate(String mobNo, int id) throws Exception {
 		System.out.println(mobNo + id);
@@ -61,8 +52,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean checkIfPhoneNumberExist(String mobNo) {
-//		System.out.println(mobNo);
-		logger.info("mob_no" +mobNo);
+		// System.out.println(mobNo);
+		logger.info("mob_no" + mobNo);
 		User u = userRepo.findBymobNo(mobNo);
 		if (u == null) {
 			return false;
@@ -81,7 +72,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findUserByMobileNumber(String mobno) {
 		logger.info("find User Using Mob_No");
-		User u= userRepo.findBymobNo(mobno);
+		User u = userRepo.findBymobNo(mobno);
 		logger.debug("Mob No " + u);
 		return u;
 	}

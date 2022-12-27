@@ -19,8 +19,10 @@ public class User {
 	
 	@Column(unique = true)
 	private String mobNo;
+	
 	@OneToOne(fetch=FetchType.LAZY)
 	private DrivingLicense drivingLicense;
+	
 
 	public DrivingLicense getDrivingLicense() {
 		return drivingLicense;
@@ -56,11 +58,6 @@ public class User {
 	public void setMobNo(String mobNo) {
 		this.mobNo = mobNo;
 	}
-//	@Override
-//	public String toString() {
-//		return "User [id=" + id + ", mobNo=" + mobNo + ", drivingLicense=" + drivingLicense + "]";
-//	}
-	
-	
-	
+
+
 }
