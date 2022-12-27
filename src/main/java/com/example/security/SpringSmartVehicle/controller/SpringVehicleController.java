@@ -41,8 +41,6 @@ public class SpringVehicleController {
     public static final String AUTH_TOKEN = "277ec74357cead14dc7ef409aa0ec202";
 
 	
-
-
 	@GetMapping("/home")
 	public String home() {
 		return "home";
@@ -53,9 +51,6 @@ public class SpringVehicleController {
 	public String admin() {
 		return "admin";
 	}
-
-
-	
 
 
 	//directs to about page
@@ -368,10 +363,6 @@ public class SpringVehicleController {
 	public String police(@PathVariable("id") int id) {
 		return "police";
 	}
-
-	
-
-
 }
 
 
