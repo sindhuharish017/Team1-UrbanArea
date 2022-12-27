@@ -1,11 +1,13 @@
 package com.example.security.SpringSmartVehicle.entity;
 
-import java.time.LocalDate;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Police {
@@ -13,34 +15,13 @@ public class Police {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
-	private String dlno;
-	private String name;
-	private LocalDate dateofBirth;
-	private String address;
-	private String phonenumber;
+	@OneToOne(fetch=FetchType.LAZY)
+	
+	private User user;
 
 	public Police() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public Police(int id, String dlno, String name, LocalDate dateofBirth, String address, String phonenumber) {
-		super();
-		this.id = id;
-		this.dlno = dlno;
-		this.name = name;
-		this.dateofBirth = dateofBirth;
-		this.address = address;
-		this.phonenumber = phonenumber;
-	}
-
-	public Police(String dlno, String name, LocalDate dateofBirth, String address, String phonenumber) {
-		super();
-		this.dlno = dlno;
-		this.name = name;
-		this.dateofBirth = dateofBirth;
-		this.address = address;
-		this.phonenumber = phonenumber;
 	}
 
 	public int getId() {
@@ -51,44 +32,24 @@ public class Police {
 		this.id = id;
 	}
 
-	public String getDlno() {
-		return dlno;
+	public Police(int id, User user) {
+		super();
+		this.id = id;
+		this.user = user;
 	}
 
-	public void setDlno(String dlno) {
-		this.dlno = dlno;
+	public Police(User user) {
+		super();
+		this.user = user;
 	}
 
-	public String getName() {
-		return name;
+	public User getUser() {
+		return user;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public LocalDate getDateofBirth() {
-		return dateofBirth;
-	}
-
-	public void setDateofBirth(LocalDate dateofBirth) {
-		this.dateofBirth = dateofBirth;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getPhonenumber() {
-		return phonenumber;
-	}
-
-	public void setPhonenumber(String phonenumber) {
-		this.phonenumber = phonenumber;
-	}
-
+	
 }

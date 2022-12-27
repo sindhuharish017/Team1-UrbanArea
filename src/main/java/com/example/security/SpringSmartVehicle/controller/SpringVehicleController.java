@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.security.SpringSmartVehicle.Repository.PoliceRepo;
 import com.example.security.SpringSmartVehicle.Service.DLService;
-import com.example.security.SpringSmartVehicle.Service.PoliceService;
 import com.example.security.SpringSmartVehicle.Service.UserService;
+import com.example.security.SpringSmartVehicle.Service.policeSerive;
 import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
 import com.example.security.SpringSmartVehicle.entity.Police;
 import com.example.security.SpringSmartVehicle.entity.User;
@@ -33,9 +34,8 @@ public class SpringVehicleController {
 	@Autowired
 	private UserService userService;
 
-	@Autowired
-	private PoliceService policeService;
-
+	@Autowired 
+	private policeSerive pservice;
 
 	public static final String ACCOUNT_SID = "AC81b1658cefbeaa45d1e39cfabef3d5d2";
     public static final String AUTH_TOKEN = "277ec74357cead14dc7ef409aa0ec202";
@@ -310,20 +310,15 @@ public class SpringVehicleController {
 
 	// while driving a Vehicle, If Accident happens the police gets to know the identity of user through his userid
 	@PostMapping("/allowAccess/{id}")
-	public ModelAndView AllowAccess(@PathVariable("id") int id, User user, Model model) throws Exception {
+	public ModelAndView AllowAccess(@PathVariable("id") int id,  Model model) throws Exception {
 		try {
 
 			ModelAndView mv = new ModelAndView("redirect:/police/{id}");
-			DrivingLicense dr = dlService.findDlById(id);
-			User u = userService.findUserBydl(dr);
+			User u= userService.findUserBydl(dlService.findDlById(id));
 			Police police = new Police();
-			police.setAddress(dr.getAddress());
-			police.setDateofBirth(dr.getDateofBirth());
-			police.setDlno(dr.getDlno());
-			police.setName(dr.getName());
-			police.setPhonenumber(u.getMobNo());
-			policeService.ProvideUserIdentity(police);
-			System.out.println(police.getDlno());
+			police.setUser(u);
+			pservice.createPolice(police);
+			System.out.println(police.getUser().getId());
 			model.addAttribute("police", police);
 			return mv;
 		} catch (Exception e) {
@@ -341,21 +336,13 @@ public class SpringVehicleController {
 
 	
 	@GetMapping("/police/{id}")
-	public String PoliceNotified(@PathVariable("id") int id, User user, Model model) {
-		DrivingLicense dr = dlService.findDlById(id);
-		User u = userService.findUserBydl(dr);
-		Police p = new Police();
-		p.setDlno(dr.getDlno());
-		p.setAddress(dr.getAddress());
-		p.setDateofBirth(dr.getDateofBirth());
-		p.setName(dr.getName());
-		p.setPhonenumber(u.getMobNo());
-
-		model.addAttribute("phno", p.getPhonenumber());
-		model.addAttribute("name", p.getName());
-		model.addAttribute("address", p.getAddress());
-		model.addAttribute("dob", p.getDateofBirth());
-		model.addAttribute("dlno", p.getDlno());
+	public String PoliceNotified(@PathVariable("id") int id, Model model) {
+		User u= userService.findUserBydl(dlService.findDlById(id));
+		model.addAttribute("phno", u.getMobNo());
+		model.addAttribute("name",u.getDrivingLicense().getName());
+		model.addAttribute("address",u.getDrivingLicense().getAddress());
+		model.addAttribute("dob",u.getDrivingLicense().getDateofBirth());
+		model.addAttribute("dlno",u.getDrivingLicense().getDlno());
 		return "police";
 	}
 

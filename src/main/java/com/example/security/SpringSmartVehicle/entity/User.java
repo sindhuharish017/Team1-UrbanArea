@@ -1,11 +1,13 @@
 package com.example.security.SpringSmartVehicle.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,12 +25,22 @@ public class User {
 	@OneToOne(fetch=FetchType.LAZY)
 	private DrivingLicense drivingLicense;
 	
+	@OneToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL,mappedBy="user")
+	@JoinColumn(name="policeid",nullable=false)
+	private Police police;
 
 	public DrivingLicense getDrivingLicense() {
 		return drivingLicense;
 	}
 	public void setDrivingLicense(DrivingLicense drivingLicense) {
 		this.drivingLicense = drivingLicense;
+	}
+	
+	public Police getPolice() {
+		return police;
+	}
+	public void setPolice(Police police) {
+		this.police = police;
 	}
 	public User() {
 		super();
