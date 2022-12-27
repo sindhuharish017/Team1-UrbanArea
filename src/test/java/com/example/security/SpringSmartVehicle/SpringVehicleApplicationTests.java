@@ -9,38 +9,38 @@
 //import java.time.LocalDate;
 //import java.util.List;
 //
-//import org.junit.jupiter.api.Test;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-//import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-//import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-//import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.security.test.context.support.WithAnonymousUser;
-//import org.springframework.test.web.servlet.MockMvc;
-//
-//import com.example.security.SpringSmartVehicle.Service.DLServiceImpl;
-//import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
-//
-//@SpringBootTest
-//@EnableAutoConfiguration(exclude = SecurityAutoConfiguration.class)
-//@AutoConfigureMockMvc
-//class SpringVehicleApplicationTests {
-//
-//	@Autowired
-//	private MockMvc mvc;
-//
-//	@Autowired
-//	private DLServiceImpl dlServiceImpl;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+// import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+// import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+// import org.springframework.boot.test.context.SpringBootTest;
+// import org.springframework.security.test.context.support.WithAnonymousUser;
+// import org.springframework.test.web.servlet.MockMvc;
+
+// import com.example.security.SpringSmartVehicle.Service.DLServiceImpl;
+// import com.example.security.SpringSmartVehicle.entity.DrivingLicense;
+
+// @SpringBootTest
+// @EnableAutoConfiguration(exclude = SecurityAutoConfiguration.class)
+// @AutoConfigureMockMvc
+// class SpringVehicleApplicationTests {
+
+// 	@Autowired
+// 	private MockMvc mvc;
+
+// 	@Autowired
+// 	private DLServiceImpl dlServiceImpl;
 //
 //	
 //	
 //
 //
-//	@Test
-//	@WithAnonymousUser
-//	public void testHome() throws Exception {
-//		mvc.perform(get("/home")).andDo(print()).andExpect(content().string("")).andExpect(status().isOk());
-//	}
+// 	@Test
+// 	@WithAnonymousUser
+// 	public void testHome() throws Exception {
+// 		mvc.perform(get("/home")).andDo(print()).andExpect(content().string("")).andExpect(status().isOk());
+// 	}
 //
 //	@Test
 //	void testRtoPage() throws Exception {
@@ -69,12 +69,12 @@
 //
 //	}
 //
-//	@Test
-//	void testvehicletype() throws Exception {
-//		String id = "1";
-//		mvc.perform(get("/vehicleType/{id}", id)).andDo(print()).andExpect(content().string(""))
-//				.andExpect(status().isOk());
-//	}
+// 	@Test
+// 	void testvehicletype() throws Exception {
+// 		String id = "1";
+// 		mvc.perform(get("/vehicleType/{id}", id)).andDo(print()).andExpect(content().string(""))
+// 				.andExpect(status().isOk());
+// 	}
 //
 //	@Test
 //	void testallowaccess() throws Exception {
