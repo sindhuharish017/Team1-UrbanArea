@@ -1932,3 +1932,47 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 2022-12-27 15:56:25.450  WARN 6496 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
 2022-12-27 15:56:25.509  INFO 6496 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Start completed.
 2022-12-27 15:56:25.509  INFO 6496 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 15:57:00.105  INFO 6496 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 15:57:00.105  INFO 6496 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 15:57:00.309  INFO 6496 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53c63d71, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@31b0ecc, org.springframework.security.web.context.SecurityContextPersistenceFilter@36c97b22, org.springframework.security.web.header.HeaderWriterFilter@238a0338, org.springframework.security.web.authentication.logout.LogoutFilter@5a9cb793, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@36b5119, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@32e2760, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47b9257, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@20839e6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5aa1642f, org.springframework.security.web.session.SessionManagementFilter@20fce16a, org.springframework.security.web.access.ExceptionTranslationFilter@53ad2fed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25eeac61]
+2022-12-27 15:57:00.322  WARN 6496 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 15:57:00.388  INFO 6496 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 15:57:00.396  INFO 6496 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 15:57:00.398  INFO 6496 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 35.494 seconds (JVM running for 10273.798)
+2022-12-27 15:57:00.402  INFO 6496 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   MailSenderAutoConfiguration:
+      Did not match:
+         - AnyNestedCondition 0 matched 2 did not; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.JndiNameProperty @ConditionalOnProperty (spring.mail.jndi-name) did not find property 'jndi-name'; NestedCondition on MailSenderAutoConfiguration.MailSenderCondition.HostProperty @ConditionalOnProperty (spring.mail.host) did not find property 'host' (MailSenderAutoConfiguration.MailSenderCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.mail.internet.MimeMessage', 'javax.activation.MimeType', 'org.springframework.mail.MailSender' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
