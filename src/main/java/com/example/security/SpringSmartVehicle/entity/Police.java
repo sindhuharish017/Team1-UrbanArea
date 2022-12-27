@@ -1,12 +1,10 @@
 package com.example.security.SpringSmartVehicle.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -16,7 +14,6 @@ public class Police {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
 	@OneToOne(fetch=FetchType.LAZY)
-	
 	private User user;
 
 	public Police() {

@@ -240,6 +240,7 @@ label {
 				<div class="inputWithIcon">
 					<input type="text" class="form-control form-control-lg"
 						value="${dl.dlno }" name="dlno" 
+						required="required" maxlength="16"
 						pattern="^([A-Z]{2}[0-9]{2})\s((19|20)[0-9]{2}[0-9]{7})$" /> <i
 						class="fa fa-id-card-o" aria-hidden="true"> </i>
 				</div>

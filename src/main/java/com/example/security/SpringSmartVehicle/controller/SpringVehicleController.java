@@ -3,6 +3,8 @@ package com.example.security.SpringSmartVehicle.controller;
 
 import java.time.LocalDate;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.security.SpringSmartVehicle.Repository.PoliceRepo;
 import com.example.security.SpringSmartVehicle.Service.DLService;
 import com.example.security.SpringSmartVehicle.Service.UserService;
 import com.example.security.SpringSmartVehicle.Service.policeSerive;
@@ -34,8 +35,14 @@ public class SpringVehicleController {
 	@Autowired
 	private UserService userService;
 
+
 	@Autowired 
 	private policeSerive pservice;
+
+
+	
+	private static final Logger logger = LoggerFactory.getLogger(SpringVehicleController.class);
+
 
 	public static final String ACCOUNT_SID = "AC81b1658cefbeaa45d1e39cfabef3d5d2";
     public static final String AUTH_TOKEN = "277ec74357cead14dc7ef409aa0ec202";
@@ -104,8 +111,8 @@ public class SpringVehicleController {
 						user.setDrivingLicense(dl);
 
 						userService.createUser(user);
-
-//						System.out.println("age validated");
+						logger.info("age validated");
+						
 						return mv;
 					} else {
                         //displays the error message 
@@ -199,18 +206,16 @@ public class SpringVehicleController {
 				return mv;
 			}
 	
-			System.out.println(user.getMobNo());
-			
+			logger.debug("Mob_No " + user.getMobNo());
 			dl = userService.findUserByMobileNumber(user.getMobNo()).getDrivingLicense();
-
-			System.out.println(dl);
+			logger.info("DL =" + dl);
 			//Checks whether the expiry date is greater than the current date
 			if (dl.getToDate().compareTo(LocalDate.now()) > 0) {
 
-				System.out.println("User Page Requested");
-
+				logger.info("User Page Requested");
 				int id = dl.getId();
-				System.out.println(id);
+				logger.info("ID =" + id);
+				
 				ModelAndView mv = new ModelAndView("redirect:/vehicleType/" + id);
 				mv.addObject("mobno", user.getMobNo());
 				return mv;
@@ -220,6 +225,7 @@ public class SpringVehicleController {
 				return mv;
 			}
 		} catch (NullPointerException e) {
+			logger.error("login failed");
 			model.addAttribute("fail", "login failed");
 			ModelAndView mv = new ModelAndView("/userlogin");
 			return mv;
@@ -236,21 +242,20 @@ public class SpringVehicleController {
 	public String Generated(Model model, @ModelAttribute User user) throws NullPointerException, ApiException {
 
 		try {
-			System.out.println(LocalDate.now());
+			logger.info("Date =" + LocalDate.now());
 			userService.findUserByMobileNumber(user.getMobNo());
 			DrivingLicense d = userService.findUserByMobileNumber(user.getMobNo()).getDrivingLicense();
-			System.out.println(d);
+			logger.debug("Mob No and DL No" + d);
 			//checks whether the dl is issued to a given phone number
 			if (userService.checkIfPhoneNumberExist(user.getMobNo()) == true) {
-				System.out.println(d.getToDate());
+				logger.info("To_Date =" + d.getToDate());
 				//Checks whether the expiry date is greater than current date
 				if (d.getToDate().compareTo(LocalDate.now()) > 0) {
 
 					int id = d.getId();
-					System.out.println(id);
 					model.addAttribute("mob", user.getMobNo());
 					int otp = dlService.generateOTP();
-					System.out.println(otp);
+					logger.info("OTP = "+ otp);
 					model.addAttribute("otp", otp);
 
 					Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
@@ -259,27 +264,26 @@ public class SpringVehicleController {
 							new com.twilio.type.PhoneNumber("+12058508975"),
 							otp + " is the OTP(One time Password) to authenticate your drive").create();
 
-					System.out.println("MESSAGE SENT");
-					System.out.println(message.getSid());
-
+					logger.info("MESSAGE SENT");
+					logger.debug("otp =" + message.getSid());
 					return "/GenerateOTP";
 				}
 
 				else {
 
 					model.addAttribute("fail", "Validity is Expired");
-					System.out.println(" Validity is Expired");
+					logger.info(" Validity is Expired");
 					return "userlogin";
 				}
 			}
 
 		} catch (NullPointerException e) {
+			logger.warn("Dl is not issued");
 			model.addAttribute("fail", "Dl is not issued for this Number");
-			System.out.println("Dl is not issued for this Number");
 			return "userlogin";
 		} catch (ApiException e) {
+			logger.warn("Number is not verified ");
 			model.addAttribute("fail", "Number is not verified by Twillio");
-			System.out.println("Number is not verified by Twillio");
 			return "userlogin";
 		}
 		return "redirect:/userlogin";
@@ -316,14 +320,16 @@ public class SpringVehicleController {
 			ModelAndView mv = new ModelAndView("redirect:/police/{id}");
 			User u= userService.findUserBydl(dlService.findDlById(id));
 			Police police = new Police();
+
 			police.setUser(u);
 			pservice.createPolice(police);
-			System.out.println(police.getUser().getId());
+				
+
 			model.addAttribute("police", police);
 			return mv;
 		} catch (Exception e) {
 			ModelAndView view = new ModelAndView("redirect:/allowAccess/{id}");
-			System.out.println(e);
+			logger.warn(" allow access " +e);
 			return view;
 		}
 	}

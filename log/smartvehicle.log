@@ -1837,6 +1837,7 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 2022-12-27 18:35:59.247  WARN 14080 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
 2022-12-27 18:35:59.334  INFO 14080 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
 2022-12-27 18:35:59.335  INFO 14080 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+<<<<<<< HEAD
 2022-12-27 18:36:39.645  INFO 14080 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2022-12-27 18:36:39.646  INFO 14080 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
 2022-12-27 18:36:39.874  INFO 14080 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c436790, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29b1ff95, org.springframework.security.web.context.SecurityContextPersistenceFilter@7501a0c7, org.springframework.security.web.header.HeaderWriterFilter@10d97e35, org.springframework.security.web.authentication.logout.LogoutFilter@467ba12f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5769082d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@601fb548, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fcc7973, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14bf8e69, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3606b2ee, org.springframework.security.web.session.SessionManagementFilter@3932746a, org.springframework.security.web.access.ExceptionTranslationFilter@ef68034, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f654653]
@@ -2627,3 +2628,244 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2022-12-27 19:21:51.845  INFO 34244 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : find User Using DL
 2022-12-27 19:21:52.030  INFO 34244 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
 2022-12-27 19:21:52.042  INFO 34244 --- [http-nio-8080-exec-10] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+=======
+2022-12-27 19:23:40.820  INFO 492 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2300 with PID 492 (D:\debugging\target\classes started by Varshitha.J in D:\debugging)
+2022-12-27 19:23:40.822 DEBUG 492 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-12-27 19:23:40.822  INFO 492 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 19:23:40.930  INFO 492 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Varshitha.J\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/Varshitha.J/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2022-12-27 19:23:40.931  INFO 492 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-27 19:23:40.931  INFO 492 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-27 19:23:41.856  INFO 492 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 19:23:41.922  INFO 492 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 3 JPA repository interfaces.
+2022-12-27 19:23:43.076  INFO 492 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 19:23:43.090  INFO 492 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 19:23:43.090  INFO 492 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 19:23:43.388  INFO 492 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 19:23:43.396  INFO 492 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 19:23:43.397  INFO 492 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2465 ms
+2022-12-27 19:23:43.651  INFO 492 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 19:23:43.709  INFO 492 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-27 19:23:43.937  INFO 492 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-27 19:23:44.056  INFO 492 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-27 19:23:44.061  WARN 492 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 19:23:44.762  INFO 492 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-27 19:23:44.782  INFO 492 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 19:24:22.535  INFO 492 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 19:24:22.556  INFO 492 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 19:24:23.365  INFO 492 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6481b4de, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3089e764, org.springframework.security.web.context.SecurityContextPersistenceFilter@30b66b73, org.springframework.security.web.header.HeaderWriterFilter@516e7b93, org.springframework.security.web.authentication.logout.LogoutFilter@3508c91, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4fbe9c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@76cd5f51, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@465ebd8f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6677c3a0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c2211f3, org.springframework.security.web.session.SessionManagementFilter@89db9e7, org.springframework.security.web.access.ExceptionTranslationFilter@62aaa2a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4bbfd1fd]
+2022-12-27 19:24:23.450  WARN 492 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 19:24:23.868  INFO 492 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 19:24:23.914  INFO 492 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 19:24:23.924  INFO 492 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 43.549 seconds (JVM running for 44.187)
+2022-12-27 19:24:29.539  INFO 492 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 19:24:29.540  INFO 492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 19:24:29.541  INFO 492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 19:25:32.147  INFO 492 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : check DL number exist
+2022-12-27 19:25:32.332  INFO 492 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : checking whether DOB greater than 18
+2022-12-27 19:25:32.332  INFO 492 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : mob_no9874563574
+2022-12-27 19:25:32.347  INFO 492 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : saving new dl
+2022-12-27 19:25:32.384 DEBUG 492 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : Driving License saved with id =4 is DrivingLicense [id=4, dlno=KA06 20225671582, name=subbu, dateofBirth=2000-11-11, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, LMV-NT, MCWG], user=null]
+2022-12-27 19:25:32.445  INFO 492 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : saving new user
+2022-12-27 19:25:32.488 DEBUG 492 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : User saved with id =5 is com.example.security.SpringSmartVehicle.entity.User@6b0f62b9
+2022-12-27 19:25:32.488  INFO 492 --- [http-nio-8080-exec-9] c.e.s.S.c.SpringVehicleController        : age validated
+2022-12-27 19:25:32.518  INFO 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 19:25:32.578  INFO 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 19:25:32.579 DEBUG 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : DL are[DrivingLicense [id=4, dlno=KA06 20225671582, name=subbu, dateofBirth=2000-11-11, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, LMV-NT, MCWG], user=com.example.security.SpringSmartVehicle.entity.User@52b322b7], DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MC EX 50cc], user=com.example.security.SpringSmartVehicle.entity.User@673fd152]]
+2022-12-27 19:25:38.553  INFO 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 19:25:38.577 DEBUG 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 4
+2022-12-27 19:25:38.577  INFO 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 19:25:38.584 DEBUG 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.UserServiceImpl          : dl No com.example.security.SpringSmartVehicle.entity.User@1fe7967
+2022-12-27 19:25:38.584  INFO 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 19:25:38.585 DEBUG 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 4
+2022-12-27 19:27:07.709  INFO 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 19:27:07.718 DEBUG 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 4
+2022-12-27 19:27:07.719  INFO 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 19:27:07.721 DEBUG 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : dl No com.example.security.SpringSmartVehicle.entity.User@3e8de4d0
+2022-12-27 19:27:07.721  INFO 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 19:27:07.724 DEBUG 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 4
+2022-12-27 19:27:16.880  INFO 492 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : updating Driving license with id 4
+2022-12-27 19:27:16.907 DEBUG 492 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Driving license updated with id =4 is DrivingLicense [id=4, dlno=KA06 20225671580, name=subbu, dateofBirth=2000-11-11, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[FVG, HGMV], user=null]
+2022-12-27 19:27:16.922  INFO 492 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : updating user
+2022-12-27 19:27:16.954 DEBUG 492 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : user updated id =4
+2022-12-27 19:27:16.982  INFO 492 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 19:27:16.992  INFO 492 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 19:27:16.993 DEBUG 492 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : DL are[DrivingLicense [id=4, dlno=KA06 20225671580, name=subbu, dateofBirth=2000-11-11, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[FVG, HGMV], user=com.example.security.SpringSmartVehicle.entity.User@bdfa2c4], DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MC EX 50cc], user=com.example.security.SpringSmartVehicle.entity.User@d5321e5]]
+2022-12-27 19:27:16.993  INFO 492 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : loading all user
+2022-12-27 19:27:17.004  INFO 492 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : loaded 2 User
+2022-12-27 19:27:17.004 DEBUG 492 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : User are[com.example.security.SpringSmartVehicle.entity.User@bdfa2c4, com.example.security.SpringSmartVehicle.entity.User@d5321e5]
+2022-12-27 19:27:35.223  INFO 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 19:27:35.238  INFO 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 19:27:35.238 DEBUG 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : DL are[DrivingLicense [id=4, dlno=KA06 20225671580, name=subbu, dateofBirth=2000-11-11, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[FVG, HGMV], user=com.example.security.SpringSmartVehicle.entity.User@38c817ad], DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MC EX 50cc], user=com.example.security.SpringSmartVehicle.entity.User@a3dda93]]
+2022-12-27 19:28:10.845  INFO 492 --- [http-nio-8080-exec-4] c.e.s.S.c.SpringVehicleController        : Date =2022-12-27
+2022-12-27 19:28:10.845  INFO 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:28:10.850 DEBUG 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : Mob No null
+2022-12-27 19:28:10.850  INFO 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:28:10.852 DEBUG 492 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : Mob No null
+2022-12-27 19:28:10.852  WARN 492 --- [http-nio-8080-exec-4] c.e.s.S.c.SpringVehicleController        : Dl is not issued
+2022-12-27 19:28:35.238  INFO 492 --- [http-nio-8080-exec-5] c.e.s.S.c.SpringVehicleController        : Date =2022-12-27
+2022-12-27 19:28:35.239  INFO 492 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:28:35.261 DEBUG 492 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : Mob No com.example.security.SpringSmartVehicle.entity.User@f80c3c5
+2022-12-27 19:28:35.262  INFO 492 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:28:35.275 DEBUG 492 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : Mob No com.example.security.SpringSmartVehicle.entity.User@f80c3c5
+2022-12-27 19:28:35.285 DEBUG 492 --- [http-nio-8080-exec-5] c.e.s.S.c.SpringVehicleController        : Mob No and DL NoDrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MC EX 50cc], user=com.example.security.SpringSmartVehicle.entity.User@f80c3c5]
+2022-12-27 19:28:35.285  INFO 492 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : mob_no6363702829
+2022-12-27 19:28:35.303  INFO 492 --- [http-nio-8080-exec-5] c.e.s.S.c.SpringVehicleController        : To_Date =2042-12-27
+2022-12-27 19:28:35.304  INFO 492 --- [http-nio-8080-exec-5] c.e.s.S.c.SpringVehicleController        : OTP = 112467
+2022-12-27 19:28:36.866  INFO 492 --- [http-nio-8080-exec-5] c.e.s.S.c.SpringVehicleController        : MESSAGE SENT
+2022-12-27 19:28:36.867 DEBUG 492 --- [http-nio-8080-exec-5] c.e.s.S.c.SpringVehicleController        : otp =SM8894fff25dbaf9ccedc9415b2a56df26
+2022-12-27 19:28:48.957 DEBUG 492 --- [http-nio-8080-exec-6] c.e.s.S.c.SpringVehicleController        : Mob_No 6363702829
+2022-12-27 19:28:48.958  INFO 492 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:28:48.962 DEBUG 492 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : Mob No com.example.security.SpringSmartVehicle.entity.User@3fec0d89
+2022-12-27 19:28:48.965  INFO 492 --- [http-nio-8080-exec-6] c.e.s.S.c.SpringVehicleController        : DL =DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MC EX 50cc], user=com.example.security.SpringSmartVehicle.entity.User@3fec0d89]
+2022-12-27 19:28:48.965  INFO 492 --- [http-nio-8080-exec-6] c.e.s.S.c.SpringVehicleController        : User Page Requested
+2022-12-27 19:28:48.965  INFO 492 --- [http-nio-8080-exec-6] c.e.s.S.c.SpringVehicleController        : ID =1
+2022-12-27 19:28:49.029  INFO 492 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:28:49.033 DEBUG 492 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : Mob No com.example.security.SpringSmartVehicle.entity.User@24df2111
+2022-12-27 19:28:54.766  INFO 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 19:28:54.775 DEBUG 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : Id DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MC EX 50cc], user=com.example.security.SpringSmartVehicle.entity.User@34b5d1e]
+2022-12-27 19:28:54.776  INFO 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 19:28:54.777 DEBUG 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.UserServiceImpl          : dl No com.example.security.SpringSmartVehicle.entity.User@34b5d1e
+2022-12-27 19:28:54.782  INFO 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.PoliceServiceImpl        : user Info
+2022-12-27 19:28:54.787 DEBUG 492 --- [http-nio-8080-exec-10] c.e.s.S.Service.PoliceServiceImpl        : Storing User info com.example.security.SpringSmartVehicle.entity.Police@461a77e5
+2022-12-27 19:28:54.796 DEBUG 492 --- [http-nio-8080-exec-10] c.e.s.S.c.SpringVehicleController        : Dl No KA06 20225678912
+2022-12-27 19:28:54.805  INFO 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 19:28:54.812 DEBUG 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Id DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MC EX 50cc], user=com.example.security.SpringSmartVehicle.entity.User@2713f9e2]
+2022-12-27 19:28:54.812  INFO 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 19:28:54.815 DEBUG 492 --- [http-nio-8080-exec-1] c.e.s.S.Service.UserServiceImpl          : dl No com.example.security.SpringSmartVehicle.entity.User@2713f9e2
+>>>>>>> ad3347f9c91bf25be563cfd2a45937e55256b139
+2022-12-27 19:53:04.471  INFO 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 18548 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 19:53:04.473 DEBUG 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-12-27 19:53:04.473  INFO 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 19:53:04.584  INFO 18548 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\sindhu.h\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/sindhu.h/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2022-12-27 19:53:04.584  INFO 18548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-27 19:53:04.585  INFO 18548 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-27 19:53:05.473  INFO 18548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 19:53:05.547  INFO 18548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 3 JPA repository interfaces.
+2022-12-27 19:53:06.594  INFO 18548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 19:53:06.608  INFO 18548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 19:53:06.608  INFO 18548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 19:53:06.905  INFO 18548 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 19:53:06.913  INFO 18548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 19:53:06.913  INFO 18548 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2327 ms
+2022-12-27 19:53:07.164  INFO 18548 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 19:53:07.217  INFO 18548 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-27 19:53:07.396  INFO 18548 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-27 19:53:07.506  INFO 18548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-27 19:53:07.511  WARN 18548 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 19:53:08.074  INFO 18548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-27 19:53:08.092  INFO 18548 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 19:53:09.358  INFO 18548 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 19:53:09.368  INFO 18548 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 19:53:10.141  INFO 18548 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7fb09c7b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5e454c7f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1c3a4e84, org.springframework.security.web.header.HeaderWriterFilter@59edaeac, org.springframework.security.web.authentication.logout.LogoutFilter@3d238305, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@ea0dbf1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@30a5f668, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9f5d85c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f942fe3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@414ce769, org.springframework.security.web.session.SessionManagementFilter@595faa39, org.springframework.security.web.access.ExceptionTranslationFilter@24d9174b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2ce7dd27]
+2022-12-27 19:53:10.227  WARN 18548 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 19:53:10.654  INFO 18548 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 19:53:10.697  INFO 18548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 19:53:10.710  INFO 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 6.684 seconds (JVM running for 7.291)
+2022-12-27 19:53:19.246  INFO 18548 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 19:53:19.246  INFO 18548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 19:53:19.247  INFO 18548 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 19:54:00.981  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : check DL number exist
+2022-12-27 19:54:01.197  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : checking whether DOB greater than 18
+2022-12-27 19:54:01.197  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : mob_no6363702829
+2022-12-27 19:54:01.219  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : saving new dl
+2022-12-27 19:54:01.259 DEBUG 18548 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : Driving License saved with id =1 is DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MCWG], user=null]
+2022-12-27 19:54:01.394  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : saving new user
+2022-12-27 19:54:01.502 DEBUG 18548 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : User saved with id =2 is com.example.security.SpringSmartVehicle.entity.User@19301d9a
+2022-12-27 19:54:01.502  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.c.SpringVehicleController        : age validated
+2022-12-27 19:54:01.519  INFO 18548 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 19:54:01.561  INFO 18548 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : loaded 1 DL
+2022-12-27 19:54:01.562 DEBUG 18548 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : DL are[DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MCWG], user=com.example.security.SpringSmartVehicle.entity.User@43fbaf39]]
+2022-12-27 19:54:05.223  INFO 18548 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 19:54:05.249 DEBUG 18548 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 1
+2022-12-27 19:54:05.249  INFO 18548 --- [http-nio-8080-exec-10] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 19:54:05.266 DEBUG 18548 --- [http-nio-8080-exec-10] c.e.s.S.Service.UserServiceImpl          : dl No com.example.security.SpringSmartVehicle.entity.User@6f9c8d75
+2022-12-27 19:54:05.266  INFO 18548 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 19:54:05.282 DEBUG 18548 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 1
+2022-12-27 19:54:15.504  INFO 18548 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : updating Driving license with id 1
+2022-12-27 19:54:15.527 DEBUG 18548 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Driving license updated with id =1 is DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MCWG], user=null]
+2022-12-27 19:54:15.532  INFO 18548 --- [http-nio-8080-exec-1] c.e.s.S.Service.UserServiceImpl          : updating user
+2022-12-27 19:54:15.552 DEBUG 18548 --- [http-nio-8080-exec-1] c.e.s.S.Service.UserServiceImpl          : user updated id =1
+2022-12-27 19:54:15.560  INFO 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 19:54:15.571  INFO 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loaded 1 DL
+2022-12-27 19:54:15.571 DEBUG 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : DL are[DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MCWG], user=com.example.security.SpringSmartVehicle.entity.User@3b5a1284]]
+2022-12-27 19:54:15.571  INFO 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : loading all user
+2022-12-27 19:54:15.582  INFO 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : loaded 1 User
+2022-12-27 19:54:15.583 DEBUG 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : User are[com.example.security.SpringSmartVehicle.entity.User@3b5a1284]
+2022-12-27 19:54:24.429  INFO 18548 --- [http-nio-8080-exec-7] c.e.s.S.c.SpringVehicleController        : Date =2022-12-27
+2022-12-27 19:54:24.429  INFO 18548 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:54:24.443 DEBUG 18548 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : Mob No com.example.security.SpringSmartVehicle.entity.User@2cf55ff8
+2022-12-27 19:54:24.444  INFO 18548 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:54:24.447 DEBUG 18548 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : Mob No com.example.security.SpringSmartVehicle.entity.User@2cf55ff8
+2022-12-27 19:54:24.451 DEBUG 18548 --- [http-nio-8080-exec-7] c.e.s.S.c.SpringVehicleController        : Mob No and DL NoDrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MCWG], user=com.example.security.SpringSmartVehicle.entity.User@2cf55ff8]
+2022-12-27 19:54:24.451  INFO 18548 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : mob_no6363702829
+2022-12-27 19:54:24.460  INFO 18548 --- [http-nio-8080-exec-7] c.e.s.S.c.SpringVehicleController        : To_Date =2042-12-27
+2022-12-27 19:54:24.461  INFO 18548 --- [http-nio-8080-exec-7] c.e.s.S.c.SpringVehicleController        : OTP = 545274
+2022-12-27 19:54:26.041  INFO 18548 --- [http-nio-8080-exec-7] c.e.s.S.c.SpringVehicleController        : MESSAGE SENT
+2022-12-27 19:54:26.042 DEBUG 18548 --- [http-nio-8080-exec-7] c.e.s.S.c.SpringVehicleController        : otp =SM604af0b7ddd7feb8e3356f1b8a38d6ed
+2022-12-27 19:54:37.552 DEBUG 18548 --- [http-nio-8080-exec-8] c.e.s.S.c.SpringVehicleController        : Mob_No 6363702829
+2022-12-27 19:54:37.552  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:54:37.568 DEBUG 18548 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : Mob No com.example.security.SpringSmartVehicle.entity.User@1b8acd3b
+2022-12-27 19:54:37.570  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.c.SpringVehicleController        : DL =DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MCWG], user=com.example.security.SpringSmartVehicle.entity.User@1b8acd3b]
+2022-12-27 19:54:37.570  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.c.SpringVehicleController        : User Page Requested
+2022-12-27 19:54:37.570  INFO 18548 --- [http-nio-8080-exec-8] c.e.s.S.c.SpringVehicleController        : ID =1
+2022-12-27 19:54:37.599  INFO 18548 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 19:54:37.603 DEBUG 18548 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : Mob No com.example.security.SpringSmartVehicle.entity.User@7c51c3c1
+2022-12-27 19:54:42.115  INFO 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 19:54:42.125 DEBUG 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : Id DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MCWG], user=com.example.security.SpringSmartVehicle.entity.User@bf0946e]
+2022-12-27 19:54:42.125  INFO 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 19:54:42.128 DEBUG 18548 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : dl No com.example.security.SpringSmartVehicle.entity.User@bf0946e
+2022-12-27 19:54:42.210  INFO 18548 --- [http-nio-8080-exec-3] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 19:54:42.221 DEBUG 18548 --- [http-nio-8080-exec-3] c.e.s.S.Service.DLServiceImpl            : Id DrivingLicense [id=1, dlno=KA06 20225678912, name=varsh, dateofBirth=2000-08-17, address=mysore, dateofIssue=2022-12-27, validTill=2042-12-27, vehicle=[MC 50cc, MCWG], user=com.example.security.SpringSmartVehicle.entity.User@73e802c]
+2022-12-27 19:54:42.221  INFO 18548 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 19:54:42.223 DEBUG 18548 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : dl No com.example.security.SpringSmartVehicle.entity.User@73e802c
+2022-12-27 19:55:51.326  INFO 18548 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 19:55:51.433  INFO 18548 --- [Thread-9] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 19:55:51.436  INFO 18548 --- [Thread-9] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-12-27 19:55:51.455  INFO 18548 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 19:55:51.459  INFO 18548 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-27 19:55:51.507  INFO 18548 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-27 19:55:51.712  INFO 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 18548 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 19:55:51.713 DEBUG 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-12-27 19:55:51.713  INFO 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 19:55:51.952  INFO 18548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 19:55:51.976  INFO 18548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2022-12-27 19:55:52.175  INFO 18548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 19:55:52.176  INFO 18548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 19:55:52.176  INFO 18548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 19:55:52.273  INFO 18548 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 19:55:52.275  INFO 18548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 19:55:52.276  INFO 18548 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 560 ms
+2022-12-27 19:55:52.322  INFO 18548 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 19:55:52.330  INFO 18548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-12-27 19:55:52.330  WARN 18548 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 19:55:52.444  INFO 18548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-12-27 19:55:52.444  INFO 18548 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 19:55:52.856  INFO 18548 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 19:55:52.857  INFO 18548 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 19:55:53.179  INFO 18548 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7a98a555, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d60f100, org.springframework.security.web.context.SecurityContextPersistenceFilter@18766ed1, org.springframework.security.web.header.HeaderWriterFilter@4e8447aa, org.springframework.security.web.authentication.logout.LogoutFilter@1fb56d93, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@a2a6084, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7c91fd8e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59493382, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@359c8616, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4178468, org.springframework.security.web.session.SessionManagementFilter@1e73fe0c, org.springframework.security.web.access.ExceptionTranslationFilter@2bbd586d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5fff1402]
+2022-12-27 19:55:53.211  WARN 18548 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 19:55:53.305  INFO 18548 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 19:55:53.315  INFO 18548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 19:55:53.320  INFO 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 1.644 seconds (JVM running for 169.902)
+2022-12-27 19:55:53.323  INFO 18548 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 19:56:19.439  INFO 18548 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 19:56:19.588  INFO 18548 --- [Thread-18] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 19:56:19.599  INFO 18548 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 19:56:19.600  INFO 18548 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-12-27 19:56:19.626  INFO 18548 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-12-27 19:56:19.832  INFO 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 18548 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 19:56:19.833 DEBUG 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-12-27 19:56:19.833  INFO 18548 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 19:56:20.020  INFO 18548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 19:56:20.036  INFO 18548 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 3 JPA repository interfaces.
+2022-12-27 19:56:20.217  INFO 18548 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 19:56:20.218  INFO 18548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 19:56:20.218  INFO 18548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 19:56:20.309  INFO 18548 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 19:56:20.312  INFO 18548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 19:56:20.312  INFO 18548 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 476 ms
+2022-12-27 19:56:20.351  INFO 18548 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 19:56:20.354  INFO 18548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-12-27 19:56:20.355  WARN 18548 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 19:56:20.423  INFO 18548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-12-27 19:56:20.423  INFO 18548 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
