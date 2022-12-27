@@ -802,3 +802,608 @@ java.lang.NullPointerException: null
 2022-12-27 12:56:15.037  WARN 24512 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
 2022-12-27 12:56:15.137  INFO 24512 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
 2022-12-27 12:56:15.137  INFO 24512 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 12:56:55.192  INFO 24512 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 12:56:55.192  INFO 24512 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 12:56:55.426  INFO 24512 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64688a1d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5910ac56, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c14636b, org.springframework.security.web.header.HeaderWriterFilter@4dcf2a8, org.springframework.security.web.authentication.logout.LogoutFilter@13fb0e87, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4ac19e15, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@e96d4a8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1fe7b057, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2b47c7d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3d6fe20f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ec51eb8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a8bc57d, org.springframework.security.web.session.SessionManagementFilter@4813021a, org.springframework.security.web.access.ExceptionTranslationFilter@201c34c2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58fca729]
+2022-12-27 12:56:55.442  WARN 24512 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 12:56:55.520  INFO 24512 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 12:56:55.530  INFO 24512 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 12:56:55.533  INFO 24512 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 40.996 seconds (JVM running for 2545.492)
+2022-12-27 12:56:55.534  INFO 24512 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 13:19:19.003  INFO 17004 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 17004 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 13:19:19.005  INFO 17004 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 13:19:19.091  INFO 17004 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\sindhu.h\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/sindhu.h/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2022-12-27 13:19:19.092  INFO 17004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-27 13:19:19.092  INFO 17004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-27 13:19:20.013  INFO 17004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 13:19:20.081  INFO 17004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2022-12-27 13:19:21.173  INFO 17004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 13:19:21.187  INFO 17004 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 13:19:21.187  INFO 17004 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 13:19:21.496  INFO 17004 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 13:19:21.504  INFO 17004 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 13:19:21.505  INFO 17004 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2412 ms
+2022-12-27 13:19:21.786  INFO 17004 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 13:19:21.855  INFO 17004 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-27 13:19:22.045  INFO 17004 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-27 13:19:22.154  INFO 17004 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-27 13:19:22.159  WARN 17004 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 13:19:22.786  INFO 17004 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-27 13:19:22.805  INFO 17004 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 13:19:58.308  INFO 17004 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 13:19:58.321  INFO 17004 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 13:19:59.122  INFO 17004 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27900d7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6edc01d6, org.springframework.security.web.context.SecurityContextPersistenceFilter@63922db6, org.springframework.security.web.header.HeaderWriterFilter@41d149bb, org.springframework.security.web.authentication.logout.LogoutFilter@a755447, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@47188483, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@20f9ca65, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2426306c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3edee700, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64fa7c3c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1fffd549, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a053ce3, org.springframework.security.web.session.SessionManagementFilter@1b2ad142, org.springframework.security.web.access.ExceptionTranslationFilter@1b965556, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f7d95]
+2022-12-27 13:19:59.205  WARN 17004 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 13:19:59.572  INFO 17004 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 13:19:59.615  INFO 17004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 13:19:59.624  INFO 17004 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 41.09 seconds (JVM running for 41.739)
+2022-12-27 14:26:28.070  WARN 17004 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m34s947ms861µs500ns).
+2022-12-27 14:28:34.033  INFO 32712 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 32712 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 14:28:34.035  INFO 32712 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 14:28:34.133  INFO 32712 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\sindhu.h\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/sindhu.h/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2022-12-27 14:28:34.134  INFO 32712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-27 14:28:34.135  INFO 32712 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-27 14:28:35.132  INFO 32712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 14:28:35.209  INFO 32712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 3 JPA repository interfaces.
+2022-12-27 14:28:36.289  INFO 32712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 14:28:36.302  INFO 32712 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 14:28:36.303  INFO 32712 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 14:28:36.616  INFO 32712 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 14:28:36.625  INFO 32712 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 14:28:36.625  INFO 32712 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2490 ms
+2022-12-27 14:28:36.874  INFO 32712 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 14:28:36.938  INFO 32712 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-27 14:28:37.118  INFO 32712 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-27 14:28:37.232  INFO 32712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-27 14:28:37.236  WARN 32712 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 14:28:37.855  INFO 32712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-27 14:28:37.874  INFO 32712 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 14:29:14.166  INFO 32712 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 14:29:14.174  INFO 32712 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 14:29:15.284  INFO 32712 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76c5a01b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ae484f0, org.springframework.security.web.context.SecurityContextPersistenceFilter@30061fbf, org.springframework.security.web.header.HeaderWriterFilter@466a08c3, org.springframework.security.web.authentication.logout.LogoutFilter@52746527, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@51bed109, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@149af0a4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@38feace0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@19e37f6b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6481bcf8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@233c461c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@161835dd, org.springframework.security.web.session.SessionManagementFilter@190eb62, org.springframework.security.web.access.ExceptionTranslationFilter@6a6312a4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@758eb4ce]
+2022-12-27 14:29:15.400  WARN 32712 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 14:29:15.896  INFO 32712 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 14:29:15.943  INFO 32712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 14:29:15.953  INFO 32712 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 42.376 seconds (JVM running for 43.015)
+2022-12-27 14:35:43.045  INFO 32712 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 14:35:43.046  INFO 32712 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 14:35:43.047  INFO 32712 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 14:35:49.794  INFO 32712 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 14:35:49.959  INFO 32712 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 14:35:49.986  INFO 32712 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : mob_no6363702829
+2022-12-27 14:39:07.780  INFO 32712 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 14:39:07.892  INFO 32712 --- [Thread-9] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 14:39:07.893  INFO 32712 --- [Thread-9] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-12-27 14:39:07.930  INFO 32712 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 14:39:07.934  INFO 32712 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-27 14:39:07.964  INFO 32712 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-27 14:39:08.165  INFO 32712 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 32712 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 14:39:08.166  INFO 32712 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 14:39:08.523  INFO 32712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 14:39:08.546  INFO 32712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2022-12-27 14:39:08.753  INFO 32712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 14:39:08.754  INFO 32712 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 14:39:08.754  INFO 32712 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 14:39:08.862  INFO 32712 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 14:39:08.865  INFO 32712 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 14:39:08.866  INFO 32712 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 697 ms
+2022-12-27 14:39:08.917  INFO 32712 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 14:39:08.921  INFO 32712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-12-27 14:39:08.921  WARN 32712 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 14:39:09.035  INFO 32712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-12-27 14:39:09.036  INFO 32712 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 14:39:43.705  INFO 32712 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 14:39:43.707  INFO 32712 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 14:39:43.984  INFO 32712 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c0fb306, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11d6a99c, org.springframework.security.web.context.SecurityContextPersistenceFilter@5acfacb0, org.springframework.security.web.header.HeaderWriterFilter@33f9a7e3, org.springframework.security.web.authentication.logout.LogoutFilter@381b777b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@195a03bd, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@25c039b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@58d807f0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@de72336, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d746199, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@134c056b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c92614e, org.springframework.security.web.session.SessionManagementFilter@7e2de59c, org.springframework.security.web.access.ExceptionTranslationFilter@7fd91aba, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a3eef54]
+2022-12-27 14:39:44.012  WARN 32712 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 14:39:44.113  INFO 32712 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 14:39:44.126  INFO 32712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 14:39:44.131  INFO 32712 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 36.001 seconds (JVM running for 671.327)
+2022-12-27 14:39:44.134  INFO 32712 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 14:40:50.512  INFO 32712 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 14:40:50.513  INFO 32712 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 14:40:50.514  INFO 32712 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 14:41:10.277  INFO 32712 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 14:41:10.285  INFO 32712 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 14:41:10.291  INFO 32712 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : mob_no6363702829
+2022-12-27 16:07:44.970  WARN 32712 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=31m35s130ms63µs800ns).
+2022-12-27 16:08:05.777  INFO 32712 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 16:08:05.861  INFO 32712 --- [Thread-12] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 16:08:05.862  INFO 32712 --- [Thread-12] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-12-27 16:08:05.871  INFO 32712 --- [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 16:08:05.872  INFO 32712 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-12-27 16:08:05.896  INFO 32712 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-12-27 16:08:06.140  INFO 32712 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 32712 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 16:08:06.140  INFO 32712 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 16:08:06.659  INFO 32712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 16:08:06.679  INFO 32712 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2022-12-27 16:08:06.942  INFO 32712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 16:08:06.942  INFO 32712 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 16:08:06.942  INFO 32712 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 16:08:07.041  INFO 32712 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 16:08:07.044  INFO 32712 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 16:08:07.045  INFO 32712 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 901 ms
+2022-12-27 16:08:07.087  INFO 32712 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 16:08:07.092  INFO 32712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-12-27 16:08:07.092  WARN 32712 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 16:08:07.196  INFO 32712 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-12-27 16:08:07.196  INFO 32712 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 16:08:41.503  INFO 32712 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 16:08:41.504  INFO 32712 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 16:08:41.820  INFO 32712 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7e983fc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1536bfb5, org.springframework.security.web.context.SecurityContextPersistenceFilter@97fa358, org.springframework.security.web.header.HeaderWriterFilter@45d1b771, org.springframework.security.web.authentication.logout.LogoutFilter@200f795d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@8d2cad3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@250cad13, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@bac7b92, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3297fb2e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a1d7fc8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52bf29c5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6efaf42, org.springframework.security.web.session.SessionManagementFilter@63d282db, org.springframework.security.web.access.ExceptionTranslationFilter@3ad52483, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@88359c5]
+2022-12-27 16:08:41.844  WARN 32712 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 16:08:41.943  INFO 32712 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 16:08:41.953  INFO 32712 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 16:08:41.957  INFO 32712 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 35.863 seconds (JVM running for 6009.46)
+2022-12-27 16:08:41.958  INFO 32712 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 16:10:08.570  INFO 32712 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 16:10:08.571  INFO 32712 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 16:10:08.571  INFO 32712 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-12-27 16:13:11.543  INFO 17296 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 17296 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 16:13:11.545  INFO 17296 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 16:13:11.614  INFO 17296 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\sindhu.h\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/sindhu.h/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2022-12-27 16:13:11.614  INFO 17296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-27 16:13:11.614  INFO 17296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-27 16:39:57.028  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 9088 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 16:39:57.030  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 16:39:57.134  INFO 9088 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\sindhu.h\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/sindhu.h/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2022-12-27 16:39:57.135  INFO 9088 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-27 16:39:57.135  INFO 9088 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-27 16:39:58.120  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 16:39:58.197  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 3 JPA repository interfaces.
+2022-12-27 16:39:59.854  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 16:39:59.865  INFO 9088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 16:39:59.866  INFO 9088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 16:40:00.711  INFO 9088 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 16:40:00.719  INFO 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 16:40:00.720  INFO 9088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3584 ms
+2022-12-27 16:40:00.975  INFO 9088 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 16:40:01.045  INFO 9088 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-27 16:40:01.212  INFO 9088 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-27 16:40:01.336  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-27 16:40:01.341  WARN 9088 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 16:40:01.998  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-27 16:40:02.016  INFO 9088 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 16:40:37.762  INFO 9088 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 16:40:37.789  INFO 9088 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 16:40:38.637  INFO 9088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@d7961f9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18d6ea16, org.springframework.security.web.context.SecurityContextPersistenceFilter@ca004c1, org.springframework.security.web.header.HeaderWriterFilter@79b49f07, org.springframework.security.web.authentication.logout.LogoutFilter@7f975c98, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@800d5ae, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1e64c9fd, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@640b87e6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1f1c67a5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9e2b15e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b2de651, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e36e019, org.springframework.security.web.session.SessionManagementFilter@a755447, org.springframework.security.web.access.ExceptionTranslationFilter@69ec9a15, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4fe588d1]
+2022-12-27 16:40:38.719  WARN 9088 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 16:40:39.124  INFO 9088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 16:40:39.177  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 16:40:39.187  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 42.568 seconds (JVM running for 43.196)
+2022-12-27 16:41:12.917  INFO 9088 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 16:41:12.917  INFO 9088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 16:41:12.918  INFO 9088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 16:41:44.926  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 16:41:45.171  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loaded 1 DL
+2022-12-27 16:41:48.711  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:41:48.734  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:41:48.751  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:43:34.402  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:43:34.416  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:43:34.420  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:44:26.328  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:44:26.338  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:44:26.340  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:44:57.138  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 16:44:57.147  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : loaded 1 DL
+2022-12-27 16:44:58.608  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:44:58.618  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:44:58.622  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:46:21.491  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:46:21.500  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:46:21.502  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:46:28.949  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:46:28.958  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:46:28.960  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:47:28.416  INFO 9088 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 16:47:28.437  INFO 9088 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : loaded 1 DL
+2022-12-27 16:47:37.655  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:47:37.666  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:47:37.669  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:49:45.123  INFO 9088 --- [http-nio-8080-exec-3] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:49:45.172  INFO 9088 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:49:45.176  INFO 9088 --- [http-nio-8080-exec-3] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:50:42.358  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:50:42.376  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:50:42.380  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:50:43.254  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:50:43.262  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:50:43.264  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:52:23.654  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:52:23.666  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:52:23.668  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:52:25.789  INFO 9088 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 16:52:25.809  INFO 9088 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : loaded 1 DL
+2022-12-27 16:52:25.809  INFO 9088 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : loading all user
+2022-12-27 16:52:25.824  INFO 9088 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : loaded 1 User
+2022-12-27 16:52:30.270  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 16:52:30.289  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : loaded 1 DL
+2022-12-27 16:52:34.324  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:52:34.355  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:52:34.363  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:54:08.429  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:54:08.438  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:54:08.440  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:55:31.808  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:55:31.819  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:55:31.822  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:56:39.772  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : check DL number exist
+2022-12-27 16:56:39.825  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : checking whether DOB greater than 18
+2022-12-27 16:56:39.826  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 16:56:44.260  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:56:44.269  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:56:44.273  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:56:46.777  INFO 9088 --- [http-nio-8080-exec-3] c.e.s.S.Service.DLServiceImpl            : check DL number exist
+2022-12-27 16:56:46.784  INFO 9088 --- [http-nio-8080-exec-3] c.e.s.S.Service.DLServiceImpl            : checking whether DOB greater than 18
+2022-12-27 16:56:46.784  INFO 9088 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 16:56:53.034  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:56:53.040  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:56:53.042  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:57:32.302  INFO 9088 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 16:57:32.397  INFO 9088 --- [Thread-9] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 16:57:32.399  INFO 9088 --- [Thread-9] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-12-27 16:57:32.417  INFO 9088 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 16:57:32.422  INFO 9088 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-27 16:57:32.464  INFO 9088 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-27 16:57:32.650  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 9088 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 16:57:32.651  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 16:57:32.874  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 16:57:32.896  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2022-12-27 16:57:33.137  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 16:57:33.138  INFO 9088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 16:57:33.138  INFO 9088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 16:57:33.242  INFO 9088 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 16:57:33.245  INFO 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 16:57:33.245  INFO 9088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 591 ms
+2022-12-27 16:57:33.300  INFO 9088 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 16:57:33.304  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-12-27 16:57:33.305  WARN 9088 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 16:57:33.392  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-12-27 16:57:33.392  INFO 9088 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 16:58:07.979  INFO 9088 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 16:58:07.980  INFO 9088 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 16:58:08.259  INFO 9088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3b88864c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@320c8d15, org.springframework.security.web.context.SecurityContextPersistenceFilter@47265f23, org.springframework.security.web.header.HeaderWriterFilter@3fd6d55f, org.springframework.security.web.authentication.logout.LogoutFilter@46bb2a2d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@60eaf90e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1f88e3c6, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@59930d3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1e19b5af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37637ad0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d76ab14, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@567e4902, org.springframework.security.web.session.SessionManagementFilter@11027fdb, org.springframework.security.web.access.ExceptionTranslationFilter@518aac21, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2b444929]
+2022-12-27 16:58:08.286  WARN 9088 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 16:58:08.389  INFO 9088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 16:58:08.399  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 16:58:08.403  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 35.787 seconds (JVM running for 1092.416)
+2022-12-27 16:58:08.405  INFO 9088 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 16:58:32.416  INFO 9088 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 16:58:32.417  INFO 9088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 16:58:32.418  INFO 9088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 16:59:01.489  INFO 9088 --- [http-nio-8080-exec-7] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 16:59:01.533  INFO 9088 --- [http-nio-8080-exec-7] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 16:59:08.464  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:59:08.472  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 16:59:08.478  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 16:59:30.552  INFO 9088 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : check DL number exist
+2022-12-27 16:59:30.561  INFO 9088 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : checking whether DOB greater than 18
+2022-12-27 16:59:30.562  INFO 9088 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 17:04:22.458  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:04:22.475  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:04:22.475  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : loading all user
+2022-12-27 17:04:22.481  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : loaded 2 User
+2022-12-27 17:04:27.935  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:04:27.947  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:05:23.327  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 17:05:23.335  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 17:05:23.339  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 17:05:45.124  INFO 9088 --- [http-nio-8080-exec-7] c.e.s.S.Service.DLServiceImpl            : check DL number exist
+2022-12-27 17:05:45.137  INFO 9088 --- [http-nio-8080-exec-7] c.e.s.S.Service.DLServiceImpl            : checking whether DOB greater than 18
+2022-12-27 17:05:45.137  INFO 9088 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 17:06:50.400  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : check DL number exist
+2022-12-27 17:06:50.408  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : checking whether DOB greater than 18
+2022-12-27 17:06:50.408  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 17:06:52.691  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 17:06:52.701  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 17:06:52.704  INFO 9088 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 17:06:59.005  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:06:59.017  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:06:59.017  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : loading all user
+2022-12-27 17:06:59.020  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : loaded 2 User
+2022-12-27 17:07:03.896  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:07:03.905  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:07:05.070  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 17:07:05.077  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 17:07:05.080  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 17:07:11.074  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : check DL number exist
+2022-12-27 17:07:11.082  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : checking whether DOB greater than 18
+2022-12-27 17:07:11.082  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 17:09:26.006  INFO 9088 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 17:09:26.124  INFO 9088 --- [Thread-34] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 17:09:26.126  INFO 9088 --- [Thread-34] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-12-27 17:09:26.137  INFO 9088 --- [Thread-34] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:09:26.139  INFO 9088 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-12-27 17:09:26.166  INFO 9088 --- [Thread-34] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-12-27 17:09:26.350  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 9088 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 17:09:26.350  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 17:09:26.546  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 17:09:26.562  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 3 JPA repository interfaces.
+2022-12-27 17:09:26.746  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 17:09:26.746  INFO 9088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 17:09:26.747  INFO 9088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 17:09:26.838  INFO 9088 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 17:09:26.841  INFO 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 17:09:26.841  INFO 9088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 487 ms
+2022-12-27 17:09:26.877  INFO 9088 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 17:09:26.882  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-12-27 17:09:26.882  WARN 9088 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 17:09:26.955  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-12-27 17:09:26.955  INFO 9088 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 17:10:01.459  INFO 9088 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 17:10:01.460  INFO 9088 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:10:01.732  INFO 9088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5dcef814, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@370b77b1, org.springframework.security.web.context.SecurityContextPersistenceFilter@6952e89d, org.springframework.security.web.header.HeaderWriterFilter@43b5fc6a, org.springframework.security.web.authentication.logout.LogoutFilter@2b244614, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33437e5b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@244a7e43, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1f9266ad, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@798f28f1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f05ce51, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33bf2f77, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1fda0d0e, org.springframework.security.web.session.SessionManagementFilter@7fcd05f6, org.springframework.security.web.access.ExceptionTranslationFilter@33b0aa2c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e369337]
+2022-12-27 17:10:01.753  WARN 9088 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 17:10:01.836  INFO 9088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 17:10:01.846  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 17:10:01.849  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 35.525 seconds (JVM running for 1805.866)
+2022-12-27 17:10:01.851  INFO 9088 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 17:10:11.493  INFO 9088 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 17:10:11.494  INFO 9088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 17:10:11.495  INFO 9088 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 17:10:22.471  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:10:22.487  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:10:23.816  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 17:10:23.826  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 17:10:23.832  INFO 9088 --- [http-nio-8080-exec-6] c.e.s.S.Service.DLServiceImpl            : Listing Driving license with id 
+2022-12-27 17:10:42.300  INFO 9088 --- [http-nio-8080-exec-7] c.e.s.S.Service.DLServiceImpl            : updating Driving license with id 37
+2022-12-27 17:10:42.358  INFO 9088 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : updating user
+2022-12-27 17:10:42.389  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:10:42.396  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:10:42.396  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : loading all user
+2022-12-27 17:10:42.403  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : loaded 2 User
+2022-12-27 17:10:49.046  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:10:49.056  INFO 9088 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:11:23.071  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:11:23.087  INFO 9088 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:11:44.964  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:11:44.973  INFO 9088 --- [http-nio-8080-exec-4] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:12:10.875  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:12:10.884  INFO 9088 --- [http-nio-8080-exec-5] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:12:12.786  INFO 9088 --- [http-nio-8080-exec-7] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:12:12.796  INFO 9088 --- [http-nio-8080-exec-7] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:12:14.898  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:12:14.908  INFO 9088 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : loaded 2 DL
+2022-12-27 17:19:22.596  INFO 9088 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 17:19:22.704  INFO 9088 --- [Thread-52] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 17:19:22.705  INFO 9088 --- [Thread-52] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-12-27 17:19:22.714  INFO 9088 --- [Thread-52] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:19:22.715  INFO 9088 --- [Thread-52] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-12-27 17:19:22.747  INFO 9088 --- [Thread-52] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-12-27 17:19:22.942  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 9088 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 17:19:22.943  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 17:19:23.130  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 17:19:23.147  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 3 JPA repository interfaces.
+2022-12-27 17:19:23.328  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 17:19:23.329  INFO 9088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 17:19:23.329  INFO 9088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 17:19:23.404  INFO 9088 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 17:19:23.407  INFO 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 17:19:23.407  INFO 9088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 462 ms
+2022-12-27 17:19:23.445  INFO 9088 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 17:19:23.448  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2022-12-27 17:19:23.448  WARN 9088 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 17:19:23.513  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2022-12-27 17:19:23.513  INFO 9088 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 17:19:57.727  INFO 9088 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 17:19:57.728  INFO 9088 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:19:57.981  INFO 9088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6937eb2c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ff50959, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b92ad4e, org.springframework.security.web.header.HeaderWriterFilter@50a76337, org.springframework.security.web.authentication.logout.LogoutFilter@6a620538, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4d520caa, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@2ec00795, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@221f6d51, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@454f097c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9fc6c58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62a9188b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f269487, org.springframework.security.web.session.SessionManagementFilter@7ad6de7d, org.springframework.security.web.access.ExceptionTranslationFilter@4d8fea7e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d0f7b68]
+2022-12-27 17:19:58.003  WARN 9088 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 17:19:58.084  INFO 9088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 17:19:58.093  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 17:19:58.096  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 35.179 seconds (JVM running for 2402.114)
+2022-12-27 17:19:58.097  INFO 9088 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 17:22:44.603  INFO 9088 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 17:22:44.691  INFO 9088 --- [Thread-67] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 17:22:44.702  INFO 9088 --- [Thread-67] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:22:44.702  INFO 9088 --- [Thread-67] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2022-12-27 17:22:44.722  INFO 9088 --- [Thread-67] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2022-12-27 17:22:44.923  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 9088 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 17:22:44.923  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 17:22:45.111  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 17:22:45.126  INFO 9088 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 3 JPA repository interfaces.
+2022-12-27 17:22:45.288  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 17:22:45.289  INFO 9088 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 17:22:45.289  INFO 9088 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 17:22:45.368  INFO 9088 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 17:22:45.371  INFO 9088 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 17:22:45.371  INFO 9088 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 446 ms
+2022-12-27 17:22:45.406  INFO 9088 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 17:22:45.411  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2022-12-27 17:22:45.411  WARN 9088 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 17:22:45.505  INFO 9088 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2022-12-27 17:22:45.505  INFO 9088 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 17:23:20.220  INFO 9088 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 17:23:20.221  INFO 9088 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:23:20.456  INFO 9088 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@bcdb5a5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@516ffaca, org.springframework.security.web.context.SecurityContextPersistenceFilter@332d3051, org.springframework.security.web.header.HeaderWriterFilter@37921951, org.springframework.security.web.authentication.logout.LogoutFilter@397bc983, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3d97030a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1a8b510c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@54e53cbe, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1fee0f7c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@abe6840, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2dc1b0d7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b1f5cb1, org.springframework.security.web.session.SessionManagementFilter@21b2d9ea, org.springframework.security.web.access.ExceptionTranslationFilter@4a8e6490, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33cd26b0]
+2022-12-27 17:23:20.468  WARN 9088 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 17:23:20.548  INFO 9088 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 17:23:20.557  INFO 9088 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 17:23:20.561  INFO 9088 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 35.663 seconds (JVM running for 2604.579)
+2022-12-27 17:23:20.562  INFO 9088 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 17:26:23.550  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 26852 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 17:26:23.553  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 17:26:23.675  INFO 26852 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\sindhu.h\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/sindhu.h/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2022-12-27 17:26:23.675  INFO 26852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-12-27 17:26:23.676  INFO 26852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-12-27 17:26:24.560  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 17:26:24.625  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2022-12-27 17:26:25.746  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 17:26:25.759  INFO 26852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 17:26:25.760  INFO 26852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 17:26:26.088  INFO 26852 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 17:26:26.096  INFO 26852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 17:26:26.097  INFO 26852 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2420 ms
+2022-12-27 17:26:26.359  INFO 26852 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 17:26:26.426  INFO 26852 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-12-27 17:26:26.601  INFO 26852 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-27 17:26:26.710  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-27 17:26:26.715  WARN 26852 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 17:26:27.314  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-27 17:26:27.333  INFO 26852 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 17:27:06.819  INFO 26852 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 17:27:06.846  INFO 26852 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:27:07.677  INFO 26852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66e8c0a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61e38798, org.springframework.security.web.context.SecurityContextPersistenceFilter@744bff5c, org.springframework.security.web.header.HeaderWriterFilter@2acfbd9b, org.springframework.security.web.authentication.logout.LogoutFilter@7f959940, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@d7961f9, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@49f5c226, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@121d8e4e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@74e9862, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44a93d44, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@313ccc96, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45a12be9, org.springframework.security.web.session.SessionManagementFilter@594a2670, org.springframework.security.web.access.ExceptionTranslationFilter@5a43b554, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6030eecc]
+2022-12-27 17:27:07.757  WARN 26852 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 17:27:08.139  INFO 26852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 17:27:08.191  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 17:27:08.205  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 45.081 seconds (JVM running for 45.709)
+2022-12-27 17:27:13.381  INFO 26852 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 17:27:13.381  INFO 26852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 17:27:13.382  INFO 26852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 17:27:37.192  INFO 26852 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 17:27:37.399  INFO 26852 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : loaded 3 DL
+2022-12-27 17:28:10.593  INFO 26852 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 17:28:10.618  INFO 26852 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 17:28:10.630  INFO 26852 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 17:28:21.199  INFO 26852 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 17:28:21.250  INFO 26852 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 17:28:27.199  INFO 26852 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 17:28:27.215  INFO 26852 --- [http-nio-8080-exec-9] c.e.s.S.Service.PoliceServiceImpl        : user Info
+2022-12-27 17:28:27.277  INFO 26852 --- [http-nio-8080-exec-10] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 17:28:27.284  INFO 26852 --- [http-nio-8080-exec-10] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 17:48:45.941  INFO 26852 --- [http-nio-8080-exec-7] c.e.s.S.Service.DLServiceImpl            : check DL number exist
+2022-12-27 17:48:45.951  INFO 26852 --- [http-nio-8080-exec-7] c.e.s.S.Service.DLServiceImpl            : checking whether DOB greater than 18
+2022-12-27 17:48:45.952  INFO 26852 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 17:55:26.656  INFO 26852 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 17:55:26.757  INFO 26852 --- [Thread-9] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 17:55:26.760  INFO 26852 --- [Thread-9] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-12-27 17:55:26.782  INFO 26852 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:55:26.789  INFO 26852 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-27 17:55:26.825  INFO 26852 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-27 17:55:27.042  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 26852 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 17:55:27.042  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 17:55:27.258  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 17:55:27.276  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2022-12-27 17:55:27.491  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 17:55:27.492  INFO 26852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 17:55:27.493  INFO 26852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 17:55:27.589  INFO 26852 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 17:55:27.592  INFO 26852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 17:55:27.592  INFO 26852 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 547 ms
+2022-12-27 17:55:27.644  INFO 26852 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 17:55:27.647  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-12-27 17:55:27.648  WARN 26852 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 17:55:27.733  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-12-27 17:55:27.734  INFO 26852 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 17:56:08.673  INFO 26852 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 17:56:08.674  INFO 26852 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:56:08.957  INFO 26852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@36505d33, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44d2d0be, org.springframework.security.web.context.SecurityContextPersistenceFilter@25b6761, org.springframework.security.web.header.HeaderWriterFilter@36dbc307, org.springframework.security.web.authentication.logout.LogoutFilter@6fdadab7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5ba54d2, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@db99a84, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@13190032, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@69fc40c7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d88dd3f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15a3ea72, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@186890ee, org.springframework.security.web.session.SessionManagementFilter@2707f0a2, org.springframework.security.web.access.ExceptionTranslationFilter@3fd81e93, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3e299b3c]
+2022-12-27 17:56:08.982  WARN 26852 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 17:56:09.078  INFO 26852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 17:56:09.089  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 17:56:09.093  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 42.084 seconds (JVM running for 1786.603)
+2022-12-27 17:56:09.095  INFO 26852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 17:59:08.846  INFO 26852 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 17:59:08.939  INFO 26852 --- [Thread-16] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 17:59:08.952  INFO 26852 --- [Thread-16] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:59:08.953  INFO 26852 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-12-27 17:59:08.979  INFO 26852 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-12-27 17:59:09.186  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 26852 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 17:59:09.187  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 17:59:09.413  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 17:59:09.432  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 3 JPA repository interfaces.
+2022-12-27 17:59:09.657  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 17:59:09.658  INFO 26852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 17:59:09.659  INFO 26852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 17:59:09.749  INFO 26852 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 17:59:09.753  INFO 26852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 17:59:09.753  INFO 26852 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 563 ms
+2022-12-27 17:59:09.798  INFO 26852 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 17:59:09.804  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-12-27 17:59:09.804  WARN 26852 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 17:59:09.908  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-12-27 17:59:09.909  INFO 26852 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 17:59:47.411  INFO 26852 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 17:59:47.411  INFO 26852 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 17:59:47.650  INFO 26852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1b4bfde5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f445954, org.springframework.security.web.context.SecurityContextPersistenceFilter@418f5010, org.springframework.security.web.header.HeaderWriterFilter@2bcb9e08, org.springframework.security.web.authentication.logout.LogoutFilter@2cf05162, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@94e3c19, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6f1f03a2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@77120251, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5c43686f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16add1cf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61e126cc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30d50ccc, org.springframework.security.web.session.SessionManagementFilter@6e7c119b, org.springframework.security.web.access.ExceptionTranslationFilter@5891ec92, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@50f89c64]
+2022-12-27 17:59:47.673  WARN 26852 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 17:59:47.766  INFO 26852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 17:59:47.775  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 17:59:47.779  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 38.625 seconds (JVM running for 2005.29)
+2022-12-27 17:59:47.781  INFO 26852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 18:00:00.359  INFO 26852 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 18:00:00.359  INFO 26852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 18:00:00.360  INFO 26852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 18:00:01.761  INFO 26852 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loading all DL
+2022-12-27 18:00:01.799  INFO 26852 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : loaded 4 DL
+2022-12-27 18:00:10.409  INFO 26852 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 18:00:10.429  INFO 26852 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 18:00:10.434  INFO 26852 --- [http-nio-8080-exec-6] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 18:00:26.592  INFO 26852 --- [http-nio-8080-exec-7] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 18:00:26.636  INFO 26852 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 18:00:34.123  INFO 26852 --- [http-nio-8080-exec-1] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 18:00:34.135  INFO 26852 --- [http-nio-8080-exec-1] c.e.s.S.Service.PoliceServiceImpl        : user Info
+2022-12-27 18:00:34.163  INFO 26852 --- [http-nio-8080-exec-2] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 18:00:34.171  INFO 26852 --- [http-nio-8080-exec-2] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 18:01:40.809  INFO 26852 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 18:01:40.938  INFO 26852 --- [Thread-21] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 18:01:40.940  INFO 26852 --- [Thread-21] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-12-27 18:01:40.950  INFO 26852 --- [Thread-21] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 18:01:40.951  INFO 26852 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-12-27 18:01:40.982  INFO 26852 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-12-27 18:01:41.187  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 26852 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 18:01:41.188  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 18:01:41.366  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 18:01:41.381  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 3 JPA repository interfaces.
+2022-12-27 18:01:41.543  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 18:01:41.544  INFO 26852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 18:01:41.544  INFO 26852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 18:01:41.615  INFO 26852 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 18:01:41.618  INFO 26852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 18:01:41.618  INFO 26852 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 428 ms
+2022-12-27 18:01:41.656  INFO 26852 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 18:01:41.660  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2022-12-27 18:01:41.661  WARN 26852 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 18:01:41.749  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2022-12-27 18:01:41.749  INFO 26852 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 18:02:23.477  INFO 26852 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 18:02:23.477  INFO 26852 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 18:02:23.710  INFO 26852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@875bf94, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c1dd82d, org.springframework.security.web.context.SecurityContextPersistenceFilter@18a41cba, org.springframework.security.web.header.HeaderWriterFilter@4c7d38fc, org.springframework.security.web.authentication.logout.LogoutFilter@7aadb8d1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2610c8aa, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7a8882ca, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1ce8029c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@8336fe8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33c174b6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16de00ea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@fb762c6, org.springframework.security.web.session.SessionManagementFilter@d2c32c1, org.springframework.security.web.access.ExceptionTranslationFilter@11a75d2d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7248c29d]
+2022-12-27 18:02:23.725  WARN 26852 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 18:02:23.801  INFO 26852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 18:02:23.811  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 18:02:23.815  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 42.653 seconds (JVM running for 2161.326)
+2022-12-27 18:02:23.817  INFO 26852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 18:03:00.051  INFO 26852 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-12-27 18:03:00.138  INFO 26852 --- [Thread-30] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-27 18:03:00.147  INFO 26852 --- [Thread-30] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 18:03:00.148  INFO 26852 --- [Thread-30] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2022-12-27 18:03:00.173  INFO 26852 --- [Thread-30] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2022-12-27 18:03:00.371  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Starting SpringVehicleApplication using Java 1.8.0_121 on VDC01LTC2509 with PID 26852 (D:\finalproj\target\classes started by Sindhu.H in D:\finalproj)
+2022-12-27 18:03:00.372  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : No active profile set, falling back to 1 default profile: "default"
+2022-12-27 18:03:00.561  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-27 18:03:00.578  INFO 26852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+2022-12-27 18:03:00.754  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-27 18:03:00.755  INFO 26852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-27 18:03:00.755  INFO 26852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-27 18:03:00.838  INFO 26852 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-12-27 18:03:00.841  INFO 26852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-27 18:03:00.841  INFO 26852 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 466 ms
+2022-12-27 18:03:00.875  INFO 26852 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-27 18:03:00.878  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2022-12-27 18:03:00.879  WARN 26852 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2022-12-27 18:03:00.977  INFO 26852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2022-12-27 18:03:00.978  INFO 26852 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2022-12-27 18:03:45.327  INFO 26852 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-27 18:03:45.328  INFO 26852 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-27 18:03:45.581  INFO 26852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22e3c611, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@642e9524, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d439c3, org.springframework.security.web.header.HeaderWriterFilter@21772886, org.springframework.security.web.authentication.logout.LogoutFilter@4de79282, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ac5d680, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5e3d9ece, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@605b3ef7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@674f9742, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a9538c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23e0005, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bb54039, org.springframework.security.web.session.SessionManagementFilter@7115a94d, org.springframework.security.web.access.ExceptionTranslationFilter@37c583eb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@352e74b5]
+2022-12-27 18:03:45.595  WARN 26852 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-27 18:03:45.685  INFO 26852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-12-27 18:03:45.693  INFO 26852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-27 18:03:45.697  INFO 26852 --- [restartedMain] c.e.s.S.SpringVehicleApplication         : Started SpringVehicleApplication in 45.353 seconds (JVM running for 2243.208)
+2022-12-27 18:03:45.698  INFO 26852 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-12-27 18:03:49.425  INFO 26852 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-27 18:03:49.427  INFO 26852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-27 18:03:49.428  INFO 26852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-27 18:03:55.304  INFO 26852 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 18:03:55.316  INFO 26852 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 18:03:55.324  INFO 26852 --- [http-nio-8080-exec-3] c.e.s.S.Service.UserServiceImpl          : mob_no8217782949
+2022-12-27 18:04:07.942  INFO 26852 --- [http-nio-8080-exec-4] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 18:04:07.990  INFO 26852 --- [http-nio-8080-exec-5] c.e.s.S.Service.UserServiceImpl          : find User Using Mob_No
+2022-12-27 18:04:12.711  INFO 26852 --- [http-nio-8080-exec-9] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 18:04:12.731  INFO 26852 --- [http-nio-8080-exec-9] c.e.s.S.Service.UserServiceImpl          : find User Using DL
+2022-12-27 18:04:12.740  INFO 26852 --- [http-nio-8080-exec-9] c.e.s.S.Service.PoliceServiceImpl        : user Info
+2022-12-27 18:04:12.760  INFO 26852 --- [http-nio-8080-exec-8] c.e.s.S.Service.DLServiceImpl            : find Driving license Using Id
+2022-12-27 18:04:12.768  INFO 26852 --- [http-nio-8080-exec-8] c.e.s.S.Service.UserServiceImpl          : find User Using DL

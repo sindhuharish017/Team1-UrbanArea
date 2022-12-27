@@ -28,7 +28,7 @@ public class DLServiceImpl implements DLService {
 
 	private static final Logger logger = LoggerFactory.getLogger(DLServiceImpl.class);
 
-	// create a new dl
+	// To create a new dl
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED)
 	public boolean createDL(DrivingLicense dl) {
@@ -38,7 +38,7 @@ public class DLServiceImpl implements DLService {
 		return true;
 	}
 
-	// To Check Whether the DL number and Phone number exist
+	// To Check Whether the DL number already exist
 	@Override
 	public boolean checkdlno(DrivingLicense dl) {
 		logger.info("check DL number exist");
@@ -59,7 +59,7 @@ public class DLServiceImpl implements DLService {
 		return d;
 	}
 
-	// list the dl
+	// listing the dl
 	@Override
 	public List<DrivingLicense> getAll() {
 
@@ -73,7 +73,7 @@ public class DLServiceImpl implements DLService {
 	}
 	
 	
-	// update the dl
+	// updating the dl
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED)
 	public String update(DrivingLicense dl) {
@@ -94,7 +94,7 @@ public class DLServiceImpl implements DLService {
 		return d;
 
 	}
-
+//To get ID using user mobile number
 	@Override
 	public int getIdByMobNo(String mobNo) {
 		logger.info("fetch mob number ");
@@ -106,6 +106,7 @@ public class DLServiceImpl implements DLService {
 		return id;
 	}
 
+	//To generate OTP
 	@Override
 	public int generateOTP() {
 
@@ -114,6 +115,7 @@ public class DLServiceImpl implements DLService {
 		return otp;
 	}
 
+	//To validate Date of Birth such that it is greater than 18 years from the current date
 	@Override
 	public boolean DOBvalidation(DrivingLicense dlno) {
 		DrivingLicense dl = dlno;
@@ -132,6 +134,7 @@ public class DLServiceImpl implements DLService {
 
 	}
 
+	//To find dl information using user
 	@Override
 	public DrivingLicense findDrivingLicenseByUser(User u) {
 		logger.info("find Driving license Using User");

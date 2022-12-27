@@ -20,7 +20,7 @@ public class PoliceServiceImpl implements PoliceService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(PoliceServiceImpl.class);
 	
-//Storing User Information to Police If Accident Happense
+//Storing User Information to Police If Accident Happens
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void ProvideUserIdentity(@ModelAttribute Police police ) throws Exception {

@@ -124,11 +124,11 @@ body {
 					<td>NAME</td>
 					<td>DateofBirth</td>
 					<td>Address</td>
-					<td>FromDate</td>
-					<td>ToDate</td>
+					<td>DOI</td>
+					<td>Valid Till</td>
 
 					<!-- <td>MobNo</td> -->
-					<td>vehicleType</td>
+					<td>VehicleType</td>
 					<td>Update</td>
 				</div>
 			</tr>

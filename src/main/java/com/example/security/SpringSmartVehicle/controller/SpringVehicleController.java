@@ -37,19 +37,21 @@ public class SpringVehicleController {
 
 	@Autowired
 	private PoliceService policeService;
-	
+
 	private SendMailImpl sendMailImpl;
-	
+
 	private EmailServiceImpl emailServiceImpl;
 
 	public static final String ACCOUNT_SID = "AC81b1658cefbeaa45d1e39cfabef3d5d2";
-	public static final String AUTH_TOKEN = "4a91ba4d67ddde94a9d8cc8bd8dda21c";
+    public static final String AUTH_TOKEN = "277ec74357cead14dc7ef409aa0ec202";
 
+	
 	@GetMapping("/home")
 	public String home() {
 		return "home";
 	}
 
+	//Directs to the admin page
 	@GetMapping("/admin")
 	public String admin() {
 		return "admin";
@@ -57,23 +59,32 @@ public class SpringVehicleController {
 
 	@PostMapping("/admin")
 	public ModelAndView admin(@RequestParam String username, @RequestParam String pass, Model model) throws Exception {
-		if (username.equals("admin") && (pass.equals("admin"))) {
-			ModelAndView mv = new ModelAndView("redirect:/createdl");
-			return mv;
+		try {
+			//checks whether username= admin and pass=admin
+			if (username.equals("admin") && (pass.equals("admin"))) {
+				ModelAndView mv = new ModelAndView("redirect:/createdl");
+				return mv;
 
-		} else {
-			ModelAndView mv = new ModelAndView();
-			model.addAttribute("fail", "Invalid UserName or Password");
+			} else {
+				ModelAndView mv = new ModelAndView();
+				model.addAttribute("fail", "Invalid UserName or Password");
+				return mv;
+			}
+
+		} catch (Exception e) {
+			model.addAttribute("fail", e);
+			ModelAndView mv = new ModelAndView("redirect:/admin");
 			return mv;
 		}
-
 	}
 
+	//directs to about page
 	@GetMapping("/about")
 	public String about() {
 		return "about";
 	}
 
+	
 	@GetMapping("/faq")
 	public String faq() {
 		return "faq";
@@ -88,57 +99,76 @@ public class SpringVehicleController {
 	public String dl() {
 		return "createdl";
 	}
-	
-	
 
 	// To Create DL
 	@PostMapping("/createdl")
 	public ModelAndView newDLRegister(@ModelAttribute DrivingLicense dl, @ModelAttribute User user, Model model)
 			throws Exception {
+		try {
+			ModelAndView mv = new ModelAndView("redirect:/dllist");
+			boolean dlno = dlService.checkdlno(dl);
+			boolean dldob = dlService.DOBvalidation(dl);
+			boolean userphno = userService.checkIfPhoneNumberExist(user.getMobNo());
+			
+			//If dl number does not exist
+			if (dlno) {
+				//If phone number does not exist
+				if (userphno == false) {
+					//If date of birth is greater than 18 years from current date
+					if (dldob) {
+                        //Sets the date of issue to current date
+						dl.setFromDate(LocalDate.now());
+						//Sets the validity date of dl
+						dl.setToDate(dl.getFromDate().plusYears(20));
+//						model.addAttribute("todate", dl.getToDate());
+						
+						//calls createdl from dl service
+						dlService.createDL(dl);
 
-		ModelAndView mv = new ModelAndView("redirect:/dllist");
-		boolean dlno = dlService.checkdlno(dl);
-		boolean dldob = dlService.DOBvalidation(dl);
-		boolean userphno=userService.checkIfPhoneNumberExist(user.getMobNo());
-		if (dlno) {
-			if(userphno==false){
-			if (dldob) {
+						user.setMobNo(user.getMobNo());
+						user.setDrivingLicense(dl);
 
-				dl.setFromDate(LocalDate.now());
-				dl.setToDate(dl.getFromDate().plusYears(20));
-				model.addAttribute("todate", dl.getToDate());
-				dlService.createDL(dl);
-				
-				user.setMobNo(user.getMobNo());
-				user.setDrivingLicense(dl);
+						userService.createUser(user);
 
-				userService.createUser(user);
+//						System.out.println("age validated");
+						return mv;
+					} else {
+                        //displays the error message 
+						model.addAttribute("fail", "Age must above 18 Years");
+						ModelAndView mv1 = new ModelAndView("/createdl");
+						return mv1;
+					}
+				} else {
+					model.addAttribute("fail", "Phone number already exist");
+					ModelAndView mv1 = new ModelAndView("/createdl");
+					return mv1;
+				}
+			}
 
-				System.out.println("age validated");
-				return mv;
-			} else {
+			else {
 
-				model.addAttribute("fail", "Age must above 18 Years");
+				model.addAttribute("fail", "DL number already exist");
 				ModelAndView mv1 = new ModelAndView("/createdl");
 				return mv1;
 			}
-			}
-			else{
-				model.addAttribute("fail", "Phone number already exist");
-				ModelAndView mv1 = new ModelAndView("/createdl");
-				return mv1;
-			}
+
+		} catch (Exception e) {
+			ModelAndView mv = new ModelAndView("redirect:/createdl");
+			System.out.println(e);
+			model.addAttribute("fail", e);
+			return mv;
 		}
-
-		else {
-
-			model.addAttribute("fail", "DL number already exist");
-			ModelAndView mv1 = new ModelAndView("/createdl");
-			return mv1;
-		}
-
 	}
 
+	//To list the dl
+	@GetMapping("/dllist")
+	public String list(Model model) {
+		System.out.println("List Of DL");
+		model.addAttribute("dl", dlService.getAll());
+		return "dllist";
+	}
+
+	//displays the dl information of the user of the specified id
 	@GetMapping("/updatedl/{id}")
 	// @ResponseBody
 	public String updateDL(@PathVariable("id") int id, Model model) {
@@ -149,18 +179,26 @@ public class SpringVehicleController {
 		return "/updatedl";
 	}
 
-	// To list the Updated Dl Information.
+	// To update the dl
 	@PostMapping("/updatedl/{id}")
 	public ModelAndView saveUpdatedl(@PathVariable("id") int id, @ModelAttribute DrivingLicense dl,
 			@ModelAttribute User user) throws Exception {
-		ModelAndView view = new ModelAndView("redirect:/updateddllist");
+		try {
+			
+			ModelAndView view = new ModelAndView("redirect:/updateddllist");
+         
+			dlService.update(dl);
 
-		dlService.update(dl);
-
-		userService.userUpdate(user.getMobNo(), id);
-		return view;
+			userService.userUpdate(user.getMobNo(), id);
+			return view;
+		} catch (Exception e) {
+			ModelAndView view = new ModelAndView("redirect:/updatedl/{id}");
+			System.out.println(e);
+			return view;
+		}
 	}
 
+	//To view the updated dl list
 	@GetMapping("/updateddllist")
 	public String dllist(Model model) {
 
@@ -174,26 +212,29 @@ public class SpringVehicleController {
 		return "/userlogin";
 	}
 
+	// Allows user to login if dl is issued to specified phone number
 	@PostMapping("/userlogin")
 	public ModelAndView login(@ModelAttribute DrivingLicense dl, User user, ModelMap model)
 			throws NullPointerException {
 		try {
-
+               //if phone number is not entered
 			if (Long.valueOf(user.getMobNo()) == null) {
 				model.addAttribute("enter", "enter Phone NUmber");
 				ModelAndView mv = new ModelAndView("/userlogin");
 				return mv;
 			}
-			// User can only login if the dlno and Password Matches.
+	
 			System.out.println(user.getMobNo());
-			dl =userService.findUserByMobileNumber(user.getMobNo()).getDrivingLicense();
 			
+			dl = userService.findUserByMobileNumber(user.getMobNo()).getDrivingLicense();
+
 			System.out.println(dl);
+			//Checks whether the expiry date is greater than the current date
 			if (dl.getToDate().compareTo(LocalDate.now()) > 0) {
 
 				System.out.println("User Page Requested");
 
-				int id =dl.getId();
+				int id = dl.getId();
 				System.out.println(id);
 				ModelAndView mv = new ModelAndView("redirect:/vehicleType/" + id);
 				mv.addObject("mobno", user.getMobNo());
@@ -214,17 +255,20 @@ public class SpringVehicleController {
 	public String Generate() {
 		return "/GenerateOTP";
 	}
-
+    
+	//Generates OTP if Phone number is valid
 	@PostMapping("/GenerateOTP")
 	public String Generated(Model model, @ModelAttribute User user) throws NullPointerException, ApiException {
 
 		try {
 			System.out.println(LocalDate.now());
-			 userService.findUserByMobileNumber(user.getMobNo());
+			userService.findUserByMobileNumber(user.getMobNo());
 			DrivingLicense d = userService.findUserByMobileNumber(user.getMobNo()).getDrivingLicense();
 			System.out.println(d);
+			//checks whether the dl is issued to a given phone number
 			if (userService.checkIfPhoneNumberExist(user.getMobNo()) == true) {
 				System.out.println(d.getToDate());
+				//Checks whether the expiry date is greater than current date
 				if (d.getToDate().compareTo(LocalDate.now()) > 0) {
 
 					int id = d.getId();
@@ -266,10 +310,10 @@ public class SpringVehicleController {
 		return "redirect:/userlogin";
 	}
 
+	//Displays the vehicle type of the user 
 	@GetMapping("/vehicleType/{id}")
 	public String update(@PathVariable("id") int id, Model model, @RequestParam String mobno) {
 		ModelAndView mv = new ModelAndView();
-	
 		DrivingLicense d = userService.findUserByMobileNumber(mobno).getDrivingLicense();
 		mv.setViewName("vehicleType");
 		String[] veh = d.getVehicle();
@@ -289,19 +333,29 @@ public class SpringVehicleController {
 		return "allowAccess";
 	}
 
-	// while driving a Vehicle, If Accident happens The police want to know the
-	// identity of user using userid.
+	// while driving a Vehicle, If Accident happens the police gets to know the identity of user through his userid
 	@PostMapping("/allowAccess/{id}")
 	public ModelAndView AllowAccess(@PathVariable("id") int id, User user, Model model) throws Exception {
-		ModelAndView mv = new ModelAndView("redirect:/police/{id}");
-		DrivingLicense dr =dlService.findDlById(id);
+		try {
 
-		Police police = new Police();
-		police.setAddress(dr.getAddress());
-		policeService.ProvideUserIdentity(police);
-		System.out.println(police.getDlno());
-		model.addAttribute("police", police);
-		return mv;
+			ModelAndView mv = new ModelAndView("redirect:/police/{id}");
+			DrivingLicense dr = dlService.findDlById(id);
+			User u = userService.findUserBydl(dr);
+			Police police = new Police();
+			police.setAddress(dr.getAddress());
+			police.setDateofBirth(dr.getDateofBirth());
+			police.setDlno(dr.getDlno());
+			police.setName(dr.getName());
+			police.setPhonenumber(u.getMobNo());
+			policeService.ProvideUserIdentity(police);
+			System.out.println(police.getDlno());
+			model.addAttribute("police", police);
+			return mv;
+		} catch (Exception e) {
+			ModelAndView view = new ModelAndView("redirect:/allowAccess/{id}");
+			System.out.println(e);
+			return view;
+		}
 	}
 
 	// If the User Not Allowed To Drive a Vehicle
@@ -310,14 +364,7 @@ public class SpringVehicleController {
 		return "accessDenied";
 	}
 
-	@GetMapping("/dllist")
-	public String list(Model model) {
-		System.out.println("List Of DL");
-
-		model.addAttribute("dl", dlService.getAll());
-		return "dllist";
-	}
-
+	
 	@GetMapping("/police/{id}")
 	public String PoliceNotified(@PathVariable("id") int id, User user, Model model) {
 		DrivingLicense dr = dlService.findDlById(id);
@@ -341,11 +388,7 @@ public class SpringVehicleController {
 	public String police(@PathVariable("id") int id) {
 		return "police";
 	}
+
 	
-	@PostMapping("/forgotPassword")
-	public String forgotPassword(){
-		emailServiceImpl.SendMail("smartvehicle002@gmail.com", "smartrto123@gmail.com", "PASSWORD RECOVERY", "xyz");
-		return "forgotPassword";
-	}
 
 }

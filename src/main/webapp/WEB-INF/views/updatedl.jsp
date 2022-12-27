@@ -221,8 +221,9 @@ label {
 <body>
 
 	<div class="topnav">
-		<!-- <a href="/home">Home</a>  --><a href="/createdl">Create</a> <a
-			href="/updateddllist">View</a> <a href="/admin">Logout</a>
+		<!-- <a href="/home">Home</a>  -->
+		<a href="/createdl">Create</a> <a href="/updateddllist">View</a> <a
+			href="/admin">Logout</a>
 	</div>
 	<center>
 
@@ -238,26 +239,23 @@ label {
 
 				<div class="inputWithIcon">
 					<input type="text" class="form-control form-control-lg"
-						value="${dl.dlno }" name="dlno"
+						value="${dl.dlno }" name="dlno" 
 						pattern="^([A-Z]{2}[0-9]{2})\s((19|20)[0-9]{2}[0-9]{7})$" /> <i
 						class="fa fa-id-card-o" aria-hidden="true"> </i>
 				</div>
 				<div class="inputWithIcon">
 					<input type="text" class="form-control form-control-lg"
-						value="${dl.name}" name="name" pattern="^[A-Za-z -]+$" title=" enter Valid name" /> <i
-						class="fa fa-user fa-lg fa-fw" aria-hidden="true"> </i>
+						value="${dl.name}" name="name" pattern="^[A-Za-z -]+$"
+						title=" enter Valid name" /> <i class="fa fa-user fa-lg fa-fw"
+						aria-hidden="true"> </i>
 				</div>
 
 				<div class="inputWithIcon">
-					<input type="text" class="date form-control"
-						value="${dl.dateofBirth}" name="dateofBirth"
-						pattern="^\d{4}-\d{2}-\d{2}$" required="required" readonly />
-					<script type="text/javascript">
-						$('.date').datepicker({
-							format : 'yyyy-mm-dd'
-						});
-					</script>
-					<i class="fa fa-calendar" aria-hidden="true"> </i>
+					<input type="text" class="form-control form-control-lg"
+						value="${dl.dateofBirth}" name="dateofBirth" 
+						pattern="^\d{4}-\d{2}-\d{2}$" required="required" readonly/>
+
+					<!-- <i class="fa fa-calendar" aria-hidden="true"> </i> -->
 				</div>
 
 
@@ -286,8 +284,13 @@ label {
 				</div>
 				<div class="inputWithIcon">
 					<input type="text" class="date form-control" value="${dl.toDate}"
-						name="toDate" /> <i class="fa fa-calendar" aria-hidden="true">
-					</i>
+						name="toDate" />
+					<script type="text/javascript">
+						$('.date').datepicker({
+							format : 'yyyy-mm-dd'
+						});
+					</script> 
+					<i class="fa fa-calendar" aria-hidden="true"> </i>
 				</div>
 				<div class="form-outline form-white mb-1">
 					<input type="checkbox" name="vehicle" value="MC 50cc">&nbsp;MC
@@ -303,7 +306,9 @@ label {
 
 
 				</div>
-
+				<center style="color: red;">
+					<b>${fail}</b>
+				</center>
 				<table>
 					<tr>
 						<td><input class="btn third" type="submit" name="submit"
@@ -312,6 +317,7 @@ label {
 						<td><input class="btn third" type="submit" name="submit"
 							value="Cancel"></td>
 					</tr>
+
 				</table>
 				<br>
 		</form:form>
