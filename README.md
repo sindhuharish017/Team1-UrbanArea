@@ -71,7 +71,7 @@ The goal is to exercise the Spring MVC/Boots technology according to “training
  
 1.	Users:  RTO Officer and User 
 2.	Features of each Users and further project implementational details are documented:
-3.	https://github.com/akshay0828/Valtech-miniProject-Spice-Land/blob/main/DOCUMENTATION.pdf <br/>
+3.  https://github.com/sindhuharish017/Team1-UrbanArea/blob/master/Driving%20license%20controlled%20smart%20vehicle.pdf <br/>
        
        
 
@@ -80,4 +80,4 @@ The goal is to exercise the Spring MVC/Boots technology according to “training
 Agile Retrospective Meeting...
 
 
-![Outcome](https://github.com/akshay0828/Spiceland-12-12-2022/blob/main/Retrospective-Points.png)
+![Outcome](https://github.com/sindhuharish017/Team1-UrbanArea/blob/master/Retrospection-1.pdf)
