@@ -26,6 +26,7 @@ import com.twilio.Twilio;
 import com.twilio.exception.ApiException;
 import com.twilio.rest.api.v2010.account.Message;
 
+
 @Controller
 public class SpringVehicleController {
 
@@ -35,12 +36,9 @@ public class SpringVehicleController {
 	@Autowired
 	private UserService userService;
 
-
 	@Autowired 
 	private policeSerive pservice;
 
-
-	
 	private static final Logger logger = LoggerFactory.getLogger(SpringVehicleController.class);
 
 
@@ -252,7 +250,6 @@ public class SpringVehicleController {
 				//Checks whether the expiry date is greater than current date
 				if (d.getToDate().compareTo(LocalDate.now()) > 0) {
 
-					int id = d.getId();
 					model.addAttribute("mob", user.getMobNo());
 					int otp = dlService.generateOTP();
 					logger.info("OTP = "+ otp);
@@ -320,11 +317,18 @@ public class SpringVehicleController {
 			ModelAndView mv = new ModelAndView("redirect:/police/{id}");
 			User u= userService.findUserBydl(dlService.findDlById(id));
 			Police police = new Police();
-
+			System.out.println(u.getId());
+			
+			
+			if(pservice.CheckIfAccidentAlreadyHappenseByUser(u))
+			{
+				System.out.println("accident happens"+u.getId());
+				pservice.deleteById(u.getId());
+				
+			}
 			police.setUser(u);
 			pservice.createPolice(police);
-				
-
+			System.out.println("police created");
 			model.addAttribute("police", police);
 			return mv;
 		} catch (Exception e) {
@@ -334,12 +338,7 @@ public class SpringVehicleController {
 		}
 	}
 
-	// If the User Not Allowed To Drive a Vehicle
-	@GetMapping("/accessDenied")
-	public String acessDeniedfordl() {
-		return "accessDenied";
-	}
-
+	
 	
 	@GetMapping("/police/{id}")
 	public String PoliceNotified(@PathVariable("id") int id, Model model) {
