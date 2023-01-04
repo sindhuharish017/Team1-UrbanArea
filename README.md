@@ -7,10 +7,20 @@
     <li>Sai kumar</li>   
 </ul> 
 
- 	 
+## Project Deployed in Tomcat
+URL: http://192.168.141.36:8080/index
+
+Login Credentials
+Login Credentials for ADMIN/SELLER
+UserName:akshay Password:a123
+Login Credentials for CUSTOMER
+UserName:yesh Password:y123
+Login Credentials for DELIVERY PERSON
+UserName:Irfan Password:i123
 ## DL Controlled Smart vehicle
 
 Github url: https://github.com/sindhuharish017/Team1-UrbanArea <br/> 
+
 
 ## Technologies
 
