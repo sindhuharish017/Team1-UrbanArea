@@ -13,11 +13,11 @@ URL: http://192.168.141.80:8080/home
 ## Login Credentials
 <ul>
 <li>Login Credentials for RTO Officer</li>
-<li>UserName:admin</li>
-<li>Password:admin@123</li>
+UserName:admin</br>
+Password:admin@123</br>
 <li>Login Credentials for User</li>
-<li>Mobile_Number: 8217782949</li>
-<li>Mobile_Number: 7892208513</li>
+Mobile_Number: 8217782949</br>
+Mobile_Number: 7892208513</br>
 </ul>
    
     
