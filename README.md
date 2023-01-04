@@ -8,15 +8,19 @@
 </ul> 
 
 ## Project Deployed in Tomcat
-URL: http://192.168.141.36:8080/index
+URL: http://192.168.141.80:8080/home
 
-Login Credentials
-Login Credentials for ADMIN/SELLER
-UserName:akshay Password:a123
-Login Credentials for CUSTOMER
-UserName:yesh Password:y123
-Login Credentials for DELIVERY PERSON
-UserName:Irfan Password:i123
+## Login Credentials
+<ul>
+<li>Login Credentials for RTO Officer</li>
+<li>UserName:admin</li>
+<li>Password:admin@123</li>
+<li>Login Credentials for User</li>
+<li>Mobile_Number: 8217782949</li>
+<li>Mobile_Number: 7892208513</li>
+</ul>
+   
+    
 ## DL Controlled Smart vehicle
 
 Github url: https://github.com/sindhuharish017/Team1-UrbanArea <br/> 
