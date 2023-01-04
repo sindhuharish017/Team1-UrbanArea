@@ -80,4 +80,4 @@ The goal is to exercise the Spring MVC/Boots technology according to “training
 Agile Retrospective Meeting...
 
 
-![Outcome](https://github.com/sindhuharish017/Team1-UrbanArea/blob/master/Retrospection-1.pdf)
+![Outcome](https://github.com/sindhuharish017/Team1-UrbanArea/blob/master/retrospective.PNG)
