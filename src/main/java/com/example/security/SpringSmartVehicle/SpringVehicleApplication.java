@@ -11,7 +11,7 @@ public class SpringVehicleApplication extends  SpringBootServletInitializer{
 	@Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(SpringVehicleApplication.class);
-    }
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(SpringVehicleApplication.class, args);
 	}
